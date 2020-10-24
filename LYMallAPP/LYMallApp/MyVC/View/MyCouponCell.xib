@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MyCouponCell">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="65"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jft_but_postalvoucher" translatesAutoresizingMaskIntoConstraints="NO" id="wB4-89-1mr">
+                        <rect key="frame" x="0.0" y="0.0" width="110" height="65"/>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免邮券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg5-J5-spZ">
+                        <rect key="frame" x="10" y="22" width="90" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV1-jd-5pB">
+                        <rect key="frame" x="37" y="16" width="10" height="7"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="7" id="4hK-Te-ohD"/>
+                            <constraint firstAttribute="width" constant="10" id="QaL-el-HJZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIG-eZ-T19">
+                        <rect key="frame" x="48" y="16" width="18" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="87k-pp-Pgd"/>
+                            <constraint firstAttribute="width" constant="18" id="eYT-Ki-ini"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qk-Cg-t2K">
+                        <rect key="frame" x="12" y="45.5" width="86" height="11"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="11" id="oFW-Q4-CKI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="wB4-89-1mr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Eya-Gs-8cJ"/>
+                <constraint firstItem="wB4-89-1mr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GIv-Uc-Cpf"/>
+                <constraint firstItem="cV1-jd-5pB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="37" id="Md3-vn-OcS"/>
+                <constraint firstItem="4Qk-Cg-t2K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="MuC-dG-6Ai"/>
+                <constraint firstItem="Jg5-J5-spZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="NI1-Dw-g5N"/>
+                <constraint firstItem="Jg5-J5-spZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="22" id="TIw-q3-XWG"/>
+                <constraint firstItem="cIG-eZ-T19" firstAttribute="leading" secondItem="cV1-jd-5pB" secondAttribute="trailing" constant="1" id="aoj-Z8-Xl9"/>
+                <constraint firstItem="cIG-eZ-T19" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="cOA-7v-X20"/>
+                <constraint firstItem="cV1-jd-5pB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="lkT-jo-OjP"/>
+                <constraint firstAttribute="trailing" secondItem="Jg5-J5-spZ" secondAttribute="trailing" constant="10" id="nNy-C6-cQ6"/>
+                <constraint firstAttribute="bottom" secondItem="wB4-89-1mr" secondAttribute="bottom" id="tgp-td-vK2"/>
+                <constraint firstAttribute="bottom" secondItem="Jg5-J5-spZ" secondAttribute="bottom" constant="22" id="vtU-U9-Pv5"/>
+                <constraint firstAttribute="trailing" secondItem="4Qk-Cg-t2K" secondAttribute="trailing" constant="12" id="vvL-TY-BN7"/>
+                <constraint firstAttribute="bottom" secondItem="4Qk-Cg-t2K" secondAttribute="bottom" constant="8.5" id="wde-Ht-xVm"/>
+                <constraint firstAttribute="trailing" secondItem="wB4-89-1mr" secondAttribute="trailing" id="yaw-1F-0N5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="155" height="87"/>
+            <connections>
+                <outlet property="bgImgView" destination="wB4-89-1mr" id="gMd-zX-gqx"/>
+                <outlet property="couponLabel" destination="4Qk-Cg-t2K" id="t8A-bM-nLe"/>
+                <outlet property="moneyLabel" destination="cIG-eZ-T19" id="WAa-9i-9DB"/>
+                <outlet property="typeLabel" destination="Jg5-J5-spZ" id="Nel-AH-fOK"/>
+            </connections>
+            <point key="canvasLocation" x="-167" y="8"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="jft_but_postalvoucher" width="110" height="65"/>
+    </resources>
+</document>

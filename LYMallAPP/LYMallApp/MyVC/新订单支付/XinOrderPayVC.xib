@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XinOrderPayVC">
+            <connections>
+                <outlet property="payButn" destination="z3y-ui-vLS" id="MBg-hV-JuJ"/>
+                <outlet property="priceLable" destination="nOU-n9-htk" id="Vq7-bj-yVD"/>
+                <outlet property="tableView" destination="R1w-f4-6nb" id="nO9-MD-8Ay"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R1w-f4-6nb">
+                    <rect key="frame" x="0.0" y="44" width="375" height="537"/>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="0QT-AQ-mbg"/>
+                        <outlet property="delegate" destination="-1" id="4LT-Z5-uMW"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfH-vP-UvG">
+                    <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOU-n9-htk">
+                            <rect key="frame" x="12" y="22.5" width="0.0" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="tVi-dE-z1w"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" red="0.97254901959999995" green="0.29411764709999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3y-ui-vLS" customClass="QMUIFillButton">
+                            <rect key="frame" x="283" y="15.5" width="80" height="35"/>
+                            <color key="backgroundColor" red="0.23921568630000001" green="0.80784313730000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="G4C-vF-64f"/>
+                                <constraint firstAttribute="width" constant="80" id="KxC-LK-jaj"/>
+                            </constraints>
+                            <state key="normal" title="立即支付">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="payButn:" destination="-1" eventType="touchUpInside" id="her-NV-VfT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="z3y-ui-vLS" secondAttribute="trailing" constant="12" id="aK3-5w-qdM"/>
+                        <constraint firstItem="z3y-ui-vLS" firstAttribute="centerY" secondItem="FfH-vP-UvG" secondAttribute="centerY" id="bWq-8J-QOI"/>
+                        <constraint firstAttribute="height" constant="66" id="fk5-SU-WcZ"/>
+                        <constraint firstItem="nOU-n9-htk" firstAttribute="leading" secondItem="FfH-vP-UvG" secondAttribute="leading" constant="12" id="gfd-11-hv2"/>
+                        <constraint firstItem="nOU-n9-htk" firstAttribute="centerY" secondItem="FfH-vP-UvG" secondAttribute="centerY" id="lID-qB-uEh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="FfH-vP-UvG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="BzD-Il-k2H"/>
+                <constraint firstItem="R1w-f4-6nb" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="HYT-Lw-ylQ"/>
+                <constraint firstItem="R1w-f4-6nb" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="K38-lx-uGQ"/>
+                <constraint firstItem="R1w-f4-6nb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="LA2-de-ECf"/>
+                <constraint firstItem="FfH-vP-UvG" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="bX1-2m-NFP"/>
+                <constraint firstItem="FfH-vP-UvG" firstAttribute="top" secondItem="R1w-f4-6nb" secondAttribute="bottom" constant="20" id="ocn-zE-i0b"/>
+                <constraint firstItem="FfH-vP-UvG" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="pSh-YV-bA3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-198" y="138"/>
+        </view>
+    </objects>
+</document>

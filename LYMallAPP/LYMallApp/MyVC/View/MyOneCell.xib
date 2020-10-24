@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="42" id="KGk-i7-Jjw" customClass="MyOneCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoW-vg-2bj">
+                        <rect key="frame" x="12.5" y="0.0" width="350" height="38"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jft_img_gradualchange" translatesAutoresizingMaskIntoConstraints="NO" id="PQn-oz-k9T">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="38"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jft_icon_member" translatesAutoresizingMaskIntoConstraints="NO" id="lk4-ZS-i5H">
+                                <rect key="frame" x="10" y="11" width="19" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="19" id="Iv9-Hh-pMe"/>
+                                    <constraint firstAttribute="height" constant="16" id="pZM-3K-iRO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前等级：普通会员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM3-Km-oDr">
+                                <rect key="frame" x="40" y="11" width="182" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fV-iI-bxA" customClass="QMUIButton">
+                                <rect key="frame" x="245" y="11" width="95" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="GdF-Y3-9rb"/>
+                                    <constraint firstAttribute="width" constant="95" id="kLQ-Eb-dV1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="专享3大权益" image="jft_icon_rightarrow">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PQn-oz-k9T" secondAttribute="bottom" id="01w-eM-dTS"/>
+                            <constraint firstItem="PQn-oz-k9T" firstAttribute="leading" secondItem="xoW-vg-2bj" secondAttribute="leading" id="38c-RW-dJv"/>
+                            <constraint firstAttribute="trailing" secondItem="PQn-oz-k9T" secondAttribute="trailing" id="BDV-rC-hMG"/>
+                            <constraint firstItem="9fV-iI-bxA" firstAttribute="leading" secondItem="gM3-Km-oDr" secondAttribute="trailing" constant="23" id="J2B-Ev-dbi"/>
+                            <constraint firstItem="PQn-oz-k9T" firstAttribute="top" secondItem="xoW-vg-2bj" secondAttribute="top" id="JhK-V3-f9P"/>
+                            <constraint firstItem="gM3-Km-oDr" firstAttribute="leading" secondItem="lk4-ZS-i5H" secondAttribute="trailing" constant="11" id="Q9E-DN-55a"/>
+                            <constraint firstAttribute="trailing" secondItem="9fV-iI-bxA" secondAttribute="trailing" constant="10" id="VyL-x2-0k2"/>
+                            <constraint firstItem="gM3-Km-oDr" firstAttribute="centerY" secondItem="PQn-oz-k9T" secondAttribute="centerY" id="iwZ-LS-G8q"/>
+                            <constraint firstItem="lk4-ZS-i5H" firstAttribute="centerY" secondItem="PQn-oz-k9T" secondAttribute="centerY" id="nyk-qc-arJ"/>
+                            <constraint firstItem="9fV-iI-bxA" firstAttribute="centerY" secondItem="PQn-oz-k9T" secondAttribute="centerY" id="onp-1b-Z1v"/>
+                            <constraint firstItem="lk4-ZS-i5H" firstAttribute="leading" secondItem="xoW-vg-2bj" secondAttribute="leading" constant="10" id="y8d-cl-XUL"/>
+                            <constraint firstAttribute="height" constant="38" id="zJa-Ix-FPA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xoW-vg-2bj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12.5" id="5jo-JK-ZjY"/>
+                    <constraint firstAttribute="trailing" secondItem="xoW-vg-2bj" secondAttribute="trailing" constant="12.5" id="isM-Wa-bat"/>
+                    <constraint firstItem="xoW-vg-2bj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wr3-vH-KHo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="butn" destination="9fV-iI-bxA" id="Yqh-23-ZRd"/>
+                <outlet property="vipTypeLabel" destination="gM3-Km-oDr" id="uEO-Nj-g3k"/>
+            </connections>
+            <point key="canvasLocation" x="884.78260869565224" y="24.107142857142858"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="jft_icon_member" width="19.5" height="15.5"/>
+        <image name="jft_icon_rightarrow" width="6.5" height="11.5"/>
+        <image name="jft_img_gradualchange" width="350" height="35"/>
+    </resources>
+</document>

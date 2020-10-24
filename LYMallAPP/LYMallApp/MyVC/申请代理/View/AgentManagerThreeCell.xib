@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="103" id="KGk-i7-Jjw" customClass="AgentManagerThreeCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分红提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cl-y3-6rE">
+                        <rect key="frame" x="13" y="18.5" width="62" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累计提现：2858" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-gh-9t0">
+                        <rect key="frame" x="13.5" y="47" width="184" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="8TZ-v6-9D0"/>
+                            <constraint firstAttribute="width" constant="184" id="mro-pn-t56"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可提现收入：5864" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-fl-T84">
+                        <rect key="frame" x="13.5" y="72" width="184" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="184" id="ZgF-X0-0K0"/>
+                            <constraint firstAttribute="height" constant="14" id="yw5-VS-wg1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-XX-85I" customClass="QMUIFillButton">
+                        <rect key="frame" x="287" y="66" width="75" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="3FI-AV-dk8"/>
+                            <constraint firstAttribute="height" constant="25" id="gBf-10-eKN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="申请提现"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="titleTextColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kvv-fl-T84" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13.5" id="5lB-Fe-WVv"/>
+                    <constraint firstItem="1Cl-y3-6rE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18.5" id="6Fc-1H-cNa"/>
+                    <constraint firstItem="nbi-gh-9t0" firstAttribute="top" secondItem="1Cl-y3-6rE" secondAttribute="bottom" constant="10.5" id="9PO-0B-QBd"/>
+                    <constraint firstItem="nbi-gh-9t0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13.5" id="Dzk-Vj-HYG"/>
+                    <constraint firstItem="kvv-fl-T84" firstAttribute="top" secondItem="nbi-gh-9t0" secondAttribute="bottom" constant="11" id="ECb-EY-rzP"/>
+                    <constraint firstAttribute="bottom" secondItem="KKk-XX-85I" secondAttribute="bottom" constant="12" id="TV3-c2-lNd"/>
+                    <constraint firstAttribute="trailing" secondItem="KKk-XX-85I" secondAttribute="trailing" constant="13" id="eKn-oc-i09"/>
+                    <constraint firstItem="1Cl-y3-6rE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="hTe-Kg-NLa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="moneyLabel" destination="kvv-fl-T84" id="m2X-03-Yb9"/>
+                <outlet property="total_moneyLabel" destination="nbi-gh-9t0" id="OWg-E3-LQd"/>
+                <outlet property="withdrawButn" destination="KKk-XX-85I" id="kgs-jm-rLk"/>
+            </connections>
+            <point key="canvasLocation" x="-31" y="64"/>
+        </tableViewCell>
+    </objects>
+</document>

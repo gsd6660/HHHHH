@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaySuccessVC">
+            <connections>
+                <outlet property="backHomeButn" destination="B4h-Zh-llr" id="7Jr-dK-VBu"/>
+                <outlet property="bgView" destination="xw9-UG-fKm" id="jVQ-9D-LdM"/>
+                <outlet property="lookButn" destination="SfI-us-QAL" id="bsN-AM-tU8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="619" height="673"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyr-mW-eCk">
+                    <rect key="frame" x="207" y="202" width="205" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="ckE-1k-lhd"/>
+                        <constraint firstAttribute="width" constant="205" id="sou-Mn-pVC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfI-us-QAL" customClass="QMUIFillButton">
+                    <rect key="frame" x="20" y="319" width="579" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="bwE-Ig-TmI"/>
+                    </constraints>
+                    <state key="normal" title="查看订单"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleTextColor">
+                            <color key="value" red="0.2274509804" green="0.80392156859999997" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColorAdjustsTitleAndImage">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4h-Zh-llr" customClass="QMUIGhostButton">
+                    <rect key="frame" x="20" y="374" width="579" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="oii-6y-WmT"/>
+                    </constraints>
+                    <state key="normal" title="返回首页">
+                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xw9-UG-fKm">
+                    <rect key="frame" x="272" y="108" width="75" height="75"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="Lqj-9f-qMi"/>
+                        <constraint firstAttribute="width" constant="75" id="r3F-YE-sPL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="B4h-Zh-llr" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="3Hh-hl-nZn"/>
+                <constraint firstItem="B4h-Zh-llr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Ub-0R-knQ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="B4h-Zh-llr" secondAttribute="trailing" constant="20" id="6OO-uG-Rph"/>
+                <constraint firstItem="SfI-us-QAL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Dae-AB-IZ5"/>
+                <constraint firstItem="oyr-mW-eCk" firstAttribute="centerX" secondItem="xw9-UG-fKm" secondAttribute="centerX" id="EAs-MS-bRm"/>
+                <constraint firstItem="xw9-UG-fKm" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="EC8-nC-zfO"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="SfI-us-QAL" secondAttribute="trailing" constant="20" id="LZW-zB-PQL"/>
+                <constraint firstItem="SfI-us-QAL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Lhn-AI-xMr"/>
+                <constraint firstItem="oyr-mW-eCk" firstAttribute="top" secondItem="xw9-UG-fKm" secondAttribute="bottom" constant="19" id="ebq-xT-mcr"/>
+                <constraint firstItem="B4h-Zh-llr" firstAttribute="top" secondItem="SfI-us-QAL" secondAttribute="bottom" constant="20" id="ezU-tA-5yo"/>
+                <constraint firstItem="oyr-mW-eCk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="202" id="vcH-u6-FJ8"/>
+                <constraint firstItem="SfI-us-QAL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yGl-WD-ZHm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-462" y="37"/>
+        </view>
+    </objects>
+</document>

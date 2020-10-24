@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="KGk-i7-Jjw" customClass="LXRuleTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普通会员" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXk-Fe-JTt">
+                        <rect key="frame" x="15" y="22" width="95" height="30"/>
+                        <color key="backgroundColor" red="0.0" green="0.53725490196078429" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="0a0-G0-u1t"/>
+                            <constraint firstAttribute="width" constant="95" id="KbC-aX-y3A"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one_1" translatesAutoresizingMaskIntoConstraints="NO" id="r7h-1e-cAi">
+                        <rect key="frame" x="259" y="11" width="41" height="50.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xj-5r-7J8">
+                        <rect key="frame" x="15" y="72" width="290" height="88"/>
+                        <string key="text">消费会员，拿商品经济的视角去解读，顾名思义是某一类志趣相同、取向一致的消费人群，被商家归类梳理，并冠以俱乐部、精英一族、小众群体的称谓，投其所好研发产品、完善服务。这是市场经济充分竞争的产物，应个性化需求而衍生的市场供给不断细分、再细分。也是一些商家采用会员制的方式，积累会员，给予优惠，让其享受会员待遇。</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.29411764705882354" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0xj-5r-7J8" firstAttribute="top" secondItem="nXk-Fe-JTt" secondAttribute="bottom" constant="20" id="ArT-Tp-AGl"/>
+                    <constraint firstItem="0xj-5r-7J8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ENV-Y1-SrA"/>
+                    <constraint firstItem="nXk-Fe-JTt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="Owl-VO-7UU"/>
+                    <constraint firstAttribute="bottom" secondItem="0xj-5r-7J8" secondAttribute="bottom" constant="10" id="fdg-FG-nmR"/>
+                    <constraint firstAttribute="trailing" secondItem="r7h-1e-cAi" secondAttribute="trailing" constant="20" id="kLs-P7-Tb6"/>
+                    <constraint firstItem="nXk-Fe-JTt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="snb-za-e9l"/>
+                    <constraint firstItem="r7h-1e-cAi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="vwf-cl-SEK"/>
+                    <constraint firstAttribute="trailing" secondItem="0xj-5r-7J8" secondAttribute="trailing" constant="15" id="ymJ-bZ-aFe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="descLabel" destination="0xj-5r-7J8" id="4gG-Xb-F1z"/>
+                <outlet property="imgV" destination="r7h-1e-cAi" id="SQq-bD-25F"/>
+                <outlet property="titleLabel" destination="nXk-Fe-JTt" id="OpU-eW-YZA"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="156.69642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="one_1" width="41" height="50.5"/>
+    </resources>
+</document>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MySubscriptivePopView">
+            <rect key="frame" x="0.0" y="0.0" width="244" height="246"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="暂无订阅" translatesAutoresizingMaskIntoConstraints="NO" id="6kO-sC-BgG">
+                    <rect key="frame" x="0.0" y="0.0" width="244" height="246"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-1H-L5l" customClass="QMUIFillButton">
+                    <rect key="frame" x="60" y="177" width="124" height="44"/>
+                    <color key="backgroundColor" red="0.23921568630000001" green="0.80784313730000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="25D-p0-gyG"/>
+                    </constraints>
+                    <state key="normal" title="我知道了">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                            <color key="value" red="0.23921568627450979" green="0.80784313725490198" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="seeButn:" destination="iN0-l3-epB" eventType="touchUpInside" id="qX6-W2-AZ7"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有订阅任何商品哦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5H-hs-0VE">
+                    <rect key="frame" x="20" y="145.5" width="204" height="13.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13.5" id="YBp-GV-eV2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无订阅" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TS-Qf-fhN">
+                    <rect key="frame" x="50" y="116" width="144" height="15.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15.5" id="QBb-8m-ev2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="p8N-1H-L5l" secondAttribute="bottom" constant="25" id="7HP-Xm-GEF"/>
+                <constraint firstItem="o5H-hs-0VE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="7pZ-wh-xdB"/>
+                <constraint firstItem="p8N-1H-L5l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="921-zs-TFF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p8N-1H-L5l" secondAttribute="trailing" constant="60" id="B2g-hB-4fU"/>
+                <constraint firstItem="3TS-Qf-fhN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="RNK-Pj-UkB"/>
+                <constraint firstItem="6kO-sC-BgG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="X9u-7U-lvn"/>
+                <constraint firstItem="o5H-hs-0VE" firstAttribute="top" secondItem="3TS-Qf-fhN" secondAttribute="bottom" constant="14" id="cHv-zn-XgO"/>
+                <constraint firstItem="p8N-1H-L5l" firstAttribute="top" secondItem="o5H-hs-0VE" secondAttribute="bottom" constant="18" id="gro-z5-8Wv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="o5H-hs-0VE" secondAttribute="trailing" constant="20" id="hk9-kO-RUx"/>
+                <constraint firstItem="6kO-sC-BgG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rve-3d-VaI"/>
+                <constraint firstItem="6kO-sC-BgG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rxu-G5-et5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3TS-Qf-fhN" secondAttribute="trailing" constant="50" id="zBc-fs-RYY"/>
+                <constraint firstItem="6kO-sC-BgG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zot-sK-8b5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="seeButn" destination="p8N-1H-L5l" id="cVV-F4-0F3"/>
+            </connections>
+            <point key="canvasLocation" x="-581" y="-64"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="暂无订阅" width="240" height="237.5"/>
+    </resources>
+</document>

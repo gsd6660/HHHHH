@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InviteFriendsVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wk" destination="XR1-TE-oIZ" id="n89-eo-IT8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XR1-TE-oIZ" customClass="DetailView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XR1-TE-oIZ" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="1gZ-cp-y4v"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="XR1-TE-oIZ" secondAttribute="trailing" id="3Vt-Ic-tuD"/>
+                <constraint firstItem="XR1-TE-oIZ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="AIx-rA-1Od"/>
+                <constraint firstItem="XR1-TE-oIZ" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="Qpy-NO-29Q"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="XR1-TE-oIZ" secondAttribute="bottom" id="WSB-nK-a5E"/>
+                <constraint firstItem="XR1-TE-oIZ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="bg9-vD-gxw"/>
+                <constraint firstItem="XR1-TE-oIZ" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="cC7-kx-vf4"/>
+                <constraint firstItem="XR1-TE-oIZ" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="yWE-8E-cG0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-270" y="114"/>
+        </view>
+    </objects>
+</document>

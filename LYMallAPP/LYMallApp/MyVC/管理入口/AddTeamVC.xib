@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTeamVC">
+            <connections>
+                <outlet property="bgVIew" destination="UfC-wJ-Jxs" id="7xA-cd-xUS"/>
+                <outlet property="mobileTF" destination="dgh-ln-Fde" id="1iJ-c9-e1T"/>
+                <outlet property="typeLabel" destination="3TV-9K-k4c" id="6oF-fL-YMF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加团员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TV-9K-k4c">
+                    <rect key="frame" x="15" y="62" width="62" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfC-wJ-Jxs">
+                    <rect key="frame" x="16" y="95" width="343" height="46"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjd-gQ-u1l">
+                            <rect key="frame" x="11" y="14" width="46" height="18"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgh-ln-Fde">
+                            <rect key="frame" x="87" y="14.5" width="238" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dgh-ln-Fde" firstAttribute="leading" secondItem="kjd-gQ-u1l" secondAttribute="trailing" constant="30" id="0zP-uf-Sig"/>
+                        <constraint firstItem="kjd-gQ-u1l" firstAttribute="leading" secondItem="UfC-wJ-Jxs" secondAttribute="leading" constant="11" id="55x-gL-ELa"/>
+                        <constraint firstAttribute="height" constant="46" id="8GQ-tj-Jcb"/>
+                        <constraint firstItem="dgh-ln-Fde" firstAttribute="centerY" secondItem="kjd-gQ-u1l" secondAttribute="centerY" id="RrX-Z6-u8t"/>
+                        <constraint firstItem="kjd-gQ-u1l" firstAttribute="centerY" secondItem="UfC-wJ-Jxs" secondAttribute="centerY" id="cCL-hl-Yb3"/>
+                        <constraint firstAttribute="trailing" secondItem="dgh-ln-Fde" secondAttribute="trailing" constant="18" id="h4X-0O-Dyh"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-N6-OSZ" customClass="QMUIFillButton">
+                    <rect key="frame" x="44" y="178" width="287" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="UmQ-OY-Ny7"/>
+                    </constraints>
+                    <state key="normal" title="确认添加">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                            <color key="value" red="0.2274509804" green="0.80392156859999997" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="sureButn:" destination="-1" eventType="touchUpInside" id="jD7-Ib-hWG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UfC-wJ-Jxs" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="58H-ND-k3Y"/>
+                <constraint firstItem="TPL-N6-OSZ" firstAttribute="top" secondItem="UfC-wJ-Jxs" secondAttribute="bottom" constant="37" id="DnK-1b-dHJ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="UfC-wJ-Jxs" secondAttribute="trailing" constant="16" id="Pwk-GQ-6TV"/>
+                <constraint firstItem="UfC-wJ-Jxs" firstAttribute="top" secondItem="3TV-9K-k4c" secondAttribute="bottom" constant="15" id="VWY-a2-kSv"/>
+                <constraint firstItem="TPL-N6-OSZ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="44" id="W8N-PC-gPW"/>
+                <constraint firstItem="3TV-9K-k4c" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="emL-9h-2De"/>
+                <constraint firstItem="3TV-9K-k4c" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="18" id="kzp-rw-Gi6"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="TPL-N6-OSZ" secondAttribute="trailing" constant="44" id="z6s-om-RuJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-415.21739130434787" y="105.46875"/>
+        </view>
+    </objects>
+</document>

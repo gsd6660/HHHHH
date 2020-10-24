@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MyCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="77" height="76"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="77" height="76"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yuanxingzhanweitu" translatesAutoresizingMaskIntoConstraints="NO" id="8kG-cL-chQ">
+                        <rect key="frame" x="21.5" y="8" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="8kG-cL-chQ" secondAttribute="height" multiplier="1:1" id="5RI-Eq-VcV"/>
+                            <constraint firstAttribute="height" constant="34" id="6lg-Pb-IWJ"/>
+                            <constraint firstAttribute="width" constant="34" id="MQi-vR-1Yb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的订购" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-9E-NSS">
+                        <rect key="frame" x="0.0" y="49" width="77" height="14.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14.5" id="ai8-kA-rsp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Omx-9E-NSS" firstAttribute="top" secondItem="8kG-cL-chQ" secondAttribute="bottom" constant="7" id="5BZ-rC-GbL"/>
+                <constraint firstItem="8kG-cL-chQ" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="8vp-wM-jIY"/>
+                <constraint firstAttribute="trailing" secondItem="Omx-9E-NSS" secondAttribute="trailing" id="VsZ-51-WmR"/>
+                <constraint firstItem="Omx-9E-NSS" firstAttribute="top" secondItem="8kG-cL-chQ" secondAttribute="bottom" constant="7" id="ZAU-LM-o10"/>
+                <constraint firstItem="8kG-cL-chQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="rU0-8Y-Eh6"/>
+                <constraint firstItem="Omx-9E-NSS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yZt-gJ-30j"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="77" height="76"/>
+            <connections>
+                <outlet property="myImageView" destination="8kG-cL-chQ" id="NSj-Um-861"/>
+                <outlet property="titLabel" destination="Omx-9E-NSS" id="crG-wB-a9t"/>
+            </connections>
+            <point key="canvasLocation" x="-59" y="44"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="yuanxingzhanweitu" width="200" height="200"/>
+    </resources>
+</document>

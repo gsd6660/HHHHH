@@ -1,0 +1,42 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+target 'LYMallApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+pod 'Masonry'
+pod 'JDStatusBarNotification'
+pod 'YYWebImage'
+pod 'Masonry'
+pod 'QMUIKit' , '4.0.3'
+pod 'MJRefresh'
+pod 'MJExtension'
+pod 'AFNetworking', '~> 4.0'
+pod 'IQKeyboardManager'
+
+pod 'SDCycleScrollView'
+pod 'ReactiveObjC'
+pod 'FLAnimatedImage', '~> 1.0'
+pod 'lottie-ios', '~> 2.5.3'
+pod 'BRPickerView','2.3.8'
+pod 'PPNumberButton'
+pod 'CHImagePicker'
+pod 'YYCategories'
+pod 'XRCarouselView'
+
+pod 'YYText'
+pod 'UMCShare/UI'
+pod 'UMCShare/Social/ReducedWeChat'
+pod 'JPush'
+pod 'TZImagePickerController','~> 3.2.6' #iOS8 and later
+#pod "PYPhotoBrowser"
+ pod 'SocketRocket'
+ ##微信支付宝支付
+ pod 'WechatOpenSDK'
+ pod 'AlipaySDK-iOS'
+ pod 'JMLink'
+ pod 'FDFullscreenPopGesture'
+
+  # Pods for LYMallApp
+
+end

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="136" id="KGk-i7-Jjw" customClass="MessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yosemite00" translatesAutoresizingMaskIntoConstraints="NO" id="u0x-OW-8Jc">
+                        <rect key="frame" x="14" y="18" width="139" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="u0x-OW-8Jc" secondAttribute="height" multiplier="139:100" id="2jd-Rq-OMA"/>
+                            <constraint firstAttribute="width" constant="139" id="5k6-TY-n4E"/>
+                            <constraint firstAttribute="height" constant="100" id="UIW-kN-lYc"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隆源农业董事长任成顺作为农业企业家代表出席“第23届圣彼得堡国际经济论坛”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-qr-Bgs">
+                        <rect key="frame" x="164" y="17" width="201" height="62"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阅读586" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0l-bH-t3a">
+                        <rect key="frame" x="164" y="105" width="84" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="BWK-9Y-1pC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20小时前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-9f-RZz">
+                        <rect key="frame" x="262.5" y="105" width="100" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="OYV-xA-1NI"/>
+                            <constraint firstAttribute="width" constant="100" id="vts-MG-R36"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="NgK-9f-RZz" secondAttribute="trailing" constant="12.5" id="34c-5A-DWt"/>
+                    <constraint firstAttribute="trailing" secondItem="oOU-qr-Bgs" secondAttribute="trailing" constant="10" id="3Xl-SC-hQh"/>
+                    <constraint firstAttribute="bottom" secondItem="NgK-9f-RZz" secondAttribute="bottom" constant="17" id="4HD-xy-1sk"/>
+                    <constraint firstItem="F0l-bH-t3a" firstAttribute="leading" secondItem="u0x-OW-8Jc" secondAttribute="trailing" constant="11" id="6hh-XT-Bb6"/>
+                    <constraint firstItem="u0x-OW-8Jc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="8yL-O2-LPf"/>
+                    <constraint firstAttribute="bottom" secondItem="F0l-bH-t3a" secondAttribute="bottom" constant="17" id="C8g-ny-gfk"/>
+                    <constraint firstItem="oOU-qr-Bgs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="E5c-54-hNe"/>
+                    <constraint firstItem="F0l-bH-t3a" firstAttribute="top" secondItem="oOU-qr-Bgs" secondAttribute="bottom" constant="26" id="Ywf-np-hmU"/>
+                    <constraint firstItem="NgK-9f-RZz" firstAttribute="leading" secondItem="F0l-bH-t3a" secondAttribute="trailing" constant="14.5" id="cGV-cz-GQe"/>
+                    <constraint firstItem="u0x-OW-8Jc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eb3-hl-hlE"/>
+                    <constraint firstItem="oOU-qr-Bgs" firstAttribute="leading" secondItem="u0x-OW-8Jc" secondAttribute="trailing" constant="11" id="veL-nW-KFY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="aImageView" destination="u0x-OW-8Jc" id="2oX-Dn-ofl"/>
+                <outlet property="readCountLabel" destination="F0l-bH-t3a" id="eny-YV-AOx"/>
+                <outlet property="timeLabel" destination="NgK-9f-RZz" id="53a-lO-yQM"/>
+                <outlet property="titLabel" destination="oOU-qr-Bgs" id="Nll-bn-5IR"/>
+            </connections>
+            <point key="canvasLocation" x="-414" y="118"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Yosemite00" width="640" height="480"/>
+    </resources>
+</document>
