@@ -28,6 +28,16 @@
     [self.view addSubview:self.tableView];
 }
 
+
+- (void)loadData{
+    [NetWorkConnection postURL:@"/api/user.viprule/index" param:@{} success:^(id responseObject, BOOL success) {
+        
+    } fail:^(NSError *error) {
+        
+    }];
+}
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }

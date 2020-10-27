@@ -16,6 +16,9 @@
 }
 @property(nonatomic, strong) UITableView *tableView;
 
+@property(nonatomic, strong) UILabel * contentLabel;
+
+//@property(nonatomic, strong) NSMutableArray * dataArray;
 
 @end
 
@@ -24,11 +27,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"任务规则说明";
-    [self.view addSubview:self.tableView];
+//    [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:@"LXRuleTableViewCell" bundle:nil] forCellReuseIdentifier:@"LXRuleTableViewCell"];
     titles = @[@"普通会员",@"VIP会员",@"钻石会员"];
     images = @[@"one_1",@"one_2",@"one_3"];
+    [self.view addSubview:self.contentLabel];
+    [self loadData];
 }
+
+
+- (void)loadData{
+    [NetWorkConnection postURL:@"/api/task.task/rules" param:nil success:^(id responseObject, BOOL success) {
+        NSArray * arrarys = responseObject[@"data"];
+        NSMutableArray * dataArray = [NSMutableArray array];
+        for (NSDictionary * dic in arrarys) {
+            [dataArray addObject:dic[@"content"]];
+        }
+        self.contentLabel.text = [dataArray componentsJoinedByString:@","];
+    } fail:^(NSError *error) {
+        
+    }];
+}
+
+
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;
@@ -79,5 +102,14 @@
     return _tableView;
 }
 
+
+- (UILabel *)contentLabel{
+    if (!_contentLabel) {
+        _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+        _contentLabel.numberOfLines = 0;
+        _contentLabel.font = [UIFont systemFontOfSize:14];
+    }
+    return _contentLabel;
+}
 
 @end

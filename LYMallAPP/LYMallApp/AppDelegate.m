@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "TabBarViewVC.h"
 #import <UMShare/UMShare.h>
-
+#import "LoginRegisterVC.h"
 
 //#import "WxSdk.h"
 
@@ -116,9 +116,20 @@
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-    TabBarViewVC *tabBarViewController = [[TabBarViewVC alloc] init];
-    self.window.rootViewController = tabBarViewController;
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+//    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"token"];
+//    [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    NSString * token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    if ([CheackNullOjb cc_isNullOrNilWithObject:token]) {
+        LoginRegisterVC * vc = [LoginRegisterVC new];
+        self.window.rootViewController = vc;
+    }else{
+        TabBarViewVC *tabBarViewController = [[TabBarViewVC alloc] init];
+        self.window.rootViewController = tabBarViewController;
+        self.window.backgroundColor = [UIColor whiteColor];
+    }
+   
     [self.window makeKeyAndVisible];
 }
 

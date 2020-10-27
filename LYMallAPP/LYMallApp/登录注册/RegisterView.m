@@ -9,6 +9,7 @@
 #import "RegisterView.h"
 #import "VerifiedVC.h"
 #import "NibView.h"
+#import "TabBarViewVC.h"
 @interface RegisterView ()
 {
     NSInteger i;//定义全局变量
@@ -363,16 +364,23 @@
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"updateUserInfo" object:nil];
 
-                if ([responseObject[@"data"][@"is_need_authen"] intValue] ==1) {
-                    VerifiedVC * vc = [[VerifiedVC alloc]init];
-                    vc.type = @"0";
-                    vc.block = ^{
-                    };
-                    [[[self viewController] navigationController] pushViewController:vc animated:YES];
-                }else{
-//                    [self leftClick];
-
-                }
+//                if ([responseObject[@"data"][@"is_need_authen"] intValue] ==1) {
+//                    VerifiedVC * vc = [[VerifiedVC alloc]init];
+//                    vc.type = @"0";
+//                    vc.block = ^{
+//                    };
+//                    [[[self viewController] navigationController] pushViewController:vc animated:YES];
+                
+                
+//
+//
+//                }else{
+                    TabBarViewVC *tabBarViewController = [[TabBarViewVC alloc] init];
+                    self.window.rootViewController = tabBarViewController;
+                    self.window.backgroundColor = [UIColor whiteColor];
+                    
+//
+//                }
                 
          
             }else{

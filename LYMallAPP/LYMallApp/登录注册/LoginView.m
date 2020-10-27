@@ -9,6 +9,7 @@
 #import "LoginView.h"
 #import "ForgotPassWVC.h"
 #import "VerifiedVC.h"
+#import "TabBarViewVC.h"
 @interface LoginView ()<QMUITextFieldDelegate>
 {
     NSInteger i;//定义全局变量
@@ -298,7 +299,11 @@
 }
 
 - (void)leftClick{
-   [[self viewController].navigationController dismissViewControllerAnimated:YES completion:nil];
+    TabBarViewVC *tabBarViewController = [[TabBarViewVC alloc] init];
+    self.window.rootViewController = tabBarViewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+//   [[self viewController].navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 

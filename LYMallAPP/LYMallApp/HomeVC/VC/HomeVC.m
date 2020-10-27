@@ -19,7 +19,7 @@
 #import "GroupViewController.h"
 #import "ChatMeassageVC.h"
 #import "MessageListVC.h"
-#import "HomePartitionCell.h"
+#import "NewHoemTwoCell.h"
 #import "UpdateAppPopView.h"//更新视图
 @interface HomeVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(nonatomic,strong)UICollectionView * collectionView;
@@ -63,7 +63,7 @@
             self.dataDic = responseObject[@"data"];
             [self.collectionView reloadData];
             [self.collectionView.mj_header endRefreshing];
-
+            
         }
     } fail:^(NSError *error) {
         [self.collectionView.mj_header endRefreshing];
@@ -149,7 +149,7 @@
         return cell;
     }
     if (indexPath.section == 1) {
-        HomePartitionCell *cell = (HomePartitionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PartitionCell" forIndexPath:indexPath];
+        NewHoemTwoCell *cell = (NewHoemTwoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"NewHoemTwoCell" forIndexPath:indexPath];
 //        cell.dataDic = self.dataDic;
         return cell;
     }else {
@@ -357,7 +357,7 @@
     [_collectionView registerClass:[HomeThreeCell class] forCellWithReuseIdentifier:@"cellthreeId"];
         [_collectionView registerClass:[HomeFourCell class] forCellWithReuseIdentifier:@"cellFourId"];
     [_collectionView registerNib:[UINib nibWithNibName:@"HomeTowCell" bundle:nil] forCellWithReuseIdentifier:@"cellTwoId"];
-        [_collectionView registerNib:[UINib nibWithNibName:@"HomePartitionCell" bundle:nil] forCellWithReuseIdentifier:@"PartitionCell"];
+        [_collectionView registerNib:[UINib nibWithNibName:@"NewHoemTwoCell" bundle:nil] forCellWithReuseIdentifier:@"NewHoemTwoCell"];
 
     //4.设置代理
     _collectionView.delegate = self;

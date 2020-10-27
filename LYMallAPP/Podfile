@@ -37,6 +37,8 @@ pod 'TZImagePickerController','~> 3.2.6' #iOS8 and later
  pod 'JMLink'
  pod 'FDFullscreenPopGesture'
 
+ pod 'WoodPeckeriOS', :configurations => ['Debug']
+
   # Pods for LYMallApp
 
 end

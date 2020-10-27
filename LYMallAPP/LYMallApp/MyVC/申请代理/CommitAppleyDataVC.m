@@ -24,6 +24,7 @@ static NSString * cellID = @"CommitAppleyDataCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
     self.apply_lv = @"0";
     self.topView = [[CommitAppleyView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
     UIView * footView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth - 26, 200)];
@@ -201,16 +202,6 @@ static NSString * cellID = @"CommitAppleyDataCell";
 
 
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
-}
 
 -(UITableView *)tableView{
     if (_tableView == nil) {

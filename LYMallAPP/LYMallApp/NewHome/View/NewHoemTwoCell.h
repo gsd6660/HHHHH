@@ -25,11 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIImageView *rightOneImg;
 @property (weak, nonatomic) IBOutlet UIImageView *rightTwoImg;
+ 
 
-@property (weak, nonatomic) IBOutlet UIImageView *leftBottomImg;
-@property (weak, nonatomic) IBOutlet UILabel *leftBottomLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *bottomOneImg;
+
+
 
 @end
 

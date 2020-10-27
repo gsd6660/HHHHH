@@ -39,6 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
     [self addTap];
     [self getData];
 }
@@ -156,11 +157,6 @@
 
 - (IBAction)backButn:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 

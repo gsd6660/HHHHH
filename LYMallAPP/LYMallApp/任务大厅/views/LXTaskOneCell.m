@@ -10,6 +10,10 @@
 #import "HomeTypeCell.h"
 #import "LXRuleListViewController.h"
 
+#import "CommitAppleyDataVC.h"
+
+#import "MyPurseVC.h"
+
 @interface LXTaskOneCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic, strong) UICollectionView *collectionView;
 @property(nonatomic, strong) NSArray *dataArray;
@@ -49,6 +53,15 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 2) {
         [self.viewController.navigationController pushViewController:[LXRuleListViewController new] animated:YES];
+    }
+    if(indexPath.row == 5){
+        CommitAppleyDataVC * vc = [CommitAppleyDataVC new];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    }
+    if (indexPath.row == 3) {
+        MyPurseVC * vc = [MyPurseVC new];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+        
     }
 }
 

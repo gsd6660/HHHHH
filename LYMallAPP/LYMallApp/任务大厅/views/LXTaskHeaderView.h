@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 
+
+@property(nonatomic, strong) NSArray * dataArray;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

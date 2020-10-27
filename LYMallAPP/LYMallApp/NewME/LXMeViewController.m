@@ -140,8 +140,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    LXTaskHallVC * vc = [[LXTaskHallVC alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+   
 }
 
 

@@ -15,6 +15,8 @@
 #import "LXTaskListViewController.h"
 @interface LXTaskHallVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong)  LXTaskHeaderView * hearderView;
+@property(nonatomic, strong) NSMutableArray * bannerLists;
 
 @end
 
@@ -24,8 +26,8 @@
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
 
-    LXTaskHeaderView * hearderView = [[NSBundle mainBundle]loadNibNamed:@"LXTaskHeaderView" owner:self options:nil].lastObject;
-    self.tableView.tableHeaderView = hearderView;
+    self.hearderView = [[NSBundle mainBundle]loadNibNamed:@"LXTaskHeaderView" owner:self options:nil].lastObject;
+    self.tableView.tableHeaderView = self.hearderView;
     [self.tableView registerNib:[UINib nibWithNibName:@"LXTaskTwoCell" bundle:nil] forCellReuseIdentifier:@"LXTaskTwoCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LXTaskThreeCell" bundle:nil] forCellReuseIdentifier:@"LXTaskThreeCell"];
     
@@ -35,13 +37,43 @@
 
 
 - (void)loadData{
+    dispatch_group_t group = dispatch_group_create();
+    
+    //WS(weakSelf);
+    dispatch_group_enter(group);
+    [self loadOne:^(BOOL isScu) {
+        dispatch_group_leave(group);
+    }];
+    dispatch_group_enter(group);
+    [self loadNotice:^(BOOL isScu) {
+        dispatch_group_leave(group);
+    }];
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        self.hearderView.dataArray = self.bannerLists;
+        [self.tableView reloadData];
+        [self.tableView reloadData];
+    });
+}
+
+- (void)loadOne:(void(^)(BOOL isScu))requestScu{
     [NetWorkConnection postURL:@"/api/task.adv/lists" param:@{@"position":@"1"} success:^(id responseObject, BOOL success) {
-        NSLog(@"%@",responseObject);
-        
-        
-        
+        NSLog(@"%@",responseJSONString);
+        self.bannerLists = responseObject[@"data"][@"list"];
+        requestScu(YES);
     } fail:^(NSError *error) {
-                
+        requestScu(YES);
+    }];
+    
+   
+    
+}
+
+- (void)loadNotice:(void(^)(BOOL isScu))requestScu{
+    [NetWorkConnection postURL:@"/api/task.task/notice" param:@{} success:^(id responseObject, BOOL success) {
+        
+        requestScu(YES);
+    } fail:^(NSError *error) {
+        requestScu(YES);
     }];
 }
 
@@ -117,6 +149,14 @@
         _tableView.dataSource = self;
     }
     return _tableView;
+}
+
+
+- (NSMutableArray *)bannerLists{
+    if (!_bannerLists) {
+        _bannerLists = [NSMutableArray array];
+    }
+    return _bannerLists;
 }
 
 @end
