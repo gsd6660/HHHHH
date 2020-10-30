@@ -51,7 +51,7 @@
         NSDictionary * dic = self.dataArray[indexPath.section];
         cell.titleLabel.text = dic[@"title"];
         cell.descLabel.text = dic[@"subtitle"];
-        cell.numberLabel.text = [NSString stringWithFormat:@"获得%@银豆",dic[@"sliver"]];
+        cell.numberLabel.text = [NSString stringWithFormat:@"扣除%@银豆",dic[@"sliver"]];
     }
    
     

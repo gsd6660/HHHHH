@@ -153,10 +153,10 @@ static NSString * orderPayCellID = @"OrderPayCell";
             self.incomeLable.text = dic[@"income_money"];
             self.service_chargeLable.text = dic[@"withdrawal_service_charge"];
 
-                   NSArray * method = dic[@"method"];
-                   for (NSDictionary *dic1 in method) {
-                       [self.dataArray addObject:dic1];
-                   }
+//                   NSArray * method = dic[@"method"];
+//                   for (NSDictionary *dic1 in method) {
+//                       [self.dataArray addObject:dic1];
+//                   }
                    [self.tableView reloadData];
                }else{
                    ShowErrorHUD(responseMessage);

@@ -39,16 +39,12 @@
     
     [self loadData];
     
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadData];
+    }];
 }
 
 - (void)loadData{
-    [NetWorkConnection postURL:@"/api/article/lists" param:@{@"catetory_id":@"1"} success:^(id responseObject, BOOL success) {
-        NSLog(@"%@",responseObject);
-        self.dataArray = responseObject[@"data"][@"list"][@"data"];
-    } fail:^(NSError *error) {
-        
-    }];
-    
     dispatch_group_t group = dispatch_group_create();
     
     //WS(weakSelf);
@@ -66,6 +62,7 @@
         dispatch_group_leave(group);
     }];
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
     });
 }

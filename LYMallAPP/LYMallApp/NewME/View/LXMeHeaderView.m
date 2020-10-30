@@ -7,9 +7,10 @@
 //
 
 #import "LXMeHeaderView.h"
-#import "BonusManagementVC.h"
+#import "XinWithdrawVC.h"
 #import "MyOrderVC.h"
 #import "InviteFriendsVC.h"
+#import "MyDetailMessageVC.h"
 @implementation LXMeHeaderView
 
 -(void)awakeFromNib{
@@ -27,11 +28,12 @@
     self.fourBtn.imagePosition = QMUIButtonImagePositionTop;
     self.fourBtn.spacingBetweenImageAndTitle = 5;
     YBDViewBorderRadius(self.bgView, 10);
+    YBDViewBorderRadius(self.vipBtn, 5);
 }
 
 - (IBAction)oneClick:(id)sender {
-    BonusManagementVC * vc = [[BonusManagementVC alloc]init];
-    vc.title = @"收益管理";
+    XinWithdrawVC * vc = [[XinWithdrawVC alloc]init];
+    vc.title = @"提现";
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
@@ -50,4 +52,13 @@
     [self.viewController.navigationController pushViewController:vc animated:YES];
     
 }
+
+- (IBAction)settingClick:(id)sender {
+    
+    MyDetailMessageVC * vc = [MyDetailMessageVC new];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
+
+
+
 @end

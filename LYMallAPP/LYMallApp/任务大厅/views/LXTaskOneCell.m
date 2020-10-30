@@ -13,7 +13,8 @@
 #import "CommitAppleyDataVC.h"
 
 #import "MyPurseVC.h"
-
+#import "MallVC.h"
+#import "InviteFriendsVC.h"
 @interface LXTaskOneCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic, strong) UICollectionView *collectionView;
 @property(nonatomic, strong) NSArray *dataArray;
@@ -51,8 +52,21 @@
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row == 0) {
+//        NSDictionary *dic = self.categoryArry[indexPath.row];
+         MallVC * vc = [[MallVC alloc]init];
+//         vc.title = @"商城";
+//         vc.category_id = [NSString stringWithFormat:@"%@",dic[@"category_id"]];
+         [[self viewController].navigationController pushViewController:vc animated:YES];
+    }
+    
     if (indexPath.row == 2) {
         [self.viewController.navigationController pushViewController:[LXRuleListViewController new] animated:YES];
+    }
+    if (indexPath.row == 3) {
+        InviteFriendsVC * vc = [InviteFriendsVC new];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
     }
     if(indexPath.row == 5){
         CommitAppleyDataVC * vc = [CommitAppleyDataVC new];

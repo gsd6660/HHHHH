@@ -357,6 +357,7 @@
 		4737A775253AE32600097590 /* LXHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737A773253AE32600097590 /* LXHomeCollectionHeaderView.m */; };
 		4737A776253AE32600097590 /* LXHomeCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4737A774253AE32600097590 /* LXHomeCollectionHeaderView.xib */; };
 		4737A779253AE8E600097590 /* LXNewHomeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737A778253AE8E600097590 /* LXNewHomeOneCell.m */; };
+		4778D855254C33C300AA3C5A /* WebInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4778D853254C33C200AA3C5A /* WebInfoViewController.m */; };
 		66416FF0253DB8C700CD0A43 /* LXCollegeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */; };
 		66416FF1253DB8C700CD0A43 /* LXCollegeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */; };
 		66416FF5253DB8DB00CD0A43 /* LXCollegeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FF3253DB8DB00CD0A43 /* LXCollegeTwoCell.m */; };
@@ -1079,6 +1080,8 @@
 		4737A774253AE32600097590 /* LXHomeCollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXHomeCollectionHeaderView.xib; sourceTree = "<group>"; };
 		4737A777253AE8E600097590 /* LXNewHomeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXNewHomeOneCell.h; sourceTree = "<group>"; };
 		4737A778253AE8E600097590 /* LXNewHomeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXNewHomeOneCell.m; sourceTree = "<group>"; };
+		4778D853254C33C200AA3C5A /* WebInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebInfoViewController.m; sourceTree = "<group>"; };
+		4778D854254C33C300AA3C5A /* WebInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInfoViewController.h; sourceTree = "<group>"; };
 		66416FED253DB8C700CD0A43 /* LXCollegeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollegeOneCell.h; sourceTree = "<group>"; };
 		66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollegeOneCell.m; sourceTree = "<group>"; };
 		66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXCollegeOneCell.xib; sourceTree = "<group>"; };
@@ -2360,6 +2363,8 @@
 		04F07DF82410EA7C00ECC06C /* LYMallApp */ = {
 			isa = PBXGroup;
 			children = (
+				4778D854254C33C300AA3C5A /* WebInfoViewController.h */,
+				4778D853254C33C200AA3C5A /* WebInfoViewController.m */,
 				66DA63DB253C32C200EC7109 /* 任务大厅 */,
 				66417006253DDDD700CD0A43 /* New Group */,
 				470D2E6F253D8DB20092B41D /* 商学院 */,
@@ -3638,6 +3643,7 @@
 				66DA63F0253C3C6D00EC7109 /* LXTaskThreeCell.m in Sources */,
 				708F7A062434A53800073D6A /* CommissionOne.m in Sources */,
 				70CEDC802435EA7100230CDC /* LCRegExpTool.m in Sources */,
+				4778D855254C33C300AA3C5A /* WebInfoViewController.m in Sources */,
 				04440EF22446E5FE00F753F8 /* KSGuaidViewController.m in Sources */,
 				04B96052244591B000A96F24 /* EditPhoneNumerVC.m in Sources */,
 				0436B32124172CE9004BF13F /* QDUIHelper.m in Sources */,

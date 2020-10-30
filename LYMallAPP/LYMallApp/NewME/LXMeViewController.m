@@ -16,8 +16,11 @@
 #import "CouponVC.h"
 #import "MyTeamVC.h"
 #import "MemberCenterVC.h"
+#import "WebInfoViewController.h"
 @interface LXMeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
+
+@property(nonatomic, strong) LXMeHeaderView * headerView;
 
 @end
 
@@ -31,14 +34,57 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"LXMeOneCell" bundle:nil] forCellReuseIdentifier:@"LXMeOneCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LXMeTwoTableViewCell" bundle:nil] forCellReuseIdentifier:@"LXMeTwoTableViewCell"];
     
-    LXMeHeaderView * headerView = [[NSBundle mainBundle]loadNibNamed:@"LXMeHeaderView" owner:self options:nil].lastObject;
-    self.tableView.tableHeaderView = headerView;
-    
+    self.headerView = [[NSBundle mainBundle]loadNibNamed:@"LXMeHeaderView" owner:self options:nil].lastObject;
+    self.tableView.tableHeaderView = self.headerView;
+    [self loadData];
+}
+
+
+
+- (void)loadData{
+    [NetWorkConnection postURL:@"api/user/my_detail_info" param:nil success:^(id responseObject, BOOL success) {
+        if (responseSuccess) {
+            NSLog(@"我的页面=====%@",responseJSONString);
+            NSDictionary * dic = responseObject[@"data"];
+            [self.headerView.imgV sd_setImageWithURL:[NSURL URLWithString:dic[@"avatarUrl"]] placeholderImage:[UIImage imageNamed:@"yuanxingzhanweitu"]];
+            self.headerView.nameLabel.text = dic[@"nickName"];
+            self.headerView.idLabel.text =[NSString stringWithFormat:@"ID：%@",dic[@"invite_code"]];
+            self.headerView.labelnum2.text = dic[@"gold"];
+            self.headerView.labelnum1.text = dic[@"sliver"];
+            [self.headerView.vipBtn setTitle:dic[@"grade_name"] forState:UIControlStateNormal];
+//            self.headView.balanceLabel.text = dic[@"balance"];
+//            self.headView.integralLabel.text = [NSString stringWithFormat:@"%@",dic[@"points"]];
+//            self.headView.cumulativeCommissionLabel.text = [NSString stringWithFormat:@"%@", dic[@"bonus_money"]];
+//            self.headView.withdrawalCommissionLabel.text = [NSString stringWithFormat:@"%@",dic[@"income_money"]];
+//            if ([dic[@"grade_image"]length] > 0) {
+//                [self.headView.vipImageView sd_setImageWithURL:[NSURL URLWithString:dic[@"grade_image"]] placeholderImage:nil];
+//            }else{
+//                self.headView.vipImageView.hidden = YES;
+//            }
+//            self.grade_name = dic[@"grade_name"];
+//
+//            if ([CheackNullOjb cc_isNullOrNilWithObject:dic[@"invite_code"]] == NO) {
+//                self.headView.duplicateButn.hidden = NO;
+//            }else{
+//                self.headView.duplicateButn.hidden = YES;
+//            }
+            
+            [self.tableView reloadData];
+        }else{
+            ShowErrorHUD(responseMessage);
+        }
+        [self hideEmptyView];
+        [self.tableView.mj_header endRefreshing];
+    } fail:^(NSError *error) {
+        [self hideEmptyView];
+        [self.tableView.mj_header endRefreshing];
+        
+    }];
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 2||section == 3) {
@@ -79,12 +125,7 @@
         return cell;
     } else{
         LXMeTwoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LXMeTwoTableViewCell"];
-        if (indexPath.section == 1) {
-            cell.titleLable.text = @"我的收藏";
-            cell.imgV.image = [UIImage imageNamed:@"me_collect"];
-            //            cell.layer.qmui_maskedCorners = QMUILayerMinXMinYCorner
-            YBDViewBorderRadius(cell, 10);
-        }else if(indexPath.section == 2){
+         if(indexPath.section == 1){
             if (indexPath.row == 0) {
                 cell.titleLable.text = @"用户协议";
                 cell.imgV.image = [UIImage imageNamed:@"me_xieyi"];
@@ -96,7 +137,7 @@
                 cell.layer.qmui_maskedCorners = QMUILayerMinXMaxYCorner|QMUILayerMaxXMaxYCorner;
                 cell.layer.cornerRadius = 10;
             }
-        }else if (indexPath.section == 3){
+        }else if (indexPath.section == 2){
             if (indexPath.row == 0) {
                 cell.titleLable.text = @"推广规则";
                 cell.imgV.image = [UIImage imageNamed:@"me_tuiguang"];
@@ -140,7 +181,27 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   
+    if (indexPath.section == 1) {
+        WebInfoViewController * vc = [WebInfoViewController new];
+        if (indexPath.row == 0) {
+            vc.title = @"用户协议";
+        }else{
+            vc.title = @"隐私协议";
+        }
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (indexPath.section == 2) {
+       
+        if (indexPath.row == 0) {
+            WebInfoViewController * vc = [WebInfoViewController new];
+            vc.title = @"推广规则";
+            [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            
+        }
+       
+    }
+    
 }
 
 
@@ -148,7 +209,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -StatusBarHeight, ScreenWidth, ScreenHeight) style:UITableViewStyleGrouped];
         _tableView.separatorStyle= UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;

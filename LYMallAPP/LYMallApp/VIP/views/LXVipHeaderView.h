@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *imgV;
 @property (weak, nonatomic) IBOutlet UIImageView *headerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *height;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 
 @end
 

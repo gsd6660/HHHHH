@@ -19,6 +19,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet QMUIButton *fourBtn;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelnum1;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelnum2;
+@property (weak, nonatomic) IBOutlet UIImageView *imgV;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UIButton *vipBtn;
+
 @end
 
 NS_ASSUME_NONNULL_END

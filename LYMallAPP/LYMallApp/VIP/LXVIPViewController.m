@@ -11,8 +11,11 @@
 #import "LXVipOneCell.h"
 #import "LXVipTwoCell.h"
 @interface LXVIPViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+{
+    NSDictionary * dataDic;
+}
 @property(nonatomic, strong) UITableView * tableView;
+@property(nonatomic, strong)  LXVipHeaderView * headerView;
 
 @end
 
@@ -21,22 +24,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
-    LXVipHeaderView * headerView = [[NSBundle mainBundle]loadNibNamed:@"LXVipHeaderView" owner:self options:nil].lastObject;
-    self.tableView.tableHeaderView = headerView;
+    self.headerView = [[NSBundle mainBundle]loadNibNamed:@"LXVipHeaderView" owner:self options:nil].lastObject;
+    self.tableView.tableHeaderView = self.headerView;
     [self.tableView registerNib:[UINib nibWithNibName:@"LXVipOneCell" bundle:nil] forCellReuseIdentifier:@"LXVipOneCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LXVipTwoCell" bundle:nil] forCellReuseIdentifier:@"LXVipTwoCell"];
     [self.view addSubview:self.tableView];
+    
+  
+    
+    [self loadData];
 }
 
 
 - (void)loadData{
-    [NetWorkConnection postURL:@"/api/user.viprule/index" param:@{} success:^(id responseObject, BOOL success) {
-        
+  [NetWorkConnection postURL:@"/api/user.viprule/index" param:@{@"vip_info":@"1",@"vip_rights":@"1",@"viprule":@"1"} success:^(id responseObject, BOOL success) {
+        NSDictionary * dic = responseObject[@"data"][@"vip_info"];
+        [self.headerView.headerView sd_setImageWithURL:[NSURL URLWithString:dic[@"avatarUrl"]] placeholderImage:[UIImage imageNamed:@"yuanxingzhanweitu"]];
+        self.headerView.nameLabel.text = dic[@"nickName"];
+        self.headerView.tipLabel.text = dic[@"next_expend_money"];
+      dataDic = responseObject[@"data"];
+      [self.tableView reloadData];
+      
     } fail:^(NSError *error) {
-        
+        [self.tableView reloadData];
+    
     }];
+  
 }
 
+ 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        NSLog(@"%@",dataDic[@"viprule"]);
+    }
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -51,6 +72,10 @@
         return cell;
     }else {
         LXVipTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LXVipTwoCell"];
+        if (dataDic) {
+            NSDictionary * dic = dataDic[@"vip_rights"][0];
+            [cell.imgV sd_setImageWithURL:[NSURL URLWithString:dic[@"image"]]];
+        }
         return cell;
     }
 }
