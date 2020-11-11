@@ -16,8 +16,11 @@
 
 //    self.imgV.mj_y = -StatusBarHeight;
     
-    self.height.constant += StatusBarHeight;
     
+    self.headerView.contentMode= UIViewContentModeScaleToFill;
+    YBDViewBorderRadius(self.headerView, 5);
+    
+    self.height.constant += StatusBarHeight;
     CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
     self.progressView.transform = transform;
     self.progressView.progressTintColor = UIColorHex(0xd7ecfe);

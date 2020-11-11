@@ -28,7 +28,7 @@
 //     [UIImage imageNamed:@"guid03"]];
 //     KSGuaidManager.shouldDismissWhenDragging = YES;
 //     [KSGuaidManager begin];
-    [WXApi registerApp:@"wx758120730fcc7401" universalLink:@"https://shui3v.jmlk.co/"];
+    [WXApi registerApp:@"wx1c9765d7b1eaf378" universalLink:@"https://shui3v.jmlk.co/"];
 
     [self createTabBarController];
     // U-Share 平台设置
@@ -97,7 +97,7 @@
     [UMConfigure initWithAppkey:@"5e8ec886167edd097c000096" channel:@"App Store"];
 
     /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx758120730fcc7401" appSecret:@"94180cd29008610acd1582e0f6ce710f" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx1c9765d7b1eaf378" appSecret:@"ff5f0eb418f71ad14669582a24fad5c8" redirectURL:@"http://mobile.umeng.com/social"];
    
     /*
      * 移除相应平台的分享，如微信收藏

@@ -11,7 +11,7 @@
 #import "RegisterVC.h"
 #import "LoginView.h"
 #import "RegisterView.h"
-        
+#import "TabBarViewVC.h"
 @interface LoginRegisterVC ()
 @property(nonatomic,strong)LoginView *loginView;
 @property(nonatomic,strong)RegisterView *registerView;
@@ -66,7 +66,8 @@
 }
 
 -(void)back:(UIBarButtonItem *)butn{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [UIApplication sharedApplication].delegate.window.rootViewController = [[TabBarViewVC alloc]init];
 }
 
 @end

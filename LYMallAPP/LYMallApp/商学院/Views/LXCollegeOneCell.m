@@ -4,7 +4,7 @@
 //
 //  Created by gds on 2020/10/19.
 //  Copyright © 2020 Mac. All rights reserved.
-//
+//2
 
 #import "LXCollegeOneCell.h"
 

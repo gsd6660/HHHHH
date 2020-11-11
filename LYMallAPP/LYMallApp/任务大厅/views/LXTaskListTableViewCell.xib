@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,14 +42,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9t-74-D3X">
+                        <rect key="frame" x="256" y="53.5" width="54" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="接受任务"/>
+                        <connections>
+                            <action selector="rightClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="H2o-7y-1mf"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="wmQ-9W-Gch" secondAttribute="trailing" constant="10" id="Dhf-R7-YMh"/>
                     <constraint firstItem="wmQ-9W-Gch" firstAttribute="top" secondItem="06l-wo-nfj" secondAttribute="top" id="Mez-LB-l2H"/>
                     <constraint firstItem="GQ5-A4-hVg" firstAttribute="top" secondItem="AU6-9n-VLS" secondAttribute="bottom" constant="10" id="Ql1-8L-Re9"/>
                     <constraint firstItem="wmQ-9W-Gch" firstAttribute="leading" secondItem="06l-wo-nfj" secondAttribute="trailing" constant="10" id="VlR-4x-irP"/>
+                    <constraint firstAttribute="trailing" secondItem="v9t-74-D3X" secondAttribute="trailing" constant="10" id="gzc-lH-DzO"/>
                     <constraint firstItem="AU6-9n-VLS" firstAttribute="leading" secondItem="06l-wo-nfj" secondAttribute="trailing" constant="10" id="kxQ-Az-LdK"/>
                     <constraint firstItem="AU6-9n-VLS" firstAttribute="top" secondItem="wmQ-9W-Gch" secondAttribute="bottom" constant="10" id="qF9-pN-8d2"/>
+                    <constraint firstItem="v9t-74-D3X" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="15" id="tET-WW-UJU"/>
                     <constraint firstItem="06l-wo-nfj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="taQ-YN-4uU"/>
                     <constraint firstItem="GQ5-A4-hVg" firstAttribute="leading" secondItem="06l-wo-nfj" secondAttribute="trailing" constant="10" id="wOO-O1-HpU"/>
                     <constraint firstItem="06l-wo-nfj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="x8S-A5-J4Q"/>
@@ -60,6 +70,7 @@
                 <outlet property="descLabel" destination="AU6-9n-VLS" id="Abx-Ym-LMe"/>
                 <outlet property="imgV" destination="06l-wo-nfj" id="Bqc-6S-EhT"/>
                 <outlet property="numberLabel" destination="GQ5-A4-hVg" id="2V1-GF-fDf"/>
+                <outlet property="rightBtn" destination="v9t-74-D3X" id="Hf8-qJ-HNN"/>
                 <outlet property="titleLabel" destination="wmQ-9W-Gch" id="435-s6-eNB"/>
             </connections>
             <point key="canvasLocation" x="81.159420289855078" y="107.47767857142857"/>

@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong,nonatomic)NSNumber * goods_sales;
 @property(strong,nonatomic)NSDictionary * goods_sku;
 @property(strong,nonatomic)NSNumber * gift_goods_type;
+@property(nonatomic, strong) NSString * sliver;
 
 
 @end

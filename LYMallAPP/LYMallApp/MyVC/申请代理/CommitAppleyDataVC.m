@@ -154,7 +154,10 @@ static NSString * cellID = @"CommitAppleyDataCell";
     CommitAppleyDataCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.levelButn.tag = 1001;
     cell.areaButn.tag = 1002;
-    [cell.levelButn addTarget:self action:@selector(cellButnAction:) forControlEvents:UIControlEventTouchUpInside];
+    if (cell.levelButn.tag == 1001) {
+        [cell.levelButn setTitle:@"县级" forState:UIControlStateNormal];
+    }
+//    [cell.levelButn addTarget:self action:@selector(cellButnAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.areaButn addTarget:self action:@selector(cellButnAction:) forControlEvents:UIControlEventTouchUpInside];
 
     return cell;
@@ -183,18 +186,15 @@ static NSString * cellID = @"CommitAppleyDataCell";
     CommitAppleyDataCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 
     if (butn.tag == 1001) {
-        [self selectLevel:cell];
+//        [self selectLevel:cell];
     }else{
         if ([cell.levelButn.titleLabel.text isEqualToString:@"省级"]) {
             [self selectArea:cell ShowType:BRAddressPickerModeProvince];
         }else if ([cell.levelButn.titleLabel.text isEqualToString:@"市级"]) {
             [self selectArea:cell ShowType:BRAddressPickerModeCity];
 
-        }else if ([cell.levelButn.titleLabel.text isEqualToString:@"区/县级"]) {
+        }else if ([cell.levelButn.titleLabel.text isEqualToString:@"县级"]) {
             [self selectArea:cell ShowType:BRAddressPickerModeArea];
-
-        }else{
-            ShowErrorHUD(@"请先选择代理级别");
         }
     }
 }

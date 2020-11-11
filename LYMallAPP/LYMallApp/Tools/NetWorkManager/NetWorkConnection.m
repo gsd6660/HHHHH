@@ -204,12 +204,20 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
          // 请求成功
-                if(responseObject){
-                    success(responseObject,YES);
-                } else {
-                    success(@{@"msg":@"暂无数据"}, NO);
-
-                }
+        if(responseObject){
+            
+            NSInteger  code = [responseObject[@"code"] integerValue];
+            if (code == 1) {
+                success(responseObject,YES);
+            }else if (code == -1) {
+                [UIApplication sharedApplication].delegate.window.rootViewController = [[LoginRegisterVC alloc]init];
+                
+                success(responseObject,YES);
+            }else{
+                success(responseObject, NO);
+            }
+        }
+           
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          // 请求失败

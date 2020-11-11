@@ -357,6 +357,7 @@
 		4737A775253AE32600097590 /* LXHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737A773253AE32600097590 /* LXHomeCollectionHeaderView.m */; };
 		4737A776253AE32600097590 /* LXHomeCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4737A774253AE32600097590 /* LXHomeCollectionHeaderView.xib */; };
 		4737A779253AE8E600097590 /* LXNewHomeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737A778253AE8E600097590 /* LXNewHomeOneCell.m */; };
+		4750921C255BE56300D21C79 /* LXSheqingDailiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4750921B255BE56300D21C79 /* LXSheqingDailiViewController.m */; };
 		4778D855254C33C300AA3C5A /* WebInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4778D853254C33C200AA3C5A /* WebInfoViewController.m */; };
 		66416FF0253DB8C700CD0A43 /* LXCollegeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */; };
 		66416FF1253DB8C700CD0A43 /* LXCollegeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */; };
@@ -1080,6 +1081,8 @@
 		4737A774253AE32600097590 /* LXHomeCollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXHomeCollectionHeaderView.xib; sourceTree = "<group>"; };
 		4737A777253AE8E600097590 /* LXNewHomeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXNewHomeOneCell.h; sourceTree = "<group>"; };
 		4737A778253AE8E600097590 /* LXNewHomeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXNewHomeOneCell.m; sourceTree = "<group>"; };
+		4750921A255BE56300D21C79 /* LXSheqingDailiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSheqingDailiViewController.h; sourceTree = "<group>"; };
+		4750921B255BE56300D21C79 /* LXSheqingDailiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSheqingDailiViewController.m; sourceTree = "<group>"; };
 		4778D853254C33C200AA3C5A /* WebInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebInfoViewController.m; sourceTree = "<group>"; };
 		4778D854254C33C300AA3C5A /* WebInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInfoViewController.h; sourceTree = "<group>"; };
 		66416FED253DB8C700CD0A43 /* LXCollegeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollegeOneCell.h; sourceTree = "<group>"; };
@@ -2724,6 +2727,22 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		47509219255BE54000D21C79 /* 申请代理 */ = {
+			isa = PBXGroup;
+			children = (
+				4750921A255BE56300D21C79 /* LXSheqingDailiViewController.h */,
+				4750921B255BE56300D21C79 /* LXSheqingDailiViewController.m */,
+			);
+			path = "申请代理";
+			sourceTree = "<group>";
+		};
+		47A593B82551489500EA0F40 /* SubVc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SubVc;
+			sourceTree = "<group>";
+		};
 		4D708668A540F83314743328 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2886,6 +2905,7 @@
 		66DA63C7253C0F4B00EC7109 /* NewME */ = {
 			isa = PBXGroup;
 			children = (
+				47509219255BE54000D21C79 /* 申请代理 */,
 				66DA63CB253C0F8800EC7109 /* View */,
 				66DA63C8253C0F6800EC7109 /* LXMeViewController.h */,
 				66DA63C9253C0F6800EC7109 /* LXMeViewController.m */,
@@ -2912,6 +2932,7 @@
 		66DA63DB253C32C200EC7109 /* 任务大厅 */ = {
 			isa = PBXGroup;
 			children = (
+				47A593B82551489500EA0F40 /* SubVc */,
 				66417012253DE34700CD0A43 /* 任务详情 */,
 				66417007253DDDE500CD0A43 /* 规则列表 */,
 				66DA63DF253C341400EC7109 /* views */,
@@ -3592,6 +3613,7 @@
 				4737A75B253ADCE100097590 /* PYPhotoCell.m in Sources */,
 				0434B5DB247BAED30067C770 /* ActivateMemberVC.m in Sources */,
 				665D08D9242DEA54008BC4D7 /* TCPropertyCell.m in Sources */,
+				4750921C255BE56300D21C79 /* LXSheqingDailiViewController.m in Sources */,
 				04F4B83C2449C08D00F7FCCE /* MHSheetHead.m in Sources */,
 				0434B5E0247BB1880067C770 /* ActivateMemberTwoVC.m in Sources */,
 				04CB26BF243EB4AD00A37C76 /* APPIntroduceVC.m in Sources */,

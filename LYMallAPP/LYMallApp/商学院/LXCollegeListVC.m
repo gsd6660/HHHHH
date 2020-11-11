@@ -8,6 +8,7 @@
 
 #import "LXCollegeListVC.h"
 #import "LXCollegeThreeCell.h"
+#import "WebInfoViewController.h"
 @interface LXCollegeListVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) UITableView * tableView;
@@ -25,7 +26,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LXCollegeThreeCell" bundle:nil] forCellReuseIdentifier:@"LXCollegeThreeCell"];
 
-    [NetWorkConnection postURL:@"/api/article/lists" param:@{@"category_id":@"2"} success:^(id responseObject, BOOL success) {
+    [NetWorkConnection postURL:@"/api/article/lists" param:@{@"category_id":@"0"} success:^(id responseObject, BOOL success) {
         NSLog(@"%@",responseObject);
         self.dataArray = responseObject[@"data"][@"list"][@"data"];
         [self.tableView reloadData];
@@ -54,6 +55,25 @@
     return cell;
 
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.dataArray.count>0) {
+        NSDictionary * dic = self.dataArray[indexPath.section];
+        NSLog(@"%@",dic);
+        
+        [NetWorkConnection postURL:@"api/article/detail" param:@{@"article_id":dic[@"article_id"]} success:^(id responseObject, BOOL success) {
+            NSLog(@"%@",responseJSONString);
+            NSDictionary * dataDic = responseObject[@"data"][@"detail"];
+            WebInfoViewController * vc = [WebInfoViewController new];
+            vc.content = dataDic[@"article_content"];
+            vc.title = dataDic[@"article_title"];
+            [self.navigationController pushViewController:vc animated:YES];
+        } fail:^(NSError *error) {
+            ShowErrorHUD(@"请求失败");
+        }];
+    }
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     

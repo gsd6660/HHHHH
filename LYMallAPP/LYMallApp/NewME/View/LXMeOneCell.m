@@ -17,8 +17,8 @@
     self.oneBtn.imagePosition = QMUIButtonImagePositionTop;
     self.oneBtn.spacingBetweenImageAndTitle = 5;
     
-//    self.twoBtn.imagePosition = QMUIButtonImagePositionTop;
-//    self.twoBtn.spacingBetweenImageAndTitle = 5;
+    self.fiveBtn.imagePosition = QMUIButtonImagePositionTop;
+    self.fiveBtn.spacingBetweenImageAndTitle = 5;
     
     self.threeBtn.imagePosition = QMUIButtonImagePositionTop;
     self.threeBtn.spacingBetweenImageAndTitle = 5;
@@ -40,6 +40,12 @@
 - (IBAction)fourClick:(id)sender {
     self.fourClickBtn();
 }
+
+- (IBAction)fiveClick:(id)sender {
+    self.fiveClickBtn();
+}
+
+
 
 - (void)setFrame:(CGRect)frame{
     frame.size.width -=20;

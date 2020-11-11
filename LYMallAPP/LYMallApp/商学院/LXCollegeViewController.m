@@ -12,6 +12,7 @@
 #import "LXCollegeTwoCell.h"
 #import "LXCollegeThreeCell.h"
 #import "LXCollegeSectionHeaderView.h"
+#import "WebInfoViewController.h"
 
 @interface LXCollegeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -136,8 +137,20 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary * dic = self.dataArray[indexPath.row];
+    NSDictionary * dic = self.listArray[indexPath.row];
     NSLog(@"%@",dic);
+    
+    [NetWorkConnection postURL:@"api/article/detail" param:@{@"article_id":dic[@"article_id"]} success:^(id responseObject, BOOL success) {
+        NSLog(@"%@",responseJSONString);
+        NSDictionary * dataDic = responseObject[@"data"][@"detail"];
+        WebInfoViewController * vc = [WebInfoViewController new];
+        vc.content = dataDic[@"article_content"];
+        vc.title = dataDic[@"article_title"];
+        [self.navigationController pushViewController:vc animated:YES];
+    } fail:^(NSError *error) {
+        ShowErrorHUD(@"请求失败");
+    }];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

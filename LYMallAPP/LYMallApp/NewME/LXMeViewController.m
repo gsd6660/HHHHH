@@ -16,11 +16,16 @@
 #import "CouponVC.h"
 #import "MyTeamVC.h"
 #import "MemberCenterVC.h"
+#import "LXSheqingDailiViewController.h"
 #import "WebInfoViewController.h"
+#import "AgentManagerVC.h"
 @interface LXMeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 
 @property(nonatomic, strong) LXMeHeaderView * headerView;
+
+@property(nonatomic, strong) NSDictionary  * dataDic;
+
 
 @end
 
@@ -46,28 +51,13 @@
         if (responseSuccess) {
             NSLog(@"我的页面=====%@",responseJSONString);
             NSDictionary * dic = responseObject[@"data"];
+            self.dataDic = dic;
             [self.headerView.imgV sd_setImageWithURL:[NSURL URLWithString:dic[@"avatarUrl"]] placeholderImage:[UIImage imageNamed:@"yuanxingzhanweitu"]];
             self.headerView.nameLabel.text = dic[@"nickName"];
             self.headerView.idLabel.text =[NSString stringWithFormat:@"ID：%@",dic[@"invite_code"]];
             self.headerView.labelnum2.text = dic[@"gold"];
             self.headerView.labelnum1.text = dic[@"sliver"];
             [self.headerView.vipBtn setTitle:dic[@"grade_name"] forState:UIControlStateNormal];
-//            self.headView.balanceLabel.text = dic[@"balance"];
-//            self.headView.integralLabel.text = [NSString stringWithFormat:@"%@",dic[@"points"]];
-//            self.headView.cumulativeCommissionLabel.text = [NSString stringWithFormat:@"%@", dic[@"bonus_money"]];
-//            self.headView.withdrawalCommissionLabel.text = [NSString stringWithFormat:@"%@",dic[@"income_money"]];
-//            if ([dic[@"grade_image"]length] > 0) {
-//                [self.headView.vipImageView sd_setImageWithURL:[NSURL URLWithString:dic[@"grade_image"]] placeholderImage:nil];
-//            }else{
-//                self.headView.vipImageView.hidden = YES;
-//            }
-//            self.grade_name = dic[@"grade_name"];
-//
-//            if ([CheackNullOjb cc_isNullOrNilWithObject:dic[@"invite_code"]] == NO) {
-//                self.headView.duplicateButn.hidden = NO;
-//            }else{
-//                self.headView.duplicateButn.hidden = YES;
-//            }
             
             [self.tableView reloadData];
         }else{
@@ -100,12 +90,12 @@
         LXMeOneCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"LXMeOneCell"];
         
         [cell.oneBtn setTitle:@"卡券中心" forState:UIControlStateNormal];
-//        [cell.twoBtn setTitle:@"粉丝订单" forState:UIControlStateNormal];
+        [cell.fiveBtn setTitle:@"申请代理" forState:UIControlStateNormal];
         [cell.threeBtn setTitle:@"粉丝团队" forState:UIControlStateNormal];
         [cell.fourBtn setTitle:@"会员特权" forState:UIControlStateNormal];
         
         [cell.oneBtn setImage:[UIImage imageNamed:@"me_oneSection_one"] forState:UIControlStateNormal];
-//        [cell.twoBtn setImage:[UIImage imageNamed:@"me_oneSection_two"] forState:UIControlStateNormal];
+        [cell.fiveBtn setImage:[UIImage imageNamed:@"me_twoSection_three"] forState:UIControlStateNormal];
         [cell.threeBtn setImage:[UIImage imageNamed:@"me_oneSection_three"] forState:UIControlStateNormal];
         [cell.fourBtn setImage:[UIImage imageNamed:@"me_oneSection_four"] forState:UIControlStateNormal];
         
@@ -120,8 +110,32 @@
         cell.fourClickBtn = ^{
             MemberCenterVC * vc = [MemberCenterVC new];
             [self.navigationController pushViewController:vc animated:YES];
+        };
+        
+        cell.fiveClickBtn = ^{
+            
+            if ([self.dataDic[@"is_agency"] intValue] == 2) {
+                [NetWorkConnection postURL:@"/api/agency.apply/apply_info" param:nil success:^(id responseObject, BOOL success) {
+                    if (responseSuccess) {
+                        LXSheqingDailiViewController * vc = [LXSheqingDailiViewController new];
+                        vc.content = responseObject[@"data"][@"content"];
+                        vc.title = @"申请代理";
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }
+                } fail:^(NSError *error) {
+                }];
+            }else if ([self.dataDic[@"is_agency"] intValue] == 1) {
+                AgentManagerVC * vc = [[AgentManagerVC alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }else if ([self.dataDic[@"is_agency"] intValue] == 3) {
+                [QMUITips showInfo:@"正在审核，请耐心等待"];
+            }
+            
+            
+            
             
         };
+        
         return cell;
     } else{
         LXMeTwoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LXMeTwoTableViewCell"];

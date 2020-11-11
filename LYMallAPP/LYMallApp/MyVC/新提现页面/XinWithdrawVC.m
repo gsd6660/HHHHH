@@ -16,8 +16,6 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *jiangjinLable;
-@property (weak, nonatomic) IBOutlet UILabel *incomeLable;
-@property (weak, nonatomic) IBOutlet UITextField *TF;
 @property (weak, nonatomic) IBOutlet UIButton *withdrawButn;
 @property (strong, nonatomic) UILabel *service_chargeLable;
 
@@ -38,7 +36,7 @@ static NSString * orderPayCellID = @"OrderPayCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"提现";
-    [self getData];
+//    [self getData];
     [self setHeadandFootView];
     [self.tableView registerNib:[UINib nibWithNibName:orderPayCellID bundle:nil] forCellReuseIdentifier:orderPayCellID];
 
@@ -48,19 +46,77 @@ static NSString * orderPayCellID = @"OrderPayCell";
 
 -(void)requestData{
     
-    [NetWorkConnection postURL:@"api/user/bank_card_detail" param:nil success:^(id responseObject, BOOL success) {
-        NSLog(@"银行卡信息====%@",responseJSONString);
-        if (responseDataSuccess) {
-            self.dataDic = responseObject[@"data"];
-        }
-        [self.tableView reloadData];
-
-    } fail:^(NSError *error) {
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_enter(group);
+    [self loadGoldInfo:^(BOOL isSuc) {
+        dispatch_group_leave(group);
     }];
+    
+    dispatch_group_enter(group);
+    [self loadWallInfo:^(BOOL isSuc) {
+        dispatch_group_leave(group);
+    }];
+    dispatch_group_enter(group);
+    [self loadBankInfo:^(BOOL isSuc) {
+        dispatch_group_leave(group);
+    }];
+    
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
         
 }
 
 
+- (void)loadWallInfo:(void(^)(BOOL isSuc))request{
+    [NetWorkConnection postURL:@"/api/task.wallet/info" param:nil success:^(id responseObject, BOOL success) {
+        NSLog(@"银行卡信息====%@",responseJSONString);
+        if (responseDataSuccess) {
+            NSDictionary * dic = responseObject[@"data"];
+//            self.money = [NSString stringWithFormat:@"%@",dic[@"money"]];
+            
+            NSArray * method = dic[@"method"];
+            for (NSDictionary *dic1 in method) {
+                [self.dataArray addObject:dic1];
+            }
+            [self.tableView reloadData];
+        }
+    } fail:^(NSError *error) {
+        
+    }];
+        
+    request(YES);
+}
+
+
+- (void)loadGoldInfo:(void(^)(BOOL isSuc))request{
+    
+    [NetWorkConnection postURL:@"/api/withdraw/gold" param:nil success:^(id responseObject, BOOL success) {
+        NSLog(@"银行卡信息====%@",responseJSONString);
+        if (responseDataSuccess) {
+            self.jiangjinLable.text = responseObject[@"data"][@"gold"];
+        }
+    } fail:^(NSError *error) {
+        
+    }];
+    request(YES);
+    
+}
+
+
+- (void)loadBankInfo:(void(^)(BOOL isSuc))request{
+    [NetWorkConnection postURL:@"/api/user/bank_card_detail" param:nil success:^(id responseObject, BOOL success) {
+        if (responseSuccess) {
+            self.dataDic = responseObject[@"data"];
+        }else{
+            ShowErrorHUD(responseObject[@"msg"]);
+        }
+    } fail:^(NSError *error) {
+        
+    }];
+}
 
 
 -(void)setHeadandFootView{
@@ -91,30 +147,14 @@ static NSString * orderPayCellID = @"OrderPayCell";
 
 
 -(void)commitButn:(UIButton *)btn{
-    if ([self.withdrawButn.titleLabel.text isEqualToString:@"提现奖金"]) {
-                 self.withdrawType = @"1";
-             }else if([self.withdrawButn.titleLabel.text isEqualToString:@"提现收益"]){
-                 self.withdrawType = @"2";
-
-             }else{
-                 ShowErrorHUD(@"请选择提现类型");
-                 return;
-             }
-  
     
-    
-    if ([self.TF.text qmui_trimAllWhiteSpace].length == 0) {
-        ShowErrorHUD(@"请输入提现金额");
-        return;
-    }
     if (self.payType.length == 0) {
         ShowErrorHUD(@"请选择提现到哪");
         return;
     }
-    [NetWorkConnection postURL:@"api/withdraw/submit" param:@{@"money":self.TF.text,@"pay_type":self.payType,@"type":self.withdrawType} success:^(id responseObject, BOOL success) {
+    [NetWorkConnection postURL:@"/api/task.wallet/withdraw" param:@{@"pay_type":self.payType} success:^(id responseObject, BOOL success) {
         if (responseSuccess) {
             WithdrawDepositSucceeVC * vc = [[WithdrawDepositSucceeVC alloc]init];
-            vc.money = self.TF.text;
             switch ([self.payType intValue]) {
                     case 1:
                     vc.payType = @"余额";
@@ -150,13 +190,12 @@ static NSString * orderPayCellID = @"OrderPayCell";
                    NSDictionary * dic = responseObject[@"data"];
                    self.money = [NSString stringWithFormat:@"%@",dic[@"money"]];
             self.jiangjinLable.text = dic[@"bonus_money"];
-            self.incomeLable.text = dic[@"income_money"];
             self.service_chargeLable.text = dic[@"withdrawal_service_charge"];
 
-//                   NSArray * method = dic[@"method"];
-//                   for (NSDictionary *dic1 in method) {
-//                       [self.dataArray addObject:dic1];
-//                   }
+                   NSArray * method = dic[@"method"];
+                   for (NSDictionary *dic1 in method) {
+                       [self.dataArray addObject:dic1];
+                   }
                    [self.tableView reloadData];
                }else{
                    ShowErrorHUD(responseMessage);
@@ -170,24 +209,24 @@ static NSString * orderPayCellID = @"OrderPayCell";
 }
 
 
-- (IBAction)selectWithDrawButn:(UIButton *)sender {
-    /// 1.单列字符串选择器（传字符串数组）
-    MJWeakSelf;
-      BRStringPickerView *stringPickerView = [[BRStringPickerView alloc]initWithPickerMode:BRStringPickerComponentSingle];
-      stringPickerView.title = @"提现类型";
-      stringPickerView.dataSourceArr = @[@"提现奖金", @"提现收益"];
-      stringPickerView.selectIndex = 0;
-      stringPickerView.resultModelBlock = ^(BRResultModel *resultModel) {
-          NSLog(@"选择的值：%@", resultModel.selectValue);
-         
-          [self.withdrawButn setTitle:resultModel.selectValue forState:UIControlStateNormal];
-          [self.withdrawButn setTitle:resultModel.selectValue forState:UIControlStateSelected];
-
-      };
-
-      [stringPickerView show];
-    
-}
+//- (IBAction)selectWithDrawButn:(UIButton *)sender {
+//    /// 1.单列字符串选择器（传字符串数组）
+//    MJWeakSelf;
+//      BRStringPickerView *stringPickerView = [[BRStringPickerView alloc]initWithPickerMode:BRStringPickerComponentSingle];
+//      stringPickerView.title = @"提现类型";
+//      stringPickerView.dataSourceArr = @[@"提现奖金", @"提现收益"];
+//      stringPickerView.selectIndex = 0;
+//      stringPickerView.resultModelBlock = ^(BRResultModel *resultModel) {
+//          NSLog(@"选择的值：%@", resultModel.selectValue);
+//
+//          [self.withdrawButn setTitle:resultModel.selectValue forState:UIControlStateNormal];
+//          [self.withdrawButn setTitle:resultModel.selectValue forState:UIControlStateSelected];
+//
+//      };
+//
+//      [stringPickerView show];
+//
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -216,19 +255,19 @@ static NSString * orderPayCellID = @"OrderPayCell";
         [cell.selectBtn setImage:[UIImage imageNamed:@"jft_but_Unselected"] forState:UIControlStateNormal];
     }
     if ([dic[@"name"] isEqualToString:@"银行卡"]) {
-       cell.balanceLabel.hidden = NO;
+        cell.balanceLabel.hidden = NO;
         if ([CheackNullOjb cc_isNullOrNilWithObject:self.dataDic] == NO) {
             cell.balanceLabel.text = [NSString stringWithFormat:@"%@ %@",self.dataDic[@"card_type"],self.dataDic[@"id_card"]];
-
+            
         }else{
             cell.balanceLabel.text = @"添加银行卡";
             [cell.selectBtn setImage:CCImage(@"jft_icon_rightarrow") forState:UIControlStateNormal];
-
-                          [cell.selectBtn addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-                              
-                          }];
-         }
             
+            [cell.selectBtn addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                
+            }];
+        }
+        
             
     }else{
         cell.balanceLabel.hidden = YES;

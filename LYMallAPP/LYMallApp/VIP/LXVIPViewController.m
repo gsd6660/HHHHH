@@ -10,6 +10,7 @@
 #import "LXVipHeaderView.h"
 #import "LXVipOneCell.h"
 #import "LXVipTwoCell.h"
+#import "WebInfoViewController.h"
 @interface LXVIPViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSDictionary * dataDic;
@@ -21,6 +22,11 @@
 
 @implementation LXVIPViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
@@ -30,9 +36,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"LXVipTwoCell" bundle:nil] forCellReuseIdentifier:@"LXVipTwoCell"];
     [self.view addSubview:self.tableView];
     
-  
-    
-    [self loadData];
 }
 
 
@@ -56,6 +59,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         NSLog(@"%@",dataDic[@"viprule"]);
+        
+        WebInfoViewController * vc  = [WebInfoViewController new];
+        vc.title = @"积分规则";
+        vc.content = dataDic[@"viprule"];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
