@@ -35,8 +35,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"首页";
-    self.navigationController.title = @"隆源商城";
+    //    self.title = @"首页";
+    //    self.navigationController.title = @"隆源商城";
+    self.fd_prefersNavigationBarHidden = YES;
     self.view.backgroundColor = kUIColorFromRGB(0xFFFFFF);
     [self.view addSubview:self.collectionView];
     self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"message"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(messageButnAction)];
@@ -45,10 +46,10 @@
     [self getRecommendData];
     MJWeakSelf;
     self.collectionView.mj_header =  [YMRefreshHeader headerWithRefreshingBlock:^{
-            [weakSelf getHomeData];
+        [weakSelf getHomeData];
         [weakSelf getRecommendData];
     }];
- 
+    
 }
 
 
@@ -67,7 +68,7 @@
         }
     } fail:^(NSError *error) {
         [self.collectionView.mj_header endRefreshing];
-
+        
     }];
 }
 //推荐商品数据
@@ -83,11 +84,11 @@
             }
             [self.collectionView reloadData];
             [self.collectionView.mj_header endRefreshing];
-
+            
         }
     } fail:^(NSError *error) {
         [self.collectionView.mj_header endRefreshing];
-
+        
     }];
 }
 
@@ -97,7 +98,7 @@
     NSLog(@"点击消息");
     MessageListVC * vc = [[MessageListVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-
+    
 }
 
 
@@ -107,30 +108,30 @@
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    if (section == 0 || section == 1) {
-//        return 1;
-//    }
+    //    if (section == 0 || section == 1) {
+    //        return 1;
+    //    }
     
     if (section == 2) {
-         return self.recommentArray.count;
+        return self.recommentArray.count;
     }
     
-//    if (section == 3) {
-//        if (self.dataDic[@"sharing_goods"]!=[NSNull null]) {
-//            return 1;
-//        }else{
-//            return 0;
-//        }
-//    }
+    //    if (section == 3) {
+    //        if (self.dataDic[@"sharing_goods"]!=[NSNull null]) {
+    //            return 1;
+    //        }else{
+    //            return 0;
+    //        }
+    //    }
     return 1;
-
+    
 }
 
 //设置每个item的UIEdgeInsets
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     
-     return UIEdgeInsetsMake(0, 10, 0, 10);
+    return UIEdgeInsetsMake(0, 10, 0, 10);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
@@ -142,7 +143,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     if (indexPath.section == 0) {
         HomeOneCell *cell = (HomeOneCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
         cell.dataDic = self.dataDic;
@@ -150,7 +151,7 @@
     }
     if (indexPath.section == 1) {
         NewHoemTwoCell *cell = (NewHoemTwoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"NewHoemTwoCell" forIndexPath:indexPath];
-//        cell.dataDic = self.dataDic;
+        //        cell.dataDic = self.dataDic;
         return cell;
     }else {
         
@@ -160,34 +161,34 @@
         
         return cell;
         
-//
+        //
     }
     
-//    if (indexPath.section == 3) {
-//         HomeThreeCell *cell = (HomeThreeCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellthreeId" forIndexPath:indexPath];
-//        if (self.dataDic[@"sharing_goods"]!=[NSNull null]) {
-//            cell.sharing_goods = self.dataDic[@"sharing_goods"];
-//        }
-//        return cell;
-//       }
-//
-//    HomeTowCell *cell = (HomeTowCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellTwoId" forIndexPath:indexPath];
-//    cell.dataDic = self.dataDic;
-//    return cell;
+    //    if (indexPath.section == 3) {
+    //         HomeThreeCell *cell = (HomeThreeCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellthreeId" forIndexPath:indexPath];
+    //        if (self.dataDic[@"sharing_goods"]!=[NSNull null]) {
+    //            cell.sharing_goods = self.dataDic[@"sharing_goods"];
+    //        }
+    //        return cell;
+    //       }
+    //
+    //    HomeTowCell *cell = (HomeTowCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellTwoId" forIndexPath:indexPath];
+    //    cell.dataDic = self.dataDic;
+    //    return cell;
 }
 
 // 添加一个补充视图(页眉或页脚)
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-   if ([kind isEqual:UICollectionElementKindSectionHeader])
-   {
-     CollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierCollectionHeader forIndexPath:indexPath];
-   
-    return headerView;
-   } else if ([kind isEqual:UICollectionElementKindSectionFooter])
-       {
-           CollectionFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:identifierCollectionFooter forIndexPath:indexPath];
-           return footerView;
-       }
+    if ([kind isEqual:UICollectionElementKindSectionHeader])
+    {
+        CollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierCollectionHeader forIndexPath:indexPath];
+        
+        return headerView;
+    } else if ([kind isEqual:UICollectionElementKindSectionFooter])
+    {
+        CollectionFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:identifierCollectionFooter forIndexPath:indexPath];
+        return footerView;
+    }
     return nil;
 }
 
@@ -200,20 +201,20 @@
         return CGSizeMake(ScreenWidth, 160);
     }else if (indexPath.section == 2){
         if (ScreenWidth == 320) {
-        return CGSizeMake(((ScreenWidth - 21) / 2), 264);
-           }else if (ScreenWidth == 375) {
-        return CGSizeMake(((ScreenWidth - 21) / 2), 290);
-           }
+            return CGSizeMake(((ScreenWidth - 21) / 2), 264);
+        }else if (ScreenWidth == 375) {
+            return CGSizeMake(((ScreenWidth - 21) / 2), 290);
+        }
         return CGSizeMake(((ScreenWidth - 21) / 2), 310);
-       
+        
     }
-//    else if (indexPath.section == 3){
-//        return CGSizeMake(ScreenWidth, 190);
-//    }
+    //    else if (indexPath.section == 3){
+    //        return CGSizeMake(ScreenWidth, 190);
+    //    }
     
     return CGSizeMake(ScreenWidth, 161);
-
-
+    
+    
 }
 
 
@@ -227,10 +228,10 @@
 
 // 设定页脚的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-//    if (section == 4) {
-//        return CGSizeMake(ScreenWidth, 0);
-//
-//    }
+    //    if (section == 4) {
+    //        return CGSizeMake(ScreenWidth, 0);
+    //
+    //    }
     return CGSizeMake(ScreenWidth, 0);
 }
 
@@ -242,13 +243,13 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 0){
-       
+        
     }
     if (indexPath.section == 2) {
         RecommentModel * model = self.recommentArray[indexPath.row];
         GoodsDetailsVC * vc = [GoodsDetailsVC new];
         vc.typeStr = @"1";
-
+        
         vc.goods_id = [NSString stringWithFormat:@"%@",model.goods_id];
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -275,7 +276,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self getJPUSHService];
-
+    
     [self updateApp];
 }
 
@@ -345,31 +346,31 @@
 
 -(UICollectionView *)collectionView{
     if (_collectionView == nil) {
-    
-       UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-
-    [self.view addSubview:_collectionView];
+        
+        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, -StatusBarHeight, ScreenWidth, ScreenHeight + StatusBarHeight) collectionViewLayout:layout];
+        
+        [self.view addSubview:_collectionView];
         _collectionView.backgroundColor = [UIColor clearColor];
-
-    [_collectionView registerClass:[HomeOneCell class] forCellWithReuseIdentifier:@"cellId"];
-    
-    [_collectionView registerClass:[HomeThreeCell class] forCellWithReuseIdentifier:@"cellthreeId"];
+        
+        [_collectionView registerClass:[HomeOneCell class] forCellWithReuseIdentifier:@"cellId"];
+        
+        [_collectionView registerClass:[HomeThreeCell class] forCellWithReuseIdentifier:@"cellthreeId"];
         [_collectionView registerClass:[HomeFourCell class] forCellWithReuseIdentifier:@"cellFourId"];
-    [_collectionView registerNib:[UINib nibWithNibName:@"HomeTowCell" bundle:nil] forCellWithReuseIdentifier:@"cellTwoId"];
+        [_collectionView registerNib:[UINib nibWithNibName:@"HomeTowCell" bundle:nil] forCellWithReuseIdentifier:@"cellTwoId"];
         [_collectionView registerNib:[UINib nibWithNibName:@"NewHoemTwoCell" bundle:nil] forCellWithReuseIdentifier:@"NewHoemTwoCell"];
-
-    //4.设置代理
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
-    [self.collectionView registerClass:[CollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierCollectionHeader];
-
-    [self.collectionView registerClass:[CollectionFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:identifierCollectionFooter];
-
-
-    
-}
-return _collectionView;
+        
+        //4.设置代理
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        [self.collectionView registerClass:[CollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierCollectionHeader];
+        
+        [self.collectionView registerClass:[CollectionFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:identifierCollectionFooter];
+        
+        
+        
+    }
+    return _collectionView;
 }
 -(NSMutableArray *)dataArray{
     if (_dataArray == nil) {

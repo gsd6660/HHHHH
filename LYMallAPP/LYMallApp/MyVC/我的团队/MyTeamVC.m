@@ -52,14 +52,14 @@ static NSString * cellID = @"MyTeamCell";
                token = @"";
            }
    WKWebViewVC * vc = [[WKWebViewVC alloc]init];
-   vc.urlString = [NSString stringWithFormat:@"http://longyuan.demo.altjia.com/wap/invite/index?Authorization=%@",token];
+   vc.urlString = [NSString stringWithFormat:@"%@wap/invite/index?Authorization=%@",BaseUrl,token];
    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)getData{
-    [NetWorkConnection postURL:@"api/user.dealer.team/lists" param:@{@"page":@(self.page)} success:^(id responseObject, BOOL success) {
+    [NetWorkConnection postURL:@"api/user.dealer.team/lists" param:nil success:^(id responseObject, BOOL success) {
         NSLog(@"我的团队=====%@",responseJSONString);
-        NSArray * data = responseObject[@"data"][@"list"][@"data"];
+        NSArray * data = responseObject[@"data"][@"list"];
 
         if (responseSuccess) {
             [self.dataArray removeAllObjects];

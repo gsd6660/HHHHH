@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet UIButton *rightBtn;
 
+
+@property(nonatomic, strong) void (^ClickBtn)();
+
+
 @end
 
 NS_ASSUME_NONNULL_END

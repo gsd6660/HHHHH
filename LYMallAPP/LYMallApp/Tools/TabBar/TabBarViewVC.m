@@ -68,7 +68,7 @@
 
     
     // window root controller
-    self.viewControllers = @[nav1,nav5,nav3,nav2,nav4];
+    self.viewControllers = @[nav1,nav3,nav2,nav4];
     
     
     self.tabBar.barTintColor = [UIColor whiteColor];

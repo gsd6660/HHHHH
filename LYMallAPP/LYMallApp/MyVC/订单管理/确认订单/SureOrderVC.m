@@ -76,7 +76,7 @@ static NSString * cellIDB = @"BuynowOneCell";
         make.width.mas_equalTo(140);
         make.height.mas_equalTo(35);
     }];
-    _titArray = @[@"优惠券",@"会员折扣",@"积分抵扣",@"运费",@"实付金额"];
+    _titArray = @[@"优惠券",@"会员折扣",@"银豆抵扣",@"运费",@"实付金额"];
     _numArray = @[@"暂无可用",@"-￥0.0",@"￥0.09",@"",@"￥0.0"];
     if (self.type == DetailPush) {//正常商品
         [self loadDataWithUrl:@"api/order/buyNow"];

@@ -32,7 +32,7 @@
                         <constraint firstItem="nz4-v9-KWI" firstAttribute="top" secondItem="xVc-jw-5RJ" secondAttribute="top" constant="20" id="xdg-mf-gg7"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRt-UZ-tGn">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRt-UZ-tGn">
                     <rect key="frame" x="20" y="30" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="VTt-us-qNf"/>
@@ -167,18 +167,34 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzQ-8p-X7a">
+                    <rect key="frame" x="10" y="100" width="201" height="56"/>
+                    <connections>
+                        <action selector="leftClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="TIV-bK-RI9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ4-iQ-1YA">
+                    <rect key="frame" x="222" y="100" width="191" height="56"/>
+                    <connections>
+                        <action selector="rightClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="jVB-U5-F3e"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Q4H-kN-vrQ" firstAttribute="leading" secondItem="mAh-lI-hH1" secondAttribute="trailing" constant="10" id="1H8-xA-yxI"/>
+                <constraint firstItem="xzQ-8p-X7a" firstAttribute="top" secondItem="hRt-UZ-tGn" secondAttribute="bottom" constant="10" id="C4w-sA-R1d"/>
                 <constraint firstItem="Z0D-nb-JZi" firstAttribute="top" secondItem="hRt-UZ-tGn" secondAttribute="top" constant="10" id="Cr0-8o-4dZ"/>
                 <constraint firstAttribute="trailing" secondItem="Q4H-kN-vrQ" secondAttribute="trailing" constant="10" id="DWw-RR-zsX"/>
                 <constraint firstItem="Z0D-nb-JZi" firstAttribute="leading" secondItem="hRt-UZ-tGn" secondAttribute="trailing" constant="15" id="FGL-aI-yx9"/>
                 <constraint firstItem="mAh-lI-hH1" firstAttribute="leading" secondItem="WTz-VJ-xYC" secondAttribute="trailing" constant="20" id="Gct-Pa-75f"/>
                 <constraint firstItem="hRt-UZ-tGn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="JIB-n8-NMD"/>
+                <constraint firstItem="oZ4-iQ-1YA" firstAttribute="bottom" secondItem="xzQ-8p-X7a" secondAttribute="bottom" id="OMn-RO-RTn"/>
                 <constraint firstItem="Frf-pM-PqB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Phb-9C-2vX"/>
                 <constraint firstItem="WTz-VJ-xYC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="S3Q-WG-0Xw"/>
+                <constraint firstItem="mAh-lI-hH1" firstAttribute="leading" secondItem="xzQ-8p-X7a" secondAttribute="trailing" id="SQl-9K-XYx"/>
                 <constraint firstItem="xVc-jw-5RJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TNu-85-0xq"/>
+                <constraint firstAttribute="trailing" secondItem="oZ4-iQ-1YA" secondAttribute="trailing" constant="10" id="TjF-m0-snj"/>
                 <constraint firstItem="cuQ-lm-GQA" firstAttribute="top" secondItem="Z0D-nb-JZi" secondAttribute="bottom" constant="10" id="VXX-4z-h0D"/>
                 <constraint firstAttribute="bottom" secondItem="xVc-jw-5RJ" secondAttribute="bottom" constant="40" id="Vpv-e7-SRe"/>
                 <constraint firstItem="Q4H-kN-vrQ" firstAttribute="top" secondItem="WTz-VJ-xYC" secondAttribute="top" id="W5m-Gy-Fcm"/>
@@ -189,16 +205,20 @@
                 <constraint firstItem="CCv-ZD-7yv" firstAttribute="top" secondItem="Q4H-kN-vrQ" secondAttribute="bottom" constant="10" id="g7L-FT-Nae"/>
                 <constraint firstItem="BWg-rL-tPu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="hQT-3a-bnP"/>
                 <constraint firstItem="Zf1-Ar-VcO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="i9G-Zb-1Fc"/>
+                <constraint firstItem="Frf-pM-PqB" firstAttribute="top" secondItem="xzQ-8p-X7a" secondAttribute="bottom" constant="10" id="jD9-Cv-JiT"/>
                 <constraint firstAttribute="trailing" secondItem="Frf-pM-PqB" secondAttribute="trailing" constant="10" id="kbt-Vc-PlS"/>
                 <constraint firstAttribute="trailing" secondItem="xVc-jw-5RJ" secondAttribute="trailing" id="nEU-wv-pCp"/>
+                <constraint firstItem="oZ4-iQ-1YA" firstAttribute="top" secondItem="xzQ-8p-X7a" secondAttribute="top" id="p2n-YV-8QQ"/>
                 <constraint firstItem="xVc-jw-5RJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="q83-Wt-uVc"/>
                 <constraint firstItem="WTz-VJ-xYC" firstAttribute="top" secondItem="cuQ-lm-GQA" secondAttribute="bottom" constant="20" id="qZI-zg-ZgC"/>
                 <constraint firstItem="mAh-lI-hH1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sMu-yX-eZb"/>
                 <constraint firstItem="hRt-UZ-tGn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="uD5-aR-flf"/>
                 <constraint firstItem="mAh-lI-hH1" firstAttribute="leading" secondItem="BWg-rL-tPu" secondAttribute="trailing" constant="10" id="wNd-6v-IbZ"/>
                 <constraint firstAttribute="bottom" secondItem="Frf-pM-PqB" secondAttribute="bottom" constant="10" id="wTT-7T-N0m"/>
+                <constraint firstItem="oZ4-iQ-1YA" firstAttribute="leading" secondItem="mAh-lI-hH1" secondAttribute="trailing" constant="10" id="xUW-Lo-vJI"/>
                 <constraint firstAttribute="trailing" secondItem="CCv-ZD-7yv" secondAttribute="trailing" constant="10" id="xro-04-8SX"/>
                 <constraint firstItem="CCv-ZD-7yv" firstAttribute="leading" secondItem="mAh-lI-hH1" secondAttribute="trailing" constant="10" id="yhW-jo-niy"/>
+                <constraint firstItem="xzQ-8p-X7a" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="zRh-Ju-liO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -214,7 +234,7 @@
                 <outlet property="twoBtn" destination="HIH-IF-HXQ" id="pbX-bx-C1t"/>
                 <outlet property="vipBtn" destination="Zf1-Ar-VcO" id="wH1-Uf-a9V"/>
             </connections>
-            <point key="canvasLocation" x="-1219.5652173913045" y="53.90625"/>
+            <point key="canvasLocation" x="-763.04347826086962" y="53.90625"/>
         </view>
     </objects>
     <resources>

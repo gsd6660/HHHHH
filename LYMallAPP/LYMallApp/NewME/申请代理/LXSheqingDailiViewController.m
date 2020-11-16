@@ -55,7 +55,7 @@
 - (void)crateBtn{
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = UIColorBlue;
-    [btn setTitle:@"申请县级代理" forState:UIControlStateNormal];
+    [btn setTitle:@"申请区/县级代理" forState:UIControlStateNormal];
     [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     btn.frame = CGRectMake(20, ScreenHeight - 60, ScreenWidth - 40, 50);
     YBDViewBorderRadius(btn, 25);

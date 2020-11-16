@@ -302,7 +302,7 @@ static NSString * tableViewCellIdentifier = @"ClassifyTableViewCell";
         if ([model.gift_goods_type intValue] == 1) {
             [self.addCartDic setValue:model.goods_id forKey:@"goods_id"];
        [self.addCartDic setValue:@"1" forKey:@"goods_num"];
-       [self.addCartDic setValue:@"0" forKey:@"spec_sku_id"];
+       [self.addCartDic setValue:model.goods_sku[@"spec_sku_id"] forKey:@"spec_sku_id"];
        SureOrderVC * vc = [[SureOrderVC alloc]init];
        vc.type = DetailPush;
        vc.prmDic = self.addCartDic;

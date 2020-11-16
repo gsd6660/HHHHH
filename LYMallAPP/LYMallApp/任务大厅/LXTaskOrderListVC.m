@@ -1,15 +1,17 @@
 //
-//  LXTaskListViewController.m
+//  LXTaskOrderListVC.m
 //  LYMallApp
 //
-//  Created by gds on 2020/10/18.
+//  Created by guxiang on 2020/11/16.
 //  Copyright © 2020 Mac. All rights reserved.
 //
 
-#import "LXTaskListViewController.h"
+#import "LXTaskOrderListVC.h"
+
 #import "LXTaskListTableViewCell.h"
 #import "LXTaskDetalViewController.h"
-@interface LXTaskListViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@interface LXTaskOrderListVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger page;
 }
@@ -18,11 +20,11 @@
 
 @end
 
-@implementation LXTaskListViewController
+@implementation LXTaskOrderListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"任务列表";
+    self.title = @"任务订单";
     [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:@"LXTaskListTableViewCell" bundle:nil] forCellReuseIdentifier:@"LXTaskListTableViewCell"];
 
@@ -40,10 +42,11 @@
 }
 
 
+
 - (void)loadData{
-    [NetWorkConnection postURL:@"/api/task.task/lists" param:@{@"page":@(page),@"type":@"1"} success:^(id responseObject, BOOL success) {
-        NSArray * array = responseObject[@"data"][@"list"][@"data"];
-        NSLog(@"%@",responseJSONString);
+    [NetWorkConnection postURL:@"/api/task.task/order" param:@{@"page":@(page),@"type":@"1"} success:^(id responseObject, BOOL success) {
+        NSArray * array = responseObject[@"data"][@"data"];
+        NSLog(@"%@",array);
         if (page == 1) {
             [self.dataArray removeAllObjects];
         }
@@ -70,23 +73,28 @@
         cell.titleLabel.text = dic[@"title"];
         cell.descLabel.text = dic[@"subtitle"];
         cell.numberLabel.text = [NSString stringWithFormat:@"扣除%@银豆",dic[@"sliver"]];
-        
+        [cell.rightBtn setTitle:@"去完成" forState:UIControlStateNormal];
     }
     cell.ClickBtn = ^{
         NSDictionary * dic = self.dataArray[indexPath.section];
         NSLog(@"%@",dic);
-        [QMUITips showLoadingInView:self.view];
-        [NetWorkConnection postURL:@"api/task.task/accept" param:@{@"task_id":dic[@"id"]} success:^(id responseObject, BOOL success) {
-            [QMUITips hideAllTipsInView:self.view];
-            if (responseSuccess) {
-                ShowHUD(responseMessage);
-            }else{
-                ShowErrorHUD(responseMessage);
-            }
-            
-        } fail:^(NSError *error) {
-            ShowErrorHUD(@"失败");
-        }];
+//        [QMUITips showLoadingInView:self.view];
+//        [NetWorkConnection postURL:@"api/task.task/accept" param:@{@"task_id":dic[@"id"]} success:^(id responseObject, BOOL success) {
+//            [QMUITips hideAllTipsInView:self.view];
+//            if (responseSuccess) {
+//                ShowHUD(responseMessage);
+//            }else{
+//                ShowErrorHUD(responseMessage);
+//            }
+//
+//        } fail:^(NSError *error) {
+//            ShowErrorHUD(@"失败");
+//        }];
+        
+        LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
+        vc.content = dic[@"article_content"];
+        vc.orderID = dic[@"id"];
+        [self.navigationController pushViewController:vc animated:YES];
         
     };
    
@@ -118,16 +126,6 @@
     return [UIView new];
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary * dic = self.dataArray[indexPath.section];
-
-    LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
-    vc.content = dic[@"article_content"];
-    vc.orderID = dic[@"id"];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStyleGrouped];
@@ -148,4 +146,6 @@
     return _dataArray;
 
 }
+ 
+
 @end

@@ -11,6 +11,7 @@
 #import "MyOrderVC.h"
 #import "InviteFriendsVC.h"
 #import "MyDetailMessageVC.h"
+#import "LXIncomeListVC.h"
 @implementation LXMeHeaderView
 
 -(void)awakeFromNib{
@@ -29,6 +30,7 @@
     self.fourBtn.spacingBetweenImageAndTitle = 5;
     YBDViewBorderRadius(self.bgView, 10);
     YBDViewBorderRadius(self.vipBtn, 5);
+    YBDViewBorderRadius(self.imgV, 30);
 }
 
 - (IBAction)oneClick:(id)sender {
@@ -59,6 +61,21 @@
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
+
+- (IBAction)leftClick:(id)sender {
+    LXIncomeListVC * vc = [[LXIncomeListVC alloc]init];
+    vc.type = LXSilver;
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+    
+}
+
+
+
+- (IBAction)rightClick:(id)sender {
+    LXIncomeListVC * vc = [[LXIncomeListVC alloc]init];
+    vc.type = LXGold;
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end

@@ -23,86 +23,111 @@
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-   if (self) {
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    
-    
-      
-    self.bannerView = [[UIView alloc]init];
-    self.bannerView.backgroundColor = kUIColorFromRGB(0xf5f5f5);
-    [self.contentView addSubview:self.bannerView];
-    
-    [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.offset(0);
-       make.height.equalTo(self.mas_width).multipliedBy(162.5/375.f);
-    }];
- 
-
-    _carouselView = [[XRCarouselView alloc] init];
-    [self.bannerView addSubview:_carouselView];
-
-    [self.carouselView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, 0));
-    }];
-    
-    _carouselView.delegate = self;
-    
-    //设置占位图片,须在设置图片数组之前设置,不设置则为默认占位图
-    _carouselView.placeholderImage = [UIImage imageNamed:@"placeholderImage.jpg"];
-    //设置图片数组及图片描述文字
-//    _carouselView.imageArray = self.bannerArr.count > 0 ? self.imageArray:arr;
-//    _carouselView.describeArray = describeArray;
-    //设置每张图片的停留时间，默认值为5s，最少为1s
-    _carouselView.time = 3;
-    //设置分页控件的图片,不设置则为系统默认
-//    [_carouselView setPageImage:[UIImage imageNamed:@"other"] andCurrentPageImage:[UIImage imageNamed:@"current"]];
-    
-    //设置分页控件的位置，默认为PositionBottomCenter
-    _carouselView.pagePosition = PositionBottomCenter;
-    // 设置滑动时gif停止播放
-    _carouselView.gifPlayMode = GifPlayModePauseWhenScroll;
-
-    
-    self.buttonView = [[UIView alloc] init];
-    self.buttonView.backgroundColor = [UIColor whiteColor];
-    [self.contentView addSubview:self.buttonView];
-
-    [self.buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
-       make.top.equalTo(self.bannerView.mas_bottom);
-       make.left.and.right.equalTo(self.bannerView);
-       make.height.equalTo(self.mas_width).multipliedBy(205/375.f);
-
-    }];
-    
-    
-    
-//    self.imageView = [[UIImageView alloc]init];
-//    self.imageView.image = [UIImage imageNamed:@""];
-//    [self.contentView addSubview:self.imageView];
-//    
-//    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//           make.top.equalTo(self.buttonView.mas_bottom);
-//          make.left.equalTo(self.buttonView).offset(10);
-//        make.right.equalTo(self.buttonView).offset(-10);
-//        make.height.equalTo(self.mas_width).multipliedBy(0.22);;
-//       }];
-
-
-    self.dataArray = @[
-      @{@"icon":@"all",@"title":@"全部"},
-      @{@"icon":@"xiaomi",@"title":@"小米"},
-      @{@"icon":@"mianfen",@"title":@"面粉"},
-      @{@"icon":@"miantiao",@"title":@"果蔬苗条"},
-      @{@"icon":@"fengmi",@"title":@"蜂蜜"},
-      @{@"icon":@"putaojiu",@"title":@"葡萄酒"},
-      @{@"icon":@"xiaomi",@"title":@"黄梨"},
-      @{@"icon":@"chubu",@"title":@"粗布"}
-    ];
-    [self.collectionView reloadData];
-    
- }
+    if (self) {
+        self.contentView.backgroundColor = [UIColor whiteColor];
+        
+        
+        
+        self.bannerView = [[UIView alloc]init];
+        self.bannerView.backgroundColor = kUIColorFromRGB(0xf5f5f5);
+        [self.contentView addSubview:self.bannerView];
+        
+        
+        [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.right.offset(0);
+            make.height.equalTo(self.mas_width).multipliedBy(200/375.f);
+        }];
+        
+        
+        UIImageView * bgImageView = [[UIImageView alloc]init];
+        bgImageView.image = [UIImage imageNamed:@"home_TopView"];
+        [self.bannerView addSubview:bgImageView];
+        [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, 0));
+        }];
+        
+        UILabel * titleLabel = [[UILabel alloc]init];
+        titleLabel.text = @"和乐宝";
+        titleLabel.textColor = UIColor.whiteColor;
+        titleLabel.font = [UIFont systemFontOfSize:18];
+        [bgImageView addSubview:titleLabel];
+        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.top.mas_equalTo(StatusBarHeight);
+            make.width.mas_equalTo(100);
+            make.height.mas_equalTo(20);
+        }];
+        
+        
+        _carouselView = [[XRCarouselView alloc] init];
+        [self.bannerView addSubview:_carouselView];
+        
+        [self.carouselView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, 0));
+            make.left.mas_equalTo(10);
+            make.top.mas_equalTo(titleLabel.mas_bottom).offset(5);
+            make.right.mas_equalTo(-10);
+            make.bottom.mas_equalTo(0);
+        }];
+        
+        _carouselView.delegate = self;
+        
+        //设置占位图片,须在设置图片数组之前设置,不设置则为默认占位图
+        _carouselView.placeholderImage = [UIImage imageNamed:@"placeholderImage.jpg"];
+        //设置图片数组及图片描述文字
+        //    _carouselView.imageArray = self.bannerArr.count > 0 ? self.imageArray:arr;
+        //    _carouselView.describeArray = describeArray;
+        //设置每张图片的停留时间，默认值为5s，最少为1s
+        _carouselView.time = 3;
+        //设置分页控件的图片,不设置则为系统默认
+        //    [_carouselView setPageImage:[UIImage imageNamed:@"other"] andCurrentPageImage:[UIImage imageNamed:@"current"]];
+        
+        //设置分页控件的位置，默认为PositionBottomCenter
+        _carouselView.pagePosition = PositionBottomCenter;
+        // 设置滑动时gif停止播放
+        _carouselView.gifPlayMode = GifPlayModePauseWhenScroll;
+        
+        
+        self.buttonView = [[UIView alloc] init];
+        self.buttonView.backgroundColor = [UIColor whiteColor];
+        [self.contentView addSubview:self.buttonView];
+        
+        [self.buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bannerView.mas_bottom);
+            make.left.and.right.equalTo(self.bannerView);
+            make.height.equalTo(self.mas_width).multipliedBy(205/375.f);
+            
+        }];
+        
+        
+        
+        //    self.imageView = [[UIImageView alloc]init];
+        //    self.imageView.image = [UIImage imageNamed:@""];
+        //    [self.contentView addSubview:self.imageView];
+        //
+        //    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        //           make.top.equalTo(self.buttonView.mas_bottom);
+        //          make.left.equalTo(self.buttonView).offset(10);
+        //        make.right.equalTo(self.buttonView).offset(-10);
+        //        make.height.equalTo(self.mas_width).multipliedBy(0.22);;
+        //       }];
+        
+        
+        self.dataArray = @[
+            @{@"icon":@"all",@"title":@"全部"},
+            @{@"icon":@"xiaomi",@"title":@"小米"},
+            @{@"icon":@"mianfen",@"title":@"面粉"},
+            @{@"icon":@"miantiao",@"title":@"果蔬苗条"},
+            @{@"icon":@"fengmi",@"title":@"蜂蜜"},
+            @{@"icon":@"putaojiu",@"title":@"葡萄酒"},
+            @{@"icon":@"xiaomi",@"title":@"黄梨"},
+            @{@"icon":@"chubu",@"title":@"粗布"}
+        ];
+        [self.collectionView reloadData];
+        
+    }
     return self;
-
+    
 }
 
 
@@ -110,12 +135,12 @@
     _dataDic = dataDic;
     [self.bannerArr removeAllObjects];
     [self.categoryArry removeAllObjects];
-
+    
     NSArray * banners = dataDic[@"banner"];
     for (NSDictionary *dic in banners) {
         [self.bannerArr addObject:dic[@"image"][@"file_path"]];
     }
-     _carouselView.imageArray = self.bannerArr;
+    _carouselView.imageArray = self.bannerArr;
     
     NSArray * categorys = dataDic[@"category"];
     for (NSDictionary *dic in categorys) {
@@ -148,14 +173,14 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.categoryArry.count > 0 ? self.categoryArry.count : self.dataArray.count;
-
+    
 }
 
 //设置每个item的UIEdgeInsets
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-   
-     return UIEdgeInsetsMake(0, 10, 10, 10);
+    
+    return UIEdgeInsetsMake(0, 10, 10, 10);
 }
 
 
@@ -164,7 +189,7 @@
 {
     return 10.0;
 }
- 
+
 // UICollectionViewCell最小列间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
@@ -178,19 +203,19 @@
     HomeTypeCell *cell = (HomeTypeCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"typeCellId" forIndexPath:indexPath];
     if (self.categoryArry.count > 0) {
         [cell setValuecationWithDataDic:self.categoryArry[indexPath.row]];
-
+        
     }
     
     return cell;
-
-    }
+    
+}
 
 
 //设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     return CGSizeMake((ScreenWidth - 50) / 4, (self.buttonView.qmui_height - 30) / 2);
-
+    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -204,24 +229,24 @@
 
 
 -(UICollectionView *)collectionView{
-if (_collectionView == nil) {
-
+    if (_collectionView == nil) {
+        
         UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-           self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-              [self.contentView addSubview:self.collectionView];
-              [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-             
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        [self.contentView addSubview:self.collectionView];
+        [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
             make.edges.equalTo(self.buttonView).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
-
-
-             }];
-                _collectionView.backgroundColor = [UIColor clearColor];
-                [_collectionView registerNib:[UINib nibWithNibName:@"HomeTypeCell" bundle:nil] forCellWithReuseIdentifier:@"typeCellId"];
-                _collectionView.delegate = self;
-                _collectionView.dataSource = self;
-                _collectionView.scrollEnabled = NO;
-       }
-      return _collectionView;
+            
+            
+        }];
+        _collectionView.backgroundColor = [UIColor clearColor];
+        [_collectionView registerNib:[UINib nibWithNibName:@"HomeTypeCell" bundle:nil] forCellWithReuseIdentifier:@"typeCellId"];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.scrollEnabled = NO;
+    }
+    return _collectionView;
 }
 
 

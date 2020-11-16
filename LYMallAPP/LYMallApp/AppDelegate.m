@@ -43,10 +43,11 @@
                  apsForProduction:1
             advertisingIdentifier:nil];
     // Custom code
+   */
     
     JMLinkConfig *config = [[JMLinkConfig alloc] init];
     config.appKey = @"584bcffd38b694fbbc32c281";
-    [JMLinkService setupWithConfig:config];*/
+    [JMLinkService setupWithConfig:config];
 //    [WxSdk registerApp];
 
     return YES;

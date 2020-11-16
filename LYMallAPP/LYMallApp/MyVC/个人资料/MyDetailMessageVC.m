@@ -11,6 +11,8 @@
 #import "EditUserNameVC.h"
 
 #import "HomeVC.h"
+#import "LoginRegisterVC.h"
+
 @interface MyDetailMessageVC ()
 {
     NSMutableDictionary * _dataDic;
@@ -215,7 +217,10 @@
     [NetWorkConnection postURL:@"api/user/log_out" param:nil success:^(id responseObject, BOOL success) {
         [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"token"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        [self.navigationController popViewControllerAnimated:YES];        
+//        [self.navigationController popViewControllerAnimated:YES];
+        
+        [UIApplication sharedApplication].delegate.window.rootViewController = [LoginRegisterVC new];
+        
         ShowHUD(@"退出成功");
     } fail:^(NSError *error) {
         

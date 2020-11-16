@@ -19,6 +19,7 @@
 #import "LXSheqingDailiViewController.h"
 #import "WebInfoViewController.h"
 #import "AgentManagerVC.h"
+#import "LXHZViewController.h"
 @interface LXMeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 
@@ -77,7 +78,7 @@
     return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 2||section == 3) {
+    if (section == 1||section == 2) {
         return 2;
     }else{
         return 1;
@@ -199,10 +200,29 @@
         WebInfoViewController * vc = [WebInfoViewController new];
         if (indexPath.row == 0) {
             vc.title = @"用户协议";
+            
+            [NetWorkConnection postURL:@"api/test/rules" param:nil success:^(id responseObject, BOOL success) {
+                NSLog(@"%@",responseJSONString);
+               NSString * content = responseObject[@"data"][@"register_rule"];
+                vc.content = content;
+                [self.navigationController pushViewController:vc animated:YES];
+            } fail:^(NSError *error) {
+                
+            }];
+            
+            
+            vc.content = [NSString stringWithFormat:@"%@api/test/rules",BaseUrl];
         }else{
             vc.title = @"隐私协议";
+            [NetWorkConnection postURL:@"api/test/rules" param:nil success:^(id responseObject, BOOL success) {
+                NSLog(@"%@",responseJSONString);
+               NSString * content = responseObject[@"data"][@"info"];
+                vc.content = content;
+                [self.navigationController pushViewController:vc animated:YES];
+            } fail:^(NSError *error) {
+                
+            }];
         }
-        [self.navigationController pushViewController:vc animated:YES];
     }
     if (indexPath.section == 2) {
        
@@ -211,7 +231,8 @@
             vc.title = @"推广规则";
             [self.navigationController pushViewController:vc animated:YES];
         }else{
-            
+            LXHZViewController * vc = [LXHZViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
         }
        
     }

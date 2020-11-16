@@ -14,7 +14,9 @@
     [super awakeFromNib];
     YBDViewBorderRadius(self, 10);
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    YBDViewBorderRadius(self.rightBtn, 15);
+    self.rightBtn.backgroundColor = UIColorHex(0x008AFF);
+    [self.rightBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     // Initialization code
 }
 
@@ -30,7 +32,7 @@
  
 - (IBAction)rightClick:(id)sender {
     
-    
+    self.ClickBtn();
     
 }
 

@@ -358,7 +358,15 @@
 		4737A776253AE32600097590 /* LXHomeCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4737A774253AE32600097590 /* LXHomeCollectionHeaderView.xib */; };
 		4737A779253AE8E600097590 /* LXNewHomeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737A778253AE8E600097590 /* LXNewHomeOneCell.m */; };
 		4750921C255BE56300D21C79 /* LXSheqingDailiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4750921B255BE56300D21C79 /* LXSheqingDailiViewController.m */; };
+		4762F3CC25626507004BE9B1 /* LXHZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4762F3CA25626507004BE9B1 /* LXHZViewController.m */; };
+		4762F3CD25626507004BE9B1 /* LXHZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4762F3CB25626507004BE9B1 /* LXHZViewController.xib */; };
+		4762F3D225626C2F004BE9B1 /* LXIncomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4762F3D125626C2F004BE9B1 /* LXIncomeListVC.m */; };
+		4762F3D925626C50004BE9B1 /* LXIncomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4762F3D725626C50004BE9B1 /* LXIncomeCell.m */; };
+		4762F3DA25626C50004BE9B1 /* LXIncomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4762F3D825626C50004BE9B1 /* LXIncomeCell.xib */; };
 		4778D855254C33C300AA3C5A /* WebInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4778D853254C33C200AA3C5A /* WebInfoViewController.m */; };
+		47D13438256239AB002324BB /* LXTaskOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D13437256239AB002324BB /* LXTaskOrderListVC.m */; };
+		47D134442562620F002324BB /* LXKeFuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D134422562620F002324BB /* LXKeFuViewController.m */; };
+		47D134452562620F002324BB /* LXKeFuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D134432562620F002324BB /* LXKeFuViewController.xib */; };
 		66416FF0253DB8C700CD0A43 /* LXCollegeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */; };
 		66416FF1253DB8C700CD0A43 /* LXCollegeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */; };
 		66416FF5253DB8DB00CD0A43 /* LXCollegeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FF3253DB8DB00CD0A43 /* LXCollegeTwoCell.m */; };
@@ -700,7 +708,6 @@
 		0457D9FF2451B2E4000B58B3 /* BandZFBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandZFBVC.h; sourceTree = "<group>"; };
 		0457DA002451B2E4000B58B3 /* BandZFBVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BandZFBVC.xib; sourceTree = "<group>"; };
 		0457DA012451B2E5000B58B3 /* BandZFBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandZFBVC.m; sourceTree = "<group>"; };
-		045A5B462452786900CFE660 /* 隆源商城.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "隆源商城.entitlements"; sourceTree = "<group>"; };
 		045A5B472452D19100CFE660 /* PaySuccessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySuccessVC.h; sourceTree = "<group>"; };
 		045A5B482452D19100CFE660 /* PaySuccessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySuccessVC.m; sourceTree = "<group>"; };
 		045A5B492452D19100CFE660 /* PaySuccessVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaySuccessVC.xib; sourceTree = "<group>"; };
@@ -1083,8 +1090,21 @@
 		4737A778253AE8E600097590 /* LXNewHomeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXNewHomeOneCell.m; sourceTree = "<group>"; };
 		4750921A255BE56300D21C79 /* LXSheqingDailiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSheqingDailiViewController.h; sourceTree = "<group>"; };
 		4750921B255BE56300D21C79 /* LXSheqingDailiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSheqingDailiViewController.m; sourceTree = "<group>"; };
+		4762F3C925626507004BE9B1 /* LXHZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHZViewController.h; sourceTree = "<group>"; };
+		4762F3CA25626507004BE9B1 /* LXHZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHZViewController.m; sourceTree = "<group>"; };
+		4762F3CB25626507004BE9B1 /* LXHZViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXHZViewController.xib; sourceTree = "<group>"; };
+		4762F3D025626C2F004BE9B1 /* LXIncomeListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXIncomeListVC.h; sourceTree = "<group>"; };
+		4762F3D125626C2F004BE9B1 /* LXIncomeListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXIncomeListVC.m; sourceTree = "<group>"; };
+		4762F3D625626C50004BE9B1 /* LXIncomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXIncomeCell.h; sourceTree = "<group>"; };
+		4762F3D725626C50004BE9B1 /* LXIncomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXIncomeCell.m; sourceTree = "<group>"; };
+		4762F3D825626C50004BE9B1 /* LXIncomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXIncomeCell.xib; sourceTree = "<group>"; };
 		4778D853254C33C200AA3C5A /* WebInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebInfoViewController.m; sourceTree = "<group>"; };
 		4778D854254C33C300AA3C5A /* WebInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInfoViewController.h; sourceTree = "<group>"; };
+		47D13436256239AB002324BB /* LXTaskOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTaskOrderListVC.h; sourceTree = "<group>"; };
+		47D13437256239AB002324BB /* LXTaskOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTaskOrderListVC.m; sourceTree = "<group>"; };
+		47D134412562620F002324BB /* LXKeFuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKeFuViewController.h; sourceTree = "<group>"; };
+		47D134422562620F002324BB /* LXKeFuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXKeFuViewController.m; sourceTree = "<group>"; };
+		47D134432562620F002324BB /* LXKeFuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXKeFuViewController.xib; sourceTree = "<group>"; };
 		66416FED253DB8C700CD0A43 /* LXCollegeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollegeOneCell.h; sourceTree = "<group>"; };
 		66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollegeOneCell.m; sourceTree = "<group>"; };
 		66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXCollegeOneCell.xib; sourceTree = "<group>"; };
@@ -2377,7 +2397,6 @@
 				04E779662465615C006EF48D /* 隐私协议 */,
 				0423280B245ABE01006B8372 /* 升级APP */,
 				041E1B542457E11D00D8B8E1 /* 动画资源 */,
-				045A5B462452786900CFE660 /* 隆源商城.entitlements */,
 				7020418F2431E5C6001F4806 /* 拼团详情 */,
 				665D089F242B05D9008BC4D7 /* 商品详情 */,
 				42586A762425B16100A3E6F7 /* 登录注册 */,
@@ -2736,11 +2755,51 @@
 			path = "申请代理";
 			sourceTree = "<group>";
 		};
+		4762F3C8256264E1004BE9B1 /* 商务合作 */ = {
+			isa = PBXGroup;
+			children = (
+				4762F3C925626507004BE9B1 /* LXHZViewController.h */,
+				4762F3CA25626507004BE9B1 /* LXHZViewController.m */,
+				4762F3CB25626507004BE9B1 /* LXHZViewController.xib */,
+			);
+			path = "商务合作";
+			sourceTree = "<group>";
+		};
+		4762F3CF25626BFA004BE9B1 /* 收支明细 */ = {
+			isa = PBXGroup;
+			children = (
+				4762F3D525626C34004BE9B1 /* View */,
+				4762F3D025626C2F004BE9B1 /* LXIncomeListVC.h */,
+				4762F3D125626C2F004BE9B1 /* LXIncomeListVC.m */,
+			);
+			path = "收支明细";
+			sourceTree = "<group>";
+		};
+		4762F3D525626C34004BE9B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4762F3D625626C50004BE9B1 /* LXIncomeCell.h */,
+				4762F3D725626C50004BE9B1 /* LXIncomeCell.m */,
+				4762F3D825626C50004BE9B1 /* LXIncomeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		47A593B82551489500EA0F40 /* SubVc */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = SubVc;
+			sourceTree = "<group>";
+		};
+		47D13440256261DA002324BB /* 客服 */ = {
+			isa = PBXGroup;
+			children = (
+				47D134412562620F002324BB /* LXKeFuViewController.h */,
+				47D134422562620F002324BB /* LXKeFuViewController.m */,
+				47D134432562620F002324BB /* LXKeFuViewController.xib */,
+			);
+			path = "客服";
 			sourceTree = "<group>";
 		};
 		4D708668A540F83314743328 /* Frameworks */ = {
@@ -2905,6 +2964,9 @@
 		66DA63C7253C0F4B00EC7109 /* NewME */ = {
 			isa = PBXGroup;
 			children = (
+				4762F3CF25626BFA004BE9B1 /* 收支明细 */,
+				4762F3C8256264E1004BE9B1 /* 商务合作 */,
+				47D13440256261DA002324BB /* 客服 */,
 				47509219255BE54000D21C79 /* 申请代理 */,
 				66DA63CB253C0F8800EC7109 /* View */,
 				66DA63C8253C0F6800EC7109 /* LXMeViewController.h */,
@@ -2940,6 +3002,8 @@
 				66DA63DD253C339800EC7109 /* LXTaskHallVC.m */,
 				66DA63F2253C4DD500EC7109 /* LXTaskListViewController.h */,
 				66DA63F3253C4DD500EC7109 /* LXTaskListViewController.m */,
+				47D13436256239AB002324BB /* LXTaskOrderListVC.h */,
+				47D13437256239AB002324BB /* LXTaskOrderListVC.m */,
 			);
 			path = "任务大厅";
 			sourceTree = "<group>";
@@ -3370,6 +3434,7 @@
 				470D2E62253D30600092B41D /* LXVipOneCell.xib in Resources */,
 				045D060424543D1C001F3F9E /* ManagerOrderVC.xib in Resources */,
 				708F79F22434764E00073D6A /* MemberCenterVC.xib in Resources */,
+				4762F3CD25626507004BE9B1 /* LXHZViewController.xib in Resources */,
 				42586A732424AD3800A3E6F7 /* CouponOneCell.xib in Resources */,
 				4737A763253ADCF100097590 /* MBProgressHUD.bundle in Resources */,
 				04FD4CB524559C9A000CF66C /* TeamCell.xib in Resources */,
@@ -3398,6 +3463,7 @@
 				048D2B4E242377F80051D6A6 /* btn_num_add@3x.png in Resources */,
 				048FFE84247DFF960076E9F8 /* GiftPackageCell.xib in Resources */,
 				04A1662E2421B3E40077F0FD /* ExpressinformationCell.xib in Resources */,
+				4762F3DA25626C50004BE9B1 /* LXIncomeCell.xib in Resources */,
 				0443447B241F1F3E00F3F8C2 /* AppraiseListVC.xib in Resources */,
 				041E5DF7242DF46400E24CF5 /* MyCollectionCell.xib in Resources */,
 				04B96053244591B000A96F24 /* EditPhoneNumerVC.xib in Resources */,
@@ -3434,6 +3500,7 @@
 				702B05762456DC99005B8598 /* AfterTwoCell.xib in Resources */,
 				04538CA924446DED003792B4 /* MySubscripOneCell.xib in Resources */,
 				044024282445A98500240AB7 /* InviteFriendsVC.xib in Resources */,
+				47D134452562620F002324BB /* LXKeFuViewController.xib in Resources */,
 				045D0614245455FF001F3F9E /* CommissionManagerTwoCell.xib in Resources */,
 				708F79E7243442B500073D6A /* WithdrawDepositVC.xib in Resources */,
 				048FFE8E247E7C5A0076E9F8 /* RegisterMemberTwoCell.xib in Resources */,
@@ -3587,6 +3654,7 @@
 				045D061C24546991001F3F9E /* ManagerOrderHeadView.m in Sources */,
 				66417018254314E700CD0A43 /* LXCollegeListVC.m in Sources */,
 				42586A6E2424ABBD00A3E6F7 /* CouponOneVC.m in Sources */,
+				4762F3D925626C50004BE9B1 /* LXIncomeCell.m in Sources */,
 				04A6916D2420C92A006500C8 /* NetWorkConnection.m in Sources */,
 				04F4B8392449C08D00F7FCCE /* MHSheetView.m in Sources */,
 				044024272445A98500240AB7 /* InviteFriendsVC.m in Sources */,
@@ -3622,6 +3690,7 @@
 				470D2E61253D30600092B41D /* LXVipOneCell.m in Sources */,
 				0476C40B243DE3A500A7B094 /* AppleyAgentVC.m in Sources */,
 				0436B30A241725A5004BF13F /* HomeFourCell.m in Sources */,
+				4762F3D225626C2F004BE9B1 /* LXIncomeListVC.m in Sources */,
 				70BC993A24446FC300AE5368 /* RefundRequestVC.m in Sources */,
 				0443446A241F080E00F3F8C2 /* MessageCell.m in Sources */,
 				708F79F72434846700073D6A /* MemberOneCell.m in Sources */,
@@ -3629,6 +3698,7 @@
 				0414CFE4243C7B1100D020F6 /* MenuSelectView.m in Sources */,
 				0436B30B241725A5004BF13F /* HomeOneCell.m in Sources */,
 				4737A75C253ADCE100097590 /* PYPhotoView.m in Sources */,
+				47D134442562620F002324BB /* LXKeFuViewController.m in Sources */,
 				0457D9EE24516C35000B58B3 /* AgentManagerTwoCell.m in Sources */,
 				048D2B44242370E50051D6A6 /* SureOrderSectionFootView.m in Sources */,
 				470D2E72253D8DE10092B41D /* LXCollegeViewController.m in Sources */,
@@ -3697,6 +3767,7 @@
 				04A93CC62448476D0048913D /* BuynowOneCell.m in Sources */,
 				42586A852425B16100A3E6F7 /* ForgotPassWVC.m in Sources */,
 				70E321E024332009008399DA /* OrderDetailfootView.m in Sources */,
+				47D13438256239AB002324BB /* LXTaskOrderListVC.m in Sources */,
 				42586A832425B16100A3E6F7 /* RegisterVC.m in Sources */,
 				4737A75A253ADCE100097590 /* PYPhotoBrowseView.m in Sources */,
 				04A166472421B4370077F0FD /* MyOrderVC.m in Sources */,
@@ -3867,6 +3938,7 @@
 				0440242124459DDD00240AB7 /* EditLoginPasswordVC.m in Sources */,
 				0452E347242DEF1C006D2D31 /* MyTwoCell.m in Sources */,
 				70E321E524333D18008399DA /* SureOrderTwoCell.m in Sources */,
+				4762F3CC25626507004BE9B1 /* LXHZViewController.m in Sources */,
 				04D5694B2481EE99006D5C37 /* XinOrderPayTwoCell.m in Sources */,
 				66DA63CE253C0F9E00EC7109 /* LXMeHeaderView.m in Sources */,
 				0476C400243DCE4400A7B094 /* LyInfoVC.m in Sources */,

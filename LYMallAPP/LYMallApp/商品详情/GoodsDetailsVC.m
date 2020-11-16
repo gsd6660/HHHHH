@@ -26,6 +26,7 @@
 #import "GiftPackageCell.h"
 #import "NumberCalculate.h"
 #import "XinOrderPayVC.h"
+#import "InviteFriendsVC.h"
 @interface GoodsDetailsVC ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,WKNavigationDelegate,NumberCalculateDelegate>
 {
     BOOL isFold;
@@ -626,7 +627,7 @@ static NSString * GoodsVipTwoCellID = @"GiftPackageCell";
     
     
     QMUIButton * messageBtn = [QMUIButton buttonWithType:UIButtonTypeCustom];
-    [messageBtn setTitle:@"消息" forState:0];
+    [messageBtn setTitle:@"分享" forState:0];
     [messageBtn setTitleColor: [UIColor grayColor] forState:0];
     [messageBtn setImage:[UIImage imageNamed:@"jft_but_customerservice"] forState:0];
     [bottomView addSubview:messageBtn];
@@ -638,17 +639,21 @@ static NSString * GoodsVipTwoCellID = @"GiftPackageCell";
         
         GF_Check_Login;
         
-        [NetWorkConnection postURL:@"api/customerservice/logs" param:nil success:^(id responseObject, BOOL success) {
-            if (responseMessage) {
-            
-                ChatMeassageVC * vc = [ChatMeassageVC new];
-                vc.title = @"客服咨询";
-                vc.record_id = [NSString stringWithFormat:@"%@",responseObject[@"data"][@"record_id"]];
-                [weakSelf.navigationController pushViewController:vc animated:YES];
-            }
-        } fail:^(NSError *error) {
-            
-        }];
+        InviteFriendsVC * vc = [InviteFriendsVC new];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+        
+        
+//        [NetWorkConnection postURL:@"api/customerservice/logs" param:nil success:^(id responseObject, BOOL success) {
+//            if (responseMessage) {
+//
+//                ChatMeassageVC * vc = [ChatMeassageVC new];
+//                vc.title = @"客服咨询";
+//                vc.record_id = [NSString stringWithFormat:@"%@",responseObject[@"data"][@"record_id"]];
+//                [weakSelf.navigationController pushViewController:vc animated:YES];
+//            }
+//        } fail:^(NSError *error) {
+//
+//        }];
         
         
     }];

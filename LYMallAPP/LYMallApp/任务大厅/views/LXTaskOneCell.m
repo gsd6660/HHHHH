@@ -15,6 +15,10 @@
 #import "MyPurseVC.h"
 #import "MallVC.h"
 #import "InviteFriendsVC.h"
+#import "LXTaskOrderListVC.h"
+#import "LXKeFuViewController.h"
+#import "LXHZViewController.h"
+
 @interface LXTaskOneCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic, strong) UICollectionView *collectionView;
 @property(nonatomic, strong) NSArray *dataArray;
@@ -61,22 +65,41 @@
          [[self viewController].navigationController pushViewController:vc animated:YES];
     }
     
+    if (indexPath.row == 1) {
+        
+    }
+    
     if (indexPath.row == 2) {
         [self.viewController.navigationController pushViewController:[LXRuleListViewController new] animated:YES];
-    }
-    if (indexPath.row == 3) {
-        InviteFriendsVC * vc = [InviteFriendsVC new];
-        [self.viewController.navigationController pushViewController:vc animated:YES];
-    }
-    if(indexPath.row == 5){
-        CommitAppleyDataVC * vc = [CommitAppleyDataVC new];
-        [self.viewController.navigationController pushViewController:vc animated:YES];
     }
     if (indexPath.row == 3) {
         MyPurseVC * vc = [MyPurseVC new];
         [self.viewController.navigationController pushViewController:vc animated:YES];
         
     }
+    if (indexPath.row == 4) {
+        LXTaskOrderListVC * vc = [LXTaskOrderListVC new];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+        
+    }
+    if(indexPath.row == 5){
+        LXHZViewController * vc = [LXHZViewController new];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    }
+ 
+    
+    if (indexPath.row == 6) {
+        LXKeFuViewController * vc = [LXKeFuViewController new];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    }
+    
+    
+    if (indexPath.row == 7) {
+        InviteFriendsVC * vc = [InviteFriendsVC new];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    }
+   
+    
 }
 
 

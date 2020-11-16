@@ -155,7 +155,7 @@ static NSString * cellID = @"CommitAppleyDataCell";
     cell.levelButn.tag = 1001;
     cell.areaButn.tag = 1002;
     if (cell.levelButn.tag == 1001) {
-        [cell.levelButn setTitle:@"县级" forState:UIControlStateNormal];
+        [cell.levelButn setTitle:@"区/县级" forState:UIControlStateNormal];
     }
 //    [cell.levelButn addTarget:self action:@selector(cellButnAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.areaButn addTarget:self action:@selector(cellButnAction:) forControlEvents:UIControlEventTouchUpInside];
