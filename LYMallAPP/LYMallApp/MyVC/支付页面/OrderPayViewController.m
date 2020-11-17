@@ -303,7 +303,7 @@ static NSString * orderPayCellID = @"OrderPayCell";
     }
     NSDictionary *dataDcit= [str mj_JSONObject];
     NSMutableString *stamp  = [dataDcit objectForKey:@"timestamp"];
-    [WXApi registerApp:@"wx758120730fcc7401" universalLink:@"https://shui3v.jmlk.co/"];
+//    [WXApi registerApp:@"wx758120730fcc7401" universalLink:@"https://shui3v.jmlk.co/"];
 
     PayReq* request             = [[PayReq alloc] init];
     request.partnerId           = [dataDcit objectForKey:@"partnerid"];
@@ -314,13 +314,13 @@ static NSString * orderPayCellID = @"OrderPayCell";
     request.sign                = [dataDcit objectForKey:@"sign"];
     //调起微信客户端 支付
     [WXApi sendReq:request completion:^(BOOL success) {
-        if (success == YES) {
-            [self goSuccessVC];
-
-        }
+      
     }];
     
+    
+    
 }
+
 
 
 -(NSMutableArray *)dataArray{

@@ -28,7 +28,7 @@
 //     [UIImage imageNamed:@"guid03"]];
 //     KSGuaidManager.shouldDismissWhenDragging = YES;
 //     [KSGuaidManager begin];
-    [WXApi registerApp:@"wx1c9765d7b1eaf378" universalLink:@"https://shui3v.jmlk.co/"];
+    [WXApi registerApp:@"wx1c9765d7b1eaf378" universalLink:@"https://bqgvo7.jgmlink.cn"];
 
     [self createTabBarController];
     // U-Share 平台设置
@@ -46,7 +46,7 @@
    */
     
     JMLinkConfig *config = [[JMLinkConfig alloc] init];
-    config.appKey = @"584bcffd38b694fbbc32c281";
+    config.appKey = @"8570b4786642bb33c699071f";
     [JMLinkService setupWithConfig:config];
 //    [WxSdk registerApp];
 
@@ -156,16 +156,14 @@
                 [QMUITips showInfo:@"订单支付失败"];
             }
         }];
-    }else{
-        if ([options[UIApplicationOpenURLOptionsSourceApplicationKey] isEqualToString:@"com.tencent.xin"] && [url.absoluteString containsString:@"login"]) {
-            [WXApi handleOpenURL:url delegate:self];
-        }else{
-            [WXApi handleOpenURL:url delegate:self];
-            
-        }
     }
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
+    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+}
+
 
 
 
