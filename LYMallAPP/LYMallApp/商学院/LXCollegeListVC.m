@@ -26,7 +26,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LXCollegeThreeCell" bundle:nil] forCellReuseIdentifier:@"LXCollegeThreeCell"];
 
-    [NetWorkConnection postURL:@"/api/article/lists" param:@{@"category_id":@"0"} success:^(id responseObject, BOOL success) {
+    [NetWorkConnection postURL:@"/api/article/lists" param:@{@"category_id":@"0",@"keyword":self.keyword.length == 0 ? @"":self.keyword} success:^(id responseObject, BOOL success) {
         NSLog(@"%@",responseObject);
         self.dataArray = responseObject[@"data"][@"list"][@"data"];
         [self.tableView reloadData];
@@ -58,6 +58,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.dataArray.count>0) {
+       
         NSDictionary * dic = self.dataArray[indexPath.section];
         NSLog(@"%@",dic);
         

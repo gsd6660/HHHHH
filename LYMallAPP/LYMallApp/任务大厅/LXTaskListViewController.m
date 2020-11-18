@@ -120,12 +120,12 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary * dic = self.dataArray[indexPath.section];
+//    NSDictionary * dic = self.dataArray[indexPath.section];
 
-    LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
-    vc.content = dic[@"article_content"];
-    vc.orderID = dic[@"id"];
-    [self.navigationController pushViewController:vc animated:YES];
+//    LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
+//    vc.content = dic[@"article_content"];
+//    vc.orderID = dic[@"id"];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UITableView *)tableView{

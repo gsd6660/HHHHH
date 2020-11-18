@@ -367,6 +367,7 @@
 		47D13438256239AB002324BB /* LXTaskOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D13437256239AB002324BB /* LXTaskOrderListVC.m */; };
 		47D134442562620F002324BB /* LXKeFuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D134422562620F002324BB /* LXKeFuViewController.m */; };
 		47D134452562620F002324BB /* LXKeFuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D134432562620F002324BB /* LXKeFuViewController.xib */; };
+		47E84E052564D04B005EFFDE /* LXCollegeVideoDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E84E042564D04B005EFFDE /* LXCollegeVideoDetailVC.m */; };
 		66416FF0253DB8C700CD0A43 /* LXCollegeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */; };
 		66416FF1253DB8C700CD0A43 /* LXCollegeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */; };
 		66416FF5253DB8DB00CD0A43 /* LXCollegeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FF3253DB8DB00CD0A43 /* LXCollegeTwoCell.m */; };
@@ -1105,6 +1106,8 @@
 		47D134412562620F002324BB /* LXKeFuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKeFuViewController.h; sourceTree = "<group>"; };
 		47D134422562620F002324BB /* LXKeFuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXKeFuViewController.m; sourceTree = "<group>"; };
 		47D134432562620F002324BB /* LXKeFuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXKeFuViewController.xib; sourceTree = "<group>"; };
+		47E84E032564D04B005EFFDE /* LXCollegeVideoDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollegeVideoDetailVC.h; sourceTree = "<group>"; };
+		47E84E042564D04B005EFFDE /* LXCollegeVideoDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollegeVideoDetailVC.m; sourceTree = "<group>"; };
 		66416FED253DB8C700CD0A43 /* LXCollegeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollegeOneCell.h; sourceTree = "<group>"; };
 		66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollegeOneCell.m; sourceTree = "<group>"; };
 		66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXCollegeOneCell.xib; sourceTree = "<group>"; };
@@ -2571,6 +2574,7 @@
 		470D2E6F253D8DB20092B41D /* 商学院 */ = {
 			isa = PBXGroup;
 			children = (
+				47E84E022564D015005EFFDE /* 详情 */,
 				470D2E73253D8DE50092B41D /* Views */,
 				470D2E70253D8DE10092B41D /* LXCollegeViewController.h */,
 				470D2E71253D8DE10092B41D /* LXCollegeViewController.m */,
@@ -2800,6 +2804,15 @@
 				47D134432562620F002324BB /* LXKeFuViewController.xib */,
 			);
 			path = "客服";
+			sourceTree = "<group>";
+		};
+		47E84E022564D015005EFFDE /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+				47E84E032564D04B005EFFDE /* LXCollegeVideoDetailVC.h */,
+				47E84E042564D04B005EFFDE /* LXCollegeVideoDetailVC.m */,
+			);
+			path = "详情";
 			sourceTree = "<group>";
 		};
 		4D708668A540F83314743328 /* Frameworks */ = {
@@ -3688,6 +3701,7 @@
 				0456BFF82449C80C001D71B4 /* TggStarEvaluationView.m in Sources */,
 				42586A812425B16100A3E6F7 /* LoginVC.m in Sources */,
 				470D2E61253D30600092B41D /* LXVipOneCell.m in Sources */,
+				47E84E052564D04B005EFFDE /* LXCollegeVideoDetailVC.m in Sources */,
 				0476C40B243DE3A500A7B094 /* AppleyAgentVC.m in Sources */,
 				0436B30A241725A5004BF13F /* HomeFourCell.m in Sources */,
 				4762F3D225626C2F004BE9B1 /* LXIncomeListVC.m in Sources */,

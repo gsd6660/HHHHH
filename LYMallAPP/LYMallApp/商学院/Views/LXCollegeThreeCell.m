@@ -14,7 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    self.payImg.hidden = YES;
 }
 
 - (void)setFrame:(CGRect)frame{

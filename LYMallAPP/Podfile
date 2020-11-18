@@ -38,8 +38,10 @@ pod 'TZImagePickerController','~> 3.2.6' #iOS8 and later
  pod 'FDFullscreenPopGesture'
 
  pod 'WoodPeckeriOS', :configurations => ['Debug']
- pod 'ZFPlayer', '~> 4.0'
+# pod 'ZFPlayer', '~> 4.0'
 
+ pod 'ZFPlayer/AVPlayer', '~> 4.0'
+ pod 'ZFPlayer/ControlView', '~> 4.0'
   # Pods for LYMallApp
 
 end

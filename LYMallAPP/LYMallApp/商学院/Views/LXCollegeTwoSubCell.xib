@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,28 +29,38 @@
                         <color key="textColor" red="0.29411764705882354" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pay" translatesAutoresizingMaskIntoConstraints="NO" id="qaY-8r-eyd">
+                        <rect key="frame" x="28.5" y="16.5" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="HKi-v8-N8F"/>
+                            <constraint firstAttribute="width" constant="45" id="YBy-5t-nBq"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ApB-Kl-70h" secondAttribute="trailing" id="5bK-fQ-Nsw"/>
                 <constraint firstItem="tFi-ne-N5p" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Bvb-2g-8j7"/>
                 <constraint firstAttribute="bottom" secondItem="tFi-ne-N5p" secondAttribute="bottom" id="D2a-OM-eKO"/>
+                <constraint firstItem="qaY-8r-eyd" firstAttribute="centerY" secondItem="ApB-Kl-70h" secondAttribute="centerY" id="GaX-Sg-1z8"/>
                 <constraint firstItem="ApB-Kl-70h" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VMx-Q9-nBJ"/>
                 <constraint firstItem="ApB-Kl-70h" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZUt-ET-96K"/>
                 <constraint firstItem="tFi-ne-N5p" firstAttribute="top" secondItem="ApB-Kl-70h" secondAttribute="bottom" id="fJj-Ec-h51"/>
                 <constraint firstItem="tFi-ne-N5p" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="g9P-ce-W14"/>
                 <constraint firstAttribute="trailing" secondItem="tFi-ne-N5p" secondAttribute="trailing" id="gy2-Vu-021"/>
+                <constraint firstItem="qaY-8r-eyd" firstAttribute="centerX" secondItem="ApB-Kl-70h" secondAttribute="centerX" id="uDc-8c-fn3"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="181" height="137"/>
             <connections>
                 <outlet property="imgV" destination="ApB-Kl-70h" id="mI1-nr-SGW"/>
                 <outlet property="titleLabel" destination="tFi-ne-N5p" id="MjM-Kv-TFJ"/>
             </connections>
-            <point key="canvasLocation" x="55.797101449275367" y="78.683035714285708"/>
+            <point key="canvasLocation" x="55.072463768115945" y="78.348214285714278"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="coll_sub_three" width="102" height="77.5"/>
+        <image name="pay" width="70" height="70"/>
     </resources>
 </document>

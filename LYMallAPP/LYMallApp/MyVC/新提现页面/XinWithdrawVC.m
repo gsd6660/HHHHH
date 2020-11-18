@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *withdrawButn;
 @property (strong, nonatomic) UILabel *service_chargeLable;
 
+@property (weak, nonatomic) IBOutlet UITextField *glodTF;
 
 @property (assign, nonatomic) NSIndexPath *selIndex;//单选，当前选中的行
 @property (nonatomic,strong)NSMutableArray * dataArray;

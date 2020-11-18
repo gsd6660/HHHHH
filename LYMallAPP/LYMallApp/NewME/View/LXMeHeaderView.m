@@ -29,7 +29,7 @@
     self.fourBtn.imagePosition = QMUIButtonImagePositionTop;
     self.fourBtn.spacingBetweenImageAndTitle = 5;
     YBDViewBorderRadius(self.bgView, 10);
-    YBDViewBorderRadius(self.vipBtn, 5);
+    YBDViewBorderRadius(self.vipBtn, 12.5);
     YBDViewBorderRadius(self.imgV, 30);
 }
 

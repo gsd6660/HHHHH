@@ -196,7 +196,7 @@
 //设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return CGSizeMake(ScreenWidth, kWithSP(364));
+        return CGSizeMake(ScreenWidth, kWithSP(400));
     }else if (indexPath.section == 1){
         return CGSizeMake(ScreenWidth, 160);
     }else if (indexPath.section == 2){

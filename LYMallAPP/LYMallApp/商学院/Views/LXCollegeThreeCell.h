@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *zhuanfaLabel;
 @property (weak, nonatomic) IBOutlet UIButton *zanLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *payImg;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

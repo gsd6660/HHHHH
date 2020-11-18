@@ -177,9 +177,9 @@
             [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"payResult" object:@"success"]];
              [[NSNotificationCenter defaultCenter] postNotificationName:@"updateUserInfo" object:nil];
         }else if (resp.errCode == -2) {
-            [QMUITips showInfo:@"用户取消"];
+            [QMUITips showError:@"用户取消"];
         }else if (resp.errCode == -1) {
-            [QMUITips showInfo:@"订单支付失败"];
+            [QMUITips showError:@"订单支付失败"];
         }
     }
     

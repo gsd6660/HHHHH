@@ -9,6 +9,7 @@
 #import "LXCollegeTwoCell.h"
 #import "LXCollegeTwoSubCell.h"
 #import "LXCollegeTwoListVC.h"
+#import "LXCollegeVideoDetailVC.h"
 @interface LXCollegeTwoCell()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @end
@@ -33,6 +34,9 @@
 }
 
 - (void)pushVC{
+//    LXCollegeVideoDetailVC * vc = [LXCollegeVideoDetailVC new];
+//    [self.viewController.navigationController pushViewController:vc animated:YES];
+    
     [self.viewController.navigationController pushViewController:[LXCollegeTwoListVC new] animated:YES];
 }
 
@@ -82,6 +86,24 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary * dic = self.dataArray[indexPath.row];
+    NSLog(@"%@",dic);
+    [NetWorkConnection postURL:@"api/article/detail" param:@{@"article_id":dic[@"article_id"]} success:^(id responseObject, BOOL success) {
+        NSLog(@"%@",responseJSONString);
+        NSDictionary * dataDic = responseObject[@"data"][@"detail"];
+        LXCollegeVideoDetailVC * vc1 = [LXCollegeVideoDetailVC new];
+        vc1.playUrl = dataDic[@"video_url"];
+        vc1.title = dataDic[@"article_title"];
+        vc1.content = dataDic[@"article_content"];
+        [self.viewController.navigationController pushViewController:vc1 animated:YES];
+        
+    } fail:^(NSError *error) {
+        ShowErrorHUD(@"请求失败");
+    }];
 }
 
 

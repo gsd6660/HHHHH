@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    YBDViewBorderRadius(self.imgV, 10);
 }
 
 @end

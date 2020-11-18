@@ -9,6 +9,7 @@
 #import "LXCollegeTwoListVC.h"
 #import "LXCollegeThreeCell.h"
 #import "WebInfoViewController.h"
+#import "LXCollegeVideoDetailVC.h"
 @interface LXCollegeTwoListVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) UITableView * tableView;
@@ -55,6 +56,7 @@
         cell.timeLabel.text = dic[@"view_time"];
         [cell.zanLabel setTitle:dic[@"1111"] forState:UIControlStateNormal];
         [cell.zhuanfaLabel setTitle:dic[@"2222"] forState:UIControlStateNormal];
+        cell.payImg.hidden = NO;
     }
     return cell;
 }
@@ -64,13 +66,17 @@
         NSDictionary * dic = self.dataArray[indexPath.section];
         NSLog(@"%@",dic);
         
+       
+        
         [NetWorkConnection postURL:@"api/article/detail" param:@{@"article_id":dic[@"article_id"]} success:^(id responseObject, BOOL success) {
             NSLog(@"%@",responseJSONString);
             NSDictionary * dataDic = responseObject[@"data"][@"detail"];
-            WebInfoViewController * vc = [WebInfoViewController new];
-            vc.content = dataDic[@"article_content"];
-            vc.title = dataDic[@"article_title"];
-            [self.navigationController pushViewController:vc animated:YES];
+            LXCollegeVideoDetailVC * vc1 = [LXCollegeVideoDetailVC new];
+            vc1.playUrl = dataDic[@"video_url"];
+            vc1.title = dataDic[@"article_title"];
+            vc1.content = dataDic[@"article_content"];
+            [self.navigationController pushViewController:vc1 animated:YES];
+            
         } fail:^(NSError *error) {
             ShowErrorHUD(@"请求失败");
         }];
