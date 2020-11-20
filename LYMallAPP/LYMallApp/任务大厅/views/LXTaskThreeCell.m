@@ -24,6 +24,7 @@
 - (IBAction)lowClick:(id)sender {
     
     LXTaskListViewController  * vc = [[LXTaskListViewController alloc]init];
+    vc.type = @"1";
     [self.viewController.navigationController pushViewController:vc animated:YES];
     
 }
@@ -31,6 +32,7 @@
 - (IBAction)centerClick:(id)sender {
     
     LXTaskListViewController  * vc = [[LXTaskListViewController alloc]init];
+    vc.type = @"2";
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
@@ -38,6 +40,31 @@
 - (IBAction)heightClick:(id)sender {
     
     LXTaskListViewController  * vc = [[LXTaskListViewController alloc]init];
+    vc.type = @"3";
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (IBAction)leftClick:(id)sender {
+    
+    LXTaskListViewController  * vc = [[LXTaskListViewController alloc]init];
+    vc.type = @"1";
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
+
+
+
+- (IBAction)centerBtnClik:(id)sender {
+    LXTaskListViewController  * vc = [[LXTaskListViewController alloc]init];
+    vc.type = @"2";
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (IBAction)rightBtnClick:(id)sender {
+    
+    LXTaskListViewController  * vc = [[LXTaskListViewController alloc]init];
+    vc.type = @"3";
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 

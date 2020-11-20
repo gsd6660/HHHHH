@@ -42,6 +42,7 @@ pod 'TZImagePickerController','~> 3.2.6' #iOS8 and later
 
  pod 'ZFPlayer/AVPlayer', '~> 4.0'
  pod 'ZFPlayer/ControlView', '~> 4.0'
+ pod 'TYAlertController'
   # Pods for LYMallApp
 
 end

@@ -44,7 +44,7 @@
     [self addSubview:self.userImageView];
     
     self.userNameLabel = [[UILabel alloc]init];
-    self.userNameLabel.text = @"隆源商城APP";
+    self.userNameLabel.text = @"和乐宝APP";
     self.userNameLabel.textColor = kUIColorFromRGB(0x666666);
     self.userNameLabel.font = [UIFont systemFontOfSize:18 weight:30];
     [self addSubview:self.userNameLabel];

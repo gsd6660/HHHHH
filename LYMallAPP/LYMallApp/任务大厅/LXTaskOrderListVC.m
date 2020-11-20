@@ -54,6 +54,11 @@
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         [self.tableView reloadData];
+        
+        if (self.dataArray.count == 0) {
+            [self showEmptyViewWithImage:CCImage(@"wushuju") text:@"暂无数据" detailText:@"" buttonTitle:@"点击重试" buttonAction:@selector(loadData)];
+        }
+        
     } fail:^(NSError *error) {
         NSLog(@"%@",error);
     }];

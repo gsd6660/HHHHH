@@ -18,6 +18,7 @@
 #import "LXTaskOrderListVC.h"
 #import "LXKeFuViewController.h"
 #import "LXHZViewController.h"
+#import "LXGoldShopViewController.h"
 
 @interface LXTaskOneCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic, strong) UICollectionView *collectionView;
@@ -41,7 +42,7 @@
         YBDViewBorderRadius(self.collectionView, 10);
         self.dataArray = @[
           @{@"icon":@"section_one_1",@"title":@"获取银豆"},
-          @{@"icon":@"section_one_2",@"title":@"银豆集市"},
+          @{@"icon":@"section_one_2",@"title":@"金豆集市"},
           @{@"icon":@"section_one_3",@"title":@"规则说明"},
           @{@"icon":@"section_one_4",@"title":@"我的钱包"},
           @{@"icon":@"section_one_5",@"title":@"任务订单"},
@@ -66,7 +67,8 @@
     }
     
     if (indexPath.row == 1) {
-        
+        LXGoldShopViewController * vc = [[LXGoldShopViewController alloc]init];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
     }
     
     if (indexPath.row == 2) {

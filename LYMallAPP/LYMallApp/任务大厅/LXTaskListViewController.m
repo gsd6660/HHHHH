@@ -41,7 +41,7 @@
 
 
 - (void)loadData{
-    [NetWorkConnection postURL:@"/api/task.task/lists" param:@{@"page":@(page),@"type":@"1"} success:^(id responseObject, BOOL success) {
+    [NetWorkConnection postURL:@"/api/task.task/lists" param:@{@"page":@(page),@"type":self.type} success:^(id responseObject, BOOL success) {
         NSArray * array = responseObject[@"data"][@"list"][@"data"];
         NSLog(@"%@",responseJSONString);
         if (page == 1) {
@@ -70,6 +70,12 @@
         cell.titleLabel.text = dic[@"title"];
         cell.descLabel.text = dic[@"subtitle"];
         cell.numberLabel.text = [NSString stringWithFormat:@"扣除%@银豆",dic[@"sliver"]];
+        NSDictionary * imageDic = dic[@"image"];
+        if ([imageDic isKindOfClass:[NSDictionary class]]) {
+            [cell.imgV sd_setImageWithURL:[NSURL URLWithString:imageDic[@"file_path"]] placeholderImage:[UIImage imageNamed:@"coll_sub_one"]];
+        }else{
+            cell.imgV.image = [UIImage imageNamed:@"coll_sub_one"];
+        }
         
     }
     cell.ClickBtn = ^{

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -44,7 +45,7 @@
                                 <rect key="frame" x="107" y="48" width="87" height="76"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金豆1%-2%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-7v-lnv">
-                                <rect key="frame" x="115" y="79" width="55.5" height="12"/>
+                                <rect key="frame" x="115" y="79" width="58.5" height="12"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -65,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金豆0.5%-1%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYx-We-2lr">
-                                <rect key="frame" x="18" y="79" width="65.5" height="12"/>
+                                <rect key="frame" x="18" y="79" width="68.5" height="12"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -81,9 +82,6 @@
                                 <state key="normal" title="立即进入">
                                     <color key="titleColor" red="0.65490196078431373" green="0.50588235294117645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="lowClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Y6G-FA-Nmw"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高级任务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOG-cn-yyk">
                                 <rect key="frame" x="212" y="56" width="61.5" height="18"/>
@@ -92,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金豆2%-5%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu6-eE-FIm">
-                                <rect key="frame" x="212" y="79" width="57" height="12"/>
+                                <rect key="frame" x="212" y="79" width="60" height="12"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -108,9 +106,6 @@
                                 <state key="normal" title="立即进入">
                                     <color key="titleColor" red="1" green="0.52941176470588236" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="heightClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GRb-AX-8AU"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdf-Db-vJM">
                                 <rect key="frame" x="115" y="99" width="50" height="15"/>
@@ -123,24 +118,46 @@
                                 <state key="normal" title="立即进入">
                                     <color key="titleColor" red="0.14509803921568626" green="0.72549019607843135" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izM-cT-bwp">
+                                <rect key="frame" x="10" y="48" width="87" height="76"/>
                                 <connections>
-                                    <action selector="centerClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jca-bI-DuT"/>
+                                    <action selector="leftClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yPh-Tz-cQc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryv-Pa-zhd">
+                                <rect key="frame" x="107" y="48" width="87" height="76"/>
+                                <connections>
+                                    <action selector="centerBtnClik:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zZn-BT-V2G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpT-bR-wsa">
+                                <rect key="frame" x="204" y="48" width="87" height="76"/>
+                                <connections>
+                                    <action selector="rightBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WYh-zD-uFx"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="loH-Hz-sal" firstAttribute="top" secondItem="RUG-M0-cul" secondAttribute="top" constant="8" id="0J2-nY-dSA"/>
+                            <constraint firstItem="KpT-bR-wsa" firstAttribute="leading" secondItem="SRj-r4-0ED" secondAttribute="leading" id="0Lz-xx-ing"/>
+                            <constraint firstItem="KpT-bR-wsa" firstAttribute="bottom" secondItem="SRj-r4-0ED" secondAttribute="bottom" id="0TC-nj-66c"/>
                             <constraint firstItem="duM-ad-Wwg" firstAttribute="width" secondItem="RUG-M0-cul" secondAttribute="width" id="0v7-zm-jXQ"/>
+                            <constraint firstItem="KpT-bR-wsa" firstAttribute="top" secondItem="SRj-r4-0ED" secondAttribute="top" id="1vs-Eb-duT"/>
                             <constraint firstItem="VtX-7v-lnv" firstAttribute="leading" secondItem="xeg-ca-KTy" secondAttribute="leading" id="5Ml-Fx-O7p"/>
+                            <constraint firstItem="KpT-bR-wsa" firstAttribute="trailing" secondItem="SRj-r4-0ED" secondAttribute="trailing" id="5id-XB-Zsc"/>
                             <constraint firstAttribute="trailing" secondItem="SRj-r4-0ED" secondAttribute="trailing" constant="10" id="5wz-jf-QUl"/>
                             <constraint firstItem="8oR-Op-YFG" firstAttribute="leading" secondItem="0HY-Mz-eB3" secondAttribute="trailing" constant="10" id="6fJ-oN-jHp"/>
                             <constraint firstItem="XYx-We-2lr" firstAttribute="leading" secondItem="loH-Hz-sal" secondAttribute="leading" id="6qW-he-Mcd"/>
                             <constraint firstItem="SRj-r4-0ED" firstAttribute="leading" secondItem="duM-ad-Wwg" secondAttribute="trailing" constant="10" id="7K1-i4-Uuv"/>
+                            <constraint firstItem="ryv-Pa-zhd" firstAttribute="leading" secondItem="duM-ad-Wwg" secondAttribute="leading" id="8l0-o7-Ibz"/>
                             <constraint firstItem="RAY-RV-7Ls" firstAttribute="leading" secondItem="XYx-We-2lr" secondAttribute="leading" id="DYR-Kj-YrH"/>
                             <constraint firstItem="duM-ad-Wwg" firstAttribute="leading" secondItem="RUG-M0-cul" secondAttribute="trailing" constant="10" id="H8q-qm-TQW"/>
                             <constraint firstItem="XYx-We-2lr" firstAttribute="top" secondItem="loH-Hz-sal" secondAttribute="bottom" constant="5" id="HTw-W9-Pg4"/>
+                            <constraint firstItem="izM-cT-bwp" firstAttribute="bottom" secondItem="RUG-M0-cul" secondAttribute="bottom" id="Hyf-Uv-crm"/>
                             <constraint firstItem="VtX-7v-lnv" firstAttribute="top" secondItem="xeg-ca-KTy" secondAttribute="bottom" constant="5" id="JEi-kY-E69"/>
+                            <constraint firstItem="izM-cT-bwp" firstAttribute="top" secondItem="RUG-M0-cul" secondAttribute="top" id="K2U-Y2-c6g"/>
                             <constraint firstItem="kdf-Db-vJM" firstAttribute="bottom" secondItem="duM-ad-Wwg" secondAttribute="bottom" constant="-10" id="LCh-vI-TtP"/>
                             <constraint firstItem="duM-ad-Wwg" firstAttribute="bottom" secondItem="RUG-M0-cul" secondAttribute="bottom" id="Ljh-2q-IZk"/>
                             <constraint firstItem="XuN-MG-hjA" firstAttribute="leading" secondItem="fu6-eE-FIm" secondAttribute="leading" id="QSh-Vx-br6"/>
@@ -149,6 +166,7 @@
                             <constraint firstItem="loH-Hz-sal" firstAttribute="leading" secondItem="RUG-M0-cul" secondAttribute="leading" constant="8" id="Tnn-wG-3ly"/>
                             <constraint firstItem="hOG-cn-yyk" firstAttribute="top" secondItem="SRj-r4-0ED" secondAttribute="top" constant="8" id="VMv-tI-myo"/>
                             <constraint firstItem="0HY-Mz-eB3" firstAttribute="top" secondItem="jJf-5c-4LV" secondAttribute="top" constant="10" id="W9v-gh-YD7"/>
+                            <constraint firstItem="ryv-Pa-zhd" firstAttribute="top" secondItem="duM-ad-Wwg" secondAttribute="top" id="ZmM-ai-qnH"/>
                             <constraint firstItem="xeg-ca-KTy" firstAttribute="leading" secondItem="duM-ad-Wwg" secondAttribute="leading" constant="8" id="aRs-Y1-zZ5"/>
                             <constraint firstItem="SRj-r4-0ED" firstAttribute="width" secondItem="RUG-M0-cul" secondAttribute="width" id="dGR-OM-tZV"/>
                             <constraint firstItem="kdf-Db-vJM" firstAttribute="leading" secondItem="VtX-7v-lnv" secondAttribute="leading" id="dIT-JY-Glj"/>
@@ -157,13 +175,17 @@
                             <constraint firstItem="hOG-cn-yyk" firstAttribute="leading" secondItem="SRj-r4-0ED" secondAttribute="leading" constant="8" id="ivk-dR-y1L"/>
                             <constraint firstItem="xeg-ca-KTy" firstAttribute="top" secondItem="duM-ad-Wwg" secondAttribute="top" constant="8" id="jZC-4W-CPX"/>
                             <constraint firstItem="SRj-r4-0ED" firstAttribute="bottom" secondItem="RUG-M0-cul" secondAttribute="bottom" id="jsY-k4-KLV"/>
+                            <constraint firstItem="izM-cT-bwp" firstAttribute="leading" secondItem="RUG-M0-cul" secondAttribute="leading" id="lZV-w1-vxW"/>
                             <constraint firstItem="duM-ad-Wwg" firstAttribute="top" secondItem="RUG-M0-cul" secondAttribute="top" id="mju-ht-5mJ"/>
                             <constraint firstItem="0HY-Mz-eB3" firstAttribute="leading" secondItem="jJf-5c-4LV" secondAttribute="leading" constant="10" id="mrS-ZG-GPb"/>
                             <constraint firstItem="SRj-r4-0ED" firstAttribute="leading" secondItem="duM-ad-Wwg" secondAttribute="trailing" constant="10" id="oLK-Gw-7AT"/>
                             <constraint firstItem="fu6-eE-FIm" firstAttribute="top" secondItem="hOG-cn-yyk" secondAttribute="bottom" constant="5" id="otb-EA-CUS"/>
+                            <constraint firstItem="ryv-Pa-zhd" firstAttribute="trailing" secondItem="duM-ad-Wwg" secondAttribute="trailing" id="r1D-Zf-lt4"/>
+                            <constraint firstItem="ryv-Pa-zhd" firstAttribute="bottom" secondItem="duM-ad-Wwg" secondAttribute="bottom" id="sGo-1g-SD4"/>
                             <constraint firstAttribute="bottom" secondItem="RUG-M0-cul" secondAttribute="bottom" constant="10" id="vfG-T5-Yl5"/>
                             <constraint firstItem="RAY-RV-7Ls" firstAttribute="bottom" secondItem="RUG-M0-cul" secondAttribute="bottom" constant="-10" id="wO4-l5-2Bx"/>
                             <constraint firstItem="RUG-M0-cul" firstAttribute="top" secondItem="8oR-Op-YFG" secondAttribute="bottom" constant="15" id="wUo-Kr-jaS"/>
+                            <constraint firstItem="izM-cT-bwp" firstAttribute="trailing" secondItem="RUG-M0-cul" secondAttribute="trailing" id="ypN-2c-ZHX"/>
                             <constraint firstItem="8oR-Op-YFG" firstAttribute="top" secondItem="jJf-5c-4LV" secondAttribute="top" constant="7" id="zmw-ZC-u83"/>
                         </constraints>
                     </view>
@@ -176,8 +198,8 @@
                     <constraint firstItem="jJf-5c-4LV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tgh-EK-RQc"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="bgView" destination="jJf-5c-4LV" id="Mgc-Mv-hti"/>
                 <outlet property="centerBtn" destination="kdf-Db-vJM" id="gD3-LT-FSp"/>
@@ -191,5 +213,8 @@
         <image name="section_three_1" width="106.5" height="76"/>
         <image name="section_three_2" width="106.5" height="76"/>
         <image name="section_three_3" width="106.5" height="76"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -161,7 +161,11 @@
         return 100;
     }
     if (indexPath.section == 1) {
-        return 160;
+        if (self.dataArray.count == 0) {
+            return 40;
+        }else{
+            return 160;
+        }
     }
     return 100;
 }

@@ -629,7 +629,7 @@ static NSString * GoodsVipTwoCellID = @"GiftPackageCell";
     QMUIButton * messageBtn = [QMUIButton buttonWithType:UIButtonTypeCustom];
     [messageBtn setTitle:@"分享" forState:0];
     [messageBtn setTitleColor: [UIColor grayColor] forState:0];
-    [messageBtn setImage:[UIImage imageNamed:@"jft_but_customerservice"] forState:0];
+    [messageBtn setImage:[UIImage imageNamed:@"gooddetailshare"] forState:0];
     [bottomView addSubview:messageBtn];
     messageBtn.titleLabel.font = [UIFont systemFontOfSize:11];
     messageBtn.imagePosition = QMUIButtonImagePositionTop;

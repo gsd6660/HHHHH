@@ -42,38 +42,51 @@
     self.fd_prefersNavigationBarHidden = YES;
     [self addTap];
     [self getData];
+    [self getUserInfo];
 }
 
 
 
--(void)getData{
-    [NetWorkConnection postURL:@"api/user/my_wallet" param:nil success:^(id responseObject, BOOL success) {
+-(void)getData{//api/user/my_wallet
+    [NetWorkConnection postURL:@"api/task.wallet/info" param:nil success:^(id responseObject, BOOL success) {
         NSLog(@"我的钱包=====%@",responseJSONString);
         if (responseSuccess) {
             NSDictionary *data = responseObject[@"data"];
-            
             [self getDataDic:data];
             
-            
+        }
+    } fail:^(NSError *error) {
+        
+    }];
+   
+}
+
+- (void)getUserInfo{
+    [NetWorkConnection postURL:@"api/user/my_wallet" param:nil success:^(id responseObject, BOOL success) {
+        if (responseSuccess) {
+            NSDictionary * dic = responseObject[@"data"];
+            self.memberCountLabel.text = [NSString stringWithFormat:@"%@",dic[@"member_account"]];
+            self.nameLable.text = [NSString stringWithFormat:@"%@",dic[@"nickName"]];
+            self.phoneLable.text = [NSString stringWithFormat:@"%@",dic[@"phone"]];
+            self.bankCardBumLable.text = [NSString stringWithFormat:@"%@",dic[@"bank_info"]];
         }
     } fail:^(NSError *error) {
         
     }];
 }
 
+
+
 -(void)getDataDic:(NSDictionary *)dic{
     
-    self.lable1.text = [NSString stringWithFormat:@"%@",dic[@"expend_money"]];
-    self.label2.text = [NSString stringWithFormat:@"%@",dic[@"balance"]];
-    self.label3.text = [NSString stringWithFormat:@"%@",dic[@"stock_num"]];
-    self.label4.text = [NSString stringWithFormat:@"%@",dic[@"gift_points"]];
-    self.label5.text = [NSString stringWithFormat:@"%@",dic[@"bonus_money"]];
-    self.label6.text = [NSString stringWithFormat:@"%@",dic[@"income_money"]];
+    self.lable1.text = [NSString stringWithFormat:@"%@",dic[@"gold"]];
+    self.label2.text = [NSString stringWithFormat:@"%@",dic[@"sliver"]];
+//    self.label3.text = [NSString stringWithFormat:@"%@",dic[@"stock_num"]];
+//    self.label4.text = [NSString stringWithFormat:@"%@",dic[@"gift_points"]];
+//    self.label5.text = [NSString stringWithFormat:@"%@",dic[@"bonus_money"]];
+//    self.label6.text = [NSString stringWithFormat:@"%@",dic[@"income_money"]];
     
-    self.memberCountLabel.text = [NSString stringWithFormat:@"%@",dic[@"member_account"]];
-    self.nameLable.text = [NSString stringWithFormat:@"%@",dic[@"nickName"]];
-    self.phoneLable.text = [NSString stringWithFormat:@"%@",dic[@"phone"]];
-    self.bankCardBumLable.text = [NSString stringWithFormat:@"%@",dic[@"bank_info"]];
+  
 
     
     

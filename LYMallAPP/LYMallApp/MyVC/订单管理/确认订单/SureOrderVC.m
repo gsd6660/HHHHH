@@ -220,6 +220,7 @@ static NSString * cellIDB = @"BuynowOneCell";
         }
     } fail:^(NSError *error) {
         [self hideEmptyView];
+        [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 

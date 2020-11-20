@@ -15,7 +15,7 @@
                                           owner:nil options:nil]lastObject];
 }
 - (IBAction)noUseButn:(UIButton *)sender {
-    [QMUITips showInfo:@"需要获得你的同意后才可继续使用隆源商城APP" inView:[[UIApplication sharedApplication]keyWindow] hideAfterDelay:2];
+    [QMUITips showInfo:@"需要获得你的同意后才可继续使用和乐宝PP" inView:[[UIApplication sharedApplication]keyWindow] hideAfterDelay:2];
 }
 
 - (IBAction)agreeButn:(UIButton *)sender {

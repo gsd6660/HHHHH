@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,15 +26,9 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息（0）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuG-TQ-OVf">
-                    <rect key="frame" x="137.5" y="48" width="80" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmh-l2-4Ls" customClass="SDCycleScrollView">
                     <rect key="frame" x="15" y="84" width="384" height="142"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="tmh-l2-4Ls" secondAttribute="height" multiplier="173:64" id="HJB-H1-QkX"/>
                     </constraints>
@@ -54,7 +49,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="ODG-Ti-Dcf" firstAttribute="leading" secondItem="Ngf-PU-XvM" secondAttribute="leading" constant="10" id="EDS-3q-PCe"/>
                         <constraint firstAttribute="height" constant="40" id="OIc-Ji-TRZ"/>
@@ -73,10 +68,8 @@
                 <constraint firstItem="tmh-l2-4Ls" firstAttribute="top" secondItem="0Gu-bG-32I" secondAttribute="bottom" constant="15" id="Mz8-Ak-jXU"/>
                 <constraint firstItem="HDq-Zw-Jx9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dUe-TK-4De"/>
                 <constraint firstItem="Ngf-PU-XvM" firstAttribute="top" secondItem="tmh-l2-4Ls" secondAttribute="bottom" constant="27" id="fn5-Zc-9Bx"/>
-                <constraint firstItem="UuG-TQ-OVf" firstAttribute="bottom" secondItem="0Gu-bG-32I" secondAttribute="bottom" id="hE6-w9-ni0"/>
                 <constraint firstAttribute="trailing" secondItem="HDq-Zw-Jx9" secondAttribute="trailing" id="iNA-of-Yaw"/>
                 <constraint firstItem="tmh-l2-4Ls" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="llH-3l-9pT"/>
-                <constraint firstItem="UuG-TQ-OVf" firstAttribute="leading" secondItem="0Gu-bG-32I" secondAttribute="trailing" constant="20" id="pqB-Zh-meV"/>
                 <constraint firstItem="0Gu-bG-32I" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="psi-0z-xjR"/>
                 <constraint firstItem="HDq-Zw-Jx9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qTp-7Q-Hzy"/>
             </constraints>
@@ -92,5 +85,8 @@
     </objects>
     <resources>
         <image name="head-topbg" width="375" height="176.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

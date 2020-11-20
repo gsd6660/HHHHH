@@ -69,8 +69,13 @@
 }
 
 - (void)loadNotice:(void(^)(BOOL isScu))requestScu{
-    [NetWorkConnection postURL:@"/api/task.task/notice" param:@{} success:^(id responseObject, BOOL success) {
-        
+    [NetWorkConnection postURL:@"/api/task.task/notice" param:nil success:^(id responseObject, BOOL success) {
+        NSLog(@"%@",responseJSONString);
+        if (responseSuccess) {
+            
+        }else{
+            
+        }
         requestScu(YES);
     } fail:^(NSError *error) {
         requestScu(YES);

@@ -42,6 +42,7 @@
 #import "CHImagePicker.h"
 #import "MHActionSheet.h"
 #import <UINavigationController+FDFullscreenPopGesture.h>
+#import <TYAlertController.h>
 
 //
 #import <AlipaySDK/AlipaySDK.h>

@@ -357,6 +357,8 @@
 		4737A775253AE32600097590 /* LXHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737A773253AE32600097590 /* LXHomeCollectionHeaderView.m */; };
 		4737A776253AE32600097590 /* LXHomeCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4737A774253AE32600097590 /* LXHomeCollectionHeaderView.xib */; };
 		4737A779253AE8E600097590 /* LXNewHomeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4737A778253AE8E600097590 /* LXNewHomeOneCell.m */; };
+		474FACB825679B3F00D52E27 /* LXGoldPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474FACB725679B3F00D52E27 /* LXGoldPopView.m */; };
+		474FACBB25679B5B00D52E27 /* LXGoldPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474FACBA25679B5B00D52E27 /* LXGoldPopView.xib */; };
 		4750921C255BE56300D21C79 /* LXSheqingDailiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4750921B255BE56300D21C79 /* LXSheqingDailiViewController.m */; };
 		4762F3CC25626507004BE9B1 /* LXHZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4762F3CA25626507004BE9B1 /* LXHZViewController.m */; };
 		4762F3CD25626507004BE9B1 /* LXHZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4762F3CB25626507004BE9B1 /* LXHZViewController.xib */; };
@@ -364,6 +366,10 @@
 		4762F3D925626C50004BE9B1 /* LXIncomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4762F3D725626C50004BE9B1 /* LXIncomeCell.m */; };
 		4762F3DA25626C50004BE9B1 /* LXIncomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4762F3D825626C50004BE9B1 /* LXIncomeCell.xib */; };
 		4778D855254C33C300AA3C5A /* WebInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4778D853254C33C200AA3C5A /* WebInfoViewController.m */; };
+		47A95390256769730095D7EA /* LXGoldShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A9538E256769730095D7EA /* LXGoldShopViewController.m */; };
+		47A95391256769730095D7EA /* LXGoldShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A9538F256769730095D7EA /* LXGoldShopViewController.xib */; };
+		47A9539725676E200095D7EA /* LXGoldShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A9539525676E200095D7EA /* LXGoldShopCell.m */; };
+		47A9539825676E200095D7EA /* LXGoldShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A9539625676E200095D7EA /* LXGoldShopCell.xib */; };
 		47D13438256239AB002324BB /* LXTaskOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D13437256239AB002324BB /* LXTaskOrderListVC.m */; };
 		47D134442562620F002324BB /* LXKeFuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D134422562620F002324BB /* LXKeFuViewController.m */; };
 		47D134452562620F002324BB /* LXKeFuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D134432562620F002324BB /* LXKeFuViewController.xib */; };
@@ -953,7 +959,7 @@
 		04E84529244AF867002B9DAB /* CommitAppleyDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommitAppleyDataCell.h; sourceTree = "<group>"; };
 		04E8452A244AF867002B9DAB /* CommitAppleyDataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommitAppleyDataCell.m; sourceTree = "<group>"; };
 		04E8452B244AF867002B9DAB /* CommitAppleyDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitAppleyDataCell.xib; sourceTree = "<group>"; };
-		04F07DF62410EA7C00ECC06C /* 隆源商城.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "隆源商城.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F07DF62410EA7C00ECC06C /* 和乐宝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "和乐宝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F07DF92410EA7C00ECC06C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04F07DFA2410EA7C00ECC06C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04F07DFF2410EA7C00ECC06C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1089,6 +1095,9 @@
 		4737A774253AE32600097590 /* LXHomeCollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXHomeCollectionHeaderView.xib; sourceTree = "<group>"; };
 		4737A777253AE8E600097590 /* LXNewHomeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXNewHomeOneCell.h; sourceTree = "<group>"; };
 		4737A778253AE8E600097590 /* LXNewHomeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXNewHomeOneCell.m; sourceTree = "<group>"; };
+		474FACB625679B3F00D52E27 /* LXGoldPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGoldPopView.h; sourceTree = "<group>"; };
+		474FACB725679B3F00D52E27 /* LXGoldPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGoldPopView.m; sourceTree = "<group>"; };
+		474FACBA25679B5B00D52E27 /* LXGoldPopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXGoldPopView.xib; sourceTree = "<group>"; };
 		4750921A255BE56300D21C79 /* LXSheqingDailiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSheqingDailiViewController.h; sourceTree = "<group>"; };
 		4750921B255BE56300D21C79 /* LXSheqingDailiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSheqingDailiViewController.m; sourceTree = "<group>"; };
 		4762F3C925626507004BE9B1 /* LXHZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHZViewController.h; sourceTree = "<group>"; };
@@ -1101,6 +1110,12 @@
 		4762F3D825626C50004BE9B1 /* LXIncomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXIncomeCell.xib; sourceTree = "<group>"; };
 		4778D853254C33C200AA3C5A /* WebInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebInfoViewController.m; sourceTree = "<group>"; };
 		4778D854254C33C300AA3C5A /* WebInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInfoViewController.h; sourceTree = "<group>"; };
+		47A9538D256769730095D7EA /* LXGoldShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGoldShopViewController.h; sourceTree = "<group>"; };
+		47A9538E256769730095D7EA /* LXGoldShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGoldShopViewController.m; sourceTree = "<group>"; };
+		47A9538F256769730095D7EA /* LXGoldShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXGoldShopViewController.xib; sourceTree = "<group>"; };
+		47A9539425676E200095D7EA /* LXGoldShopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGoldShopCell.h; sourceTree = "<group>"; };
+		47A9539525676E200095D7EA /* LXGoldShopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGoldShopCell.m; sourceTree = "<group>"; };
+		47A9539625676E200095D7EA /* LXGoldShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXGoldShopCell.xib; sourceTree = "<group>"; };
 		47D13436256239AB002324BB /* LXTaskOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTaskOrderListVC.h; sourceTree = "<group>"; };
 		47D13437256239AB002324BB /* LXTaskOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTaskOrderListVC.m; sourceTree = "<group>"; };
 		47D134412562620F002324BB /* LXKeFuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKeFuViewController.h; sourceTree = "<group>"; };
@@ -2381,7 +2396,7 @@
 		04F07DF72410EA7C00ECC06C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04F07DF62410EA7C00ECC06C /* 隆源商城.app */,
+				04F07DF62410EA7C00ECC06C /* 和乐宝.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2789,11 +2804,28 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		47A593B82551489500EA0F40 /* SubVc */ = {
+		47A593B82551489500EA0F40 /* 金豆集市 */ = {
 			isa = PBXGroup;
 			children = (
+				47A9539325676E050095D7EA /* Views */,
+				47A9538D256769730095D7EA /* LXGoldShopViewController.h */,
+				47A9538E256769730095D7EA /* LXGoldShopViewController.m */,
+				47A9538F256769730095D7EA /* LXGoldShopViewController.xib */,
 			);
-			name = SubVc;
+			name = "金豆集市";
+			sourceTree = "<group>";
+		};
+		47A9539325676E050095D7EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47A9539425676E200095D7EA /* LXGoldShopCell.h */,
+				47A9539525676E200095D7EA /* LXGoldShopCell.m */,
+				47A9539625676E200095D7EA /* LXGoldShopCell.xib */,
+				474FACB625679B3F00D52E27 /* LXGoldPopView.h */,
+				474FACB725679B3F00D52E27 /* LXGoldPopView.m */,
+				474FACBA25679B5B00D52E27 /* LXGoldPopView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		47D13440256261DA002324BB /* 客服 */ = {
@@ -3007,7 +3039,7 @@
 		66DA63DB253C32C200EC7109 /* 任务大厅 */ = {
 			isa = PBXGroup;
 			children = (
-				47A593B82551489500EA0F40 /* SubVc */,
+				47A593B82551489500EA0F40 /* 金豆集市 */,
 				66417012253DE34700CD0A43 /* 任务详情 */,
 				66417007253DDDE500CD0A43 /* 规则列表 */,
 				66DA63DF253C341400EC7109 /* views */,
@@ -3363,7 +3395,7 @@
 			);
 			name = LYMallApp;
 			productName = LYMallApp;
-			productReference = 04F07DF62410EA7C00ECC06C /* 隆源商城.app */;
+			productReference = 04F07DF62410EA7C00ECC06C /* 和乐宝.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -3441,6 +3473,7 @@
 				04197537241A11520081A9AC /* MallCell.xib in Resources */,
 				70CEDC6B24357D8200230CDC /* CommissionOneCell.xib in Resources */,
 				04A166492421B4370077F0FD /* MyOrderCell.xib in Resources */,
+				474FACBB25679B5B00D52E27 /* LXGoldPopView.xib in Resources */,
 				04D5694C2481EE99006D5C37 /* XinOrderPayTwoCell.xib in Resources */,
 				04F07E062410EA7D00ECC06C /* Assets.xcassets in Resources */,
 				0434B5E1247BB1880067C770 /* ActivateMemberTwoVC.xib in Resources */,
@@ -3481,6 +3514,7 @@
 				041E5DF7242DF46400E24CF5 /* MyCollectionCell.xib in Resources */,
 				04B96053244591B000A96F24 /* EditPhoneNumerVC.xib in Resources */,
 				0434B5D6247BA1510067C770 /* RegisterMemberCell.xib in Resources */,
+				47A9539825676E200095D7EA /* LXGoldShopCell.xib in Resources */,
 				470D2E78253D8FAF0092B41D /* LXCollegeHeaderView.xib in Resources */,
 				04A691582420C61D006500C8 /* AddMyAddressListVC.xib in Resources */,
 				04FD4CB024553AED000CF66C /* AddTeamVC.xib in Resources */,
@@ -3517,6 +3551,7 @@
 				045D0614245455FF001F3F9E /* CommissionManagerTwoCell.xib in Resources */,
 				708F79E7243442B500073D6A /* WithdrawDepositVC.xib in Resources */,
 				048FFE8E247E7C5A0076E9F8 /* RegisterMemberTwoCell.xib in Resources */,
+				47A95391256769730095D7EA /* LXGoldShopViewController.xib in Resources */,
 				045A7037248112960014D834 /* XinWithDrawRecordVC.xib in Resources */,
 				7021BDE42446A25A0003472C /* AftermarketVC.xib in Resources */,
 				047D3F622418EFD200171298 /* HomeFightCell.xib in Resources */,
@@ -3701,6 +3736,7 @@
 				0456BFF82449C80C001D71B4 /* TggStarEvaluationView.m in Sources */,
 				42586A812425B16100A3E6F7 /* LoginVC.m in Sources */,
 				470D2E61253D30600092B41D /* LXVipOneCell.m in Sources */,
+				47A95390256769730095D7EA /* LXGoldShopViewController.m in Sources */,
 				47E84E052564D04B005EFFDE /* LXCollegeVideoDetailVC.m in Sources */,
 				0476C40B243DE3A500A7B094 /* AppleyAgentVC.m in Sources */,
 				0436B30A241725A5004BF13F /* HomeFourCell.m in Sources */,
@@ -3818,6 +3854,7 @@
 				04170BA6247BC95600B4E072 /* ClassifyTableViewCell.m in Sources */,
 				66DA63DE253C339800EC7109 /* LXTaskHallVC.m in Sources */,
 				4737A769253ADCF800097590 /* DALabeledCircularProgressView.m in Sources */,
+				474FACB825679B3F00D52E27 /* LXGoldPopView.m in Sources */,
 				0457D9E624516855000B58B3 /* AgentManagerCell.m in Sources */,
 				04A166032421B1760077F0FD /* ZJContentView.m in Sources */,
 				047AE16424568410002B9BAD /* TeamModel.m in Sources */,
@@ -3944,6 +3981,7 @@
 				04A6915C2420C61D006500C8 /* AddMyAddressListVC.m in Sources */,
 				42586A722424AD3800A3E6F7 /* CouponOneCell.m in Sources */,
 				04F4B8252449BA2A00F7FCCE /* NSString+FDStringSize.m in Sources */,
+				47A9539725676E200095D7EA /* LXGoldShopCell.m in Sources */,
 				04E7796A2465616B006EF48D /* NibView.m in Sources */,
 				470D2E57253D270A0092B41D /* LXVIPViewController.m in Sources */,
 				4737A758253ADCE100097590 /* PYPhoto.m in Sources */,
@@ -4097,7 +4135,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_ENTITLEMENTS = "LYMallApp/隆源商城.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "LYMallApp/和乐宝.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
@@ -4117,7 +4155,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ly.helebao;
-				PRODUCT_NAME = "隆源商城";
+				PRODUCT_NAME = "和乐宝";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4129,7 +4167,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_ENTITLEMENTS = "LYMallApp/隆源商城.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "LYMallApp/和乐宝.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
@@ -4149,7 +4187,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ly.helebao;
-				PRODUCT_NAME = "隆源商城";
+				PRODUCT_NAME = "和乐宝";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
