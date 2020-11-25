@@ -140,10 +140,10 @@
     _model = model;
     [self.goodsImageView yy_setImageWithURL:[NSURL URLWithString:model.goods_image] placeholder:CCImage(@"")];
     self.titleLable.text = model.goods_name;
-    self.desLable.text = [NSString stringWithFormat:@"%@",model.sliver];
+    self.desLable.text =  [NSString stringWithFormat:@"赠送银豆:%@",model.sliver];
     self.salesLable.text = [NSString stringWithFormat:@"月销%@件",model.goods_sales];
     self.priceLable.text = model.goods_sku[@"goods_price"];;
-    self.desLable.text = model.selling_point;
+//    self.desLable.text = model.selling_point;
 }
 
 
@@ -151,10 +151,10 @@
     _mallModel = mallModel;
     [self.goodsImageView yy_setImageWithURL:[NSURL URLWithString:mallModel.goods_image] placeholder:CCImage(@"")];
     self.titleLable.text = mallModel.goods_name;
-    self.desLable.text =  [NSString stringWithFormat:@"%@",mallModel.sliver];
+    self.desLable.text =  [NSString stringWithFormat:@"赠送银豆:%@",mallModel.sliver];
     self.salesLable.text = [NSString stringWithFormat:@"月销%@件",mallModel.goods_sales];
     self.priceLable.text = mallModel.goods_sku[@"goods_price"];;
-    self.desLable.text = mallModel.selling_point;
+//    self.desLable.text = mallModel.selling_point;
 }
 
 

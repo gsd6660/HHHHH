@@ -8,12 +8,18 @@
 
 #import "LXTaskDetalViewController.h"
 #import <WebKit/WebKit.h>
+
+
 @interface LXTaskDetalViewController ()<WKNavigationDelegate>
 
 @property(nonatomic, strong) UIProgressView *progressView;
 @property(nonatomic, strong) WKWebView *wkWebView;
 
 @property(nonatomic, strong) UILabel * rightLabel;
+
+
+
+@property(nonatomic, strong) UITextView * contentView;
 
 @end
 
@@ -48,6 +54,19 @@
     [self.wkWebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     
     [self.view addSubview:self.progressView];
+  
+
+//    self.contentView = [[UITextView alloc]init];
+//    [self.view addSubview:self.contentView];
+//    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.mas_equalTo(self.view);
+//    }];
+//
+////    NSMutableAttributedString * text = [[NSMutableAttributedString alloc]initWithString:self.content ];
+//    NSAttributedString * text = [[NSAttributedString alloc]initWithData:[self.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+//
+//
+//    self.contentView.attributedText = text;
     
     
     self.rightLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -70,7 +89,7 @@
                 self.rightLabel.hidden = YES;
                 //(6)
 //                [QMUITips showSucceed:@"完成任务" inView:self.view];
-                [self taskWC];
+//                [self taskWC];
                 dispatch_cancel(timer);
             } else {
                 self.rightLabel.text = [NSString stringWithFormat:@"%ldS",second];

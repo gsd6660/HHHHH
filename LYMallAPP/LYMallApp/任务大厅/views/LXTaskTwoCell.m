@@ -15,7 +15,10 @@
     // Initialization code
     YBDViewBorderRadius(self, 10);
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    [self.jhtView marqueeOfSettingWithState:MarqueeStart_V];
+//    self.jhtView.textColor = UIColor.grayColor;
+    self.jhtView.textFont = [UIFont systemFontOfSize:14];
+    self.jhtView.numberOfLines = 0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

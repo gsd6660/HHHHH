@@ -20,8 +20,8 @@
     _model = model;
     [self.userImageView yy_setImageWithURL:[NSURL URLWithString:model.avatarUrl] placeholder:CCImage(@"jft_icon_headportrait")];
     self.nameLabel.text = model.nickName;
-    self.phoneLabel.text = [NSString stringWithFormat:@"手机号：%@",model.mobile];
-    self.moneyLabel.text = [NSString stringWithFormat:@"累计佣金：%@",model.commission];
+    self.phoneLabel.text = [NSString stringWithFormat:@"手机号：%@",model.phone];
+//    self.moneyLabel.text = [NSString stringWithFormat:@"累计佣金：%@",model.commission];
     self.leveLabel.text = model.levelname;
 
     

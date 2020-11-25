@@ -44,7 +44,7 @@
 
 
 - (void)loadData{
-    [NetWorkConnection postURL:@"/api/task.task/order" param:@{@"page":@(page),@"type":@"1"} success:^(id responseObject, BOOL success) {
+    [NetWorkConnection postURL:@"/api/task.task/order" param:@{@"page":@(page)} success:^(id responseObject, BOOL success) {
         NSArray * array = responseObject[@"data"][@"data"];
         NSLog(@"%@",array);
         if (page == 1) {
@@ -83,21 +83,8 @@
     cell.ClickBtn = ^{
         NSDictionary * dic = self.dataArray[indexPath.section];
         NSLog(@"%@",dic);
-//        [QMUITips showLoadingInView:self.view];
-//        [NetWorkConnection postURL:@"api/task.task/accept" param:@{@"task_id":dic[@"id"]} success:^(id responseObject, BOOL success) {
-//            [QMUITips hideAllTipsInView:self.view];
-//            if (responseSuccess) {
-//                ShowHUD(responseMessage);
-//            }else{
-//                ShowErrorHUD(responseMessage);
-//            }
-//
-//        } fail:^(NSError *error) {
-//            ShowErrorHUD(@"失败");
-//        }];
-        
         LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
-        vc.content = dic[@"article_content"];
+        vc.content =  dic[@"article_content"];
         vc.orderID = dic[@"id"];
         [self.navigationController pushViewController:vc animated:YES];
         
@@ -107,6 +94,7 @@
     return cell;
 
 }
+ 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     

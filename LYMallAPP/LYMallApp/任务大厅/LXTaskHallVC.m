@@ -17,6 +17,7 @@
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong)  LXTaskHeaderView * hearderView;
 @property(nonatomic, strong) NSMutableArray * bannerLists;
+@property(nonatomic, strong) NSMutableArray * noticeList;
 
 @end
 
@@ -72,7 +73,7 @@
     [NetWorkConnection postURL:@"/api/task.task/notice" param:nil success:^(id responseObject, BOOL success) {
         NSLog(@"%@",responseJSONString);
         if (responseSuccess) {
-            
+            self.noticeList = responseObject[@"data"][@"list"];
         }else{
             
         }
@@ -100,7 +101,9 @@
     }
     if (indexPath.section == 1) {
         LXTaskTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LXTaskTwoCell"];
-        
+        if (self.noticeList.count>0) {
+            cell.jhtView.sourceArray = self.noticeList;
+        }
         return cell;
     }else{
         LXTaskThreeCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LXTaskThreeCell"];

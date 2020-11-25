@@ -9,6 +9,9 @@
 #import "InviteFriendsVC.h"
 #import "DetailView.h"
 @interface InviteFriendsVC ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler,CLLocationManagerDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+{
+    UIImageView * codeImage;
+}
 @property (weak, nonatomic) IBOutlet DetailView *wk;
 @property (strong, nonatomic)UIImage *shareImage;
 @property (strong, nonatomic)UIActivityIndicatorView *testActivityIndicator;
@@ -30,11 +33,14 @@
     self.wk.scrollView.bounces = NO;
     self.wk.UIDelegate = self;
     self.wk.navigationDelegate = self;
-     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@wap/invite/index?Authorization=%@",BaseUrl,token]]];
+    NSString * url = [NSString stringWithFormat:@"%@wap/invite/index&Authorization=%@",BaseUrl,token];
+    NSLog(@"%@",url);
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [self.wk loadRequest:request];
- [self.wk.configuration.userContentController addScriptMessageHandler:self name:@"share"];//扫码功能
-
+    [self.wk.configuration.userContentController addScriptMessageHandler:self name:@"share"];//扫码功能
+ 
 }
+ 
 -(void)creatActivetyView{
     UIActivityIndicatorView *testActivityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
      testActivityIndicator.center = CGPointMake(100.0f, 100.0f);//只能设置中心，不能设置大小

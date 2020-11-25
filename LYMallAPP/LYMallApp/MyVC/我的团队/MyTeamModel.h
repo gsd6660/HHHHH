@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , assign) NSInteger              user_id;
 @property (nonatomic , copy) NSString              * create_time;
 @property (nonatomic , copy) NSString              * nickName;
+@property (nonatomic , copy) NSString              * phone;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -32,6 +32,12 @@
 
 @implementation LXMeViewController
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
@@ -42,7 +48,7 @@
     
     self.headerView = [[NSBundle mainBundle]loadNibNamed:@"LXMeHeaderView" owner:self options:nil].lastObject;
     self.tableView.tableHeaderView = self.headerView;
-    [self loadData];
+//    [self loadData];
 }
 
 

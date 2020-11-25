@@ -111,6 +111,7 @@ static NSString * orderPayCellID = @"OrderPayCell";
     [NetWorkConnection postURL:@"/api/user/bank_card_detail" param:nil success:^(id responseObject, BOOL success) {
         if (responseSuccess) {
             self.dataDic = responseObject[@"data"];
+            [self.tableView reloadData];
         }else{
             ShowErrorHUD(responseObject[@"msg"]);
         }
@@ -279,7 +280,21 @@ static NSString * orderPayCellID = @"OrderPayCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([CheackNullOjb cc_isNullOrNilWithObject:self.dataDic] == NO) {
+    
+    
+    
+    
+     if (indexPath.row == self.dataArray.count){
+        if ([CheackNullOjb cc_isNullOrNilWithObject:self.dataDic]) {
+            MJWeakSelf;
+            AddBankCardVC * vc = [AddBankCardVC new];
+            vc.block = ^{
+                [weakSelf requestData];
+
+            };
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }else{
         //之前选中的，取消选择
         OrderPayCell *celled = [tableView cellForRowAtIndexPath:_selIndex];
         [celled.selectBtn setImage:[UIImage imageNamed:@"jft_but_Unselected"] forState:UIControlStateNormal];
@@ -291,15 +306,6 @@ static NSString * orderPayCellID = @"OrderPayCell";
         [cell.selectBtn setImage: [UIImage imageNamed:@"jft_but_selected"] forState:UIControlStateNormal];
         self.payType = [NSString stringWithFormat:@"%@",self.dataArray[indexPath.row][@"pay_type"]];
         NSLog(@"选择====%@",self.payType);
-    }else{
-        MJWeakSelf;
-        AddBankCardVC * vc = [AddBankCardVC new];
-        vc.block = ^{
-            [weakSelf requestData];
-
-        };
-        [self.navigationController pushViewController:vc animated:YES];
-       
     }
     
 }

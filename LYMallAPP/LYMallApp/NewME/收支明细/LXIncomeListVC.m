@@ -53,24 +53,24 @@
 //    api/task.wallet/log 收益记录
     
     
-//    if (self.type == LXSilver) {
-//        [NetWorkConnection postURL:@"api/task.wallet/sliverLog" param:@{@"page":@(page)} success:^(id responseObject, BOOL success) {
-//            NSLog(@"%@",responseJSONString);
-//            if (responseSuccess) {
-//                if (page == 1) {
-//                    [self.dataArray removeAllObjects];
-//                }
-//                NSArray * arr = responseObject[@"data"][@"list"][@"data"];
-//                [self.dataArray addObjectsFromArray:arr];
-//
-//                [self.tableView.mj_header endRefreshing];
-//                [self.tableView.mj_footer endRefreshing];
-//                [self.tableView reloadData];
-//            }
-//        } fail:^(NSError *error) {
-//
-//        }];
-//    }else{
+    if (self.type == LXSilver) {
+        [NetWorkConnection postURL:@"api/task.wallet/sliverLog" param:@{@"page":@(page)} success:^(id responseObject, BOOL success) {
+            NSLog(@"%@",responseJSONString);
+            if (responseSuccess) {
+                if (page == 1) {
+                    [self.dataArray removeAllObjects];
+                }
+                NSArray * arr = responseObject[@"data"][@"list"][@"data"];
+                [self.dataArray addObjectsFromArray:arr];
+
+                [self.tableView.mj_header endRefreshing];
+                [self.tableView.mj_footer endRefreshing];
+                [self.tableView reloadData];
+            }
+        } fail:^(NSError *error) {
+
+        }];
+    }else{
         [NetWorkConnection postURL:@"api/task.wallet/log" param:@{@"page":@(page)} success:^(id responseObject, BOOL success) {
             NSLog(@"%@",responseJSONString);
             if (responseSuccess) {
@@ -87,7 +87,7 @@
         } fail:^(NSError *error) {
             
         }];
-//    }
+    }
     
   
 }
@@ -102,8 +102,19 @@
     
     if (self.dataArray.count>0) {
         NSDictionary * dic = self.dataArray[indexPath.row];
-        cell.titleLabel.text = dic[@"name"];
-        cell.descLabel.text = [NSString stringWithFormat:@"%@",dic[@"reward"]];
+        
+        if (self.type == LXSilver) {
+            cell.titleLabel.text = dic[@"type_name"];
+            if ([dic[@"method"] intValue] == 2) {
+                cell.descLabel.text = [NSString stringWithFormat:@"- %@",dic[@"value"]];
+            }else{
+                cell.descLabel.text = [NSString stringWithFormat:@"+ %@",dic[@"value"]];
+            }
+        }else{
+            cell.titleLabel.text = dic[@"name"];
+            cell.descLabel.text = [NSString stringWithFormat:@"%@",dic[@"reward"]];
+        }
+        
     }
     return cell;
 }
