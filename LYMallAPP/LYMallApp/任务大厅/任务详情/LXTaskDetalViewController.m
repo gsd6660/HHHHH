@@ -89,7 +89,7 @@
                 self.rightLabel.hidden = YES;
                 //(6)
 //                [QMUITips showSucceed:@"完成任务" inView:self.view];
-//                [self taskWC];
+                [self taskWC];
                 dispatch_cancel(timer);
             } else {
                 self.rightLabel.text = [NSString stringWithFormat:@"%ldS",second];

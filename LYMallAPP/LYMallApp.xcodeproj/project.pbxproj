@@ -366,6 +366,9 @@
 		4762F3D925626C50004BE9B1 /* LXIncomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4762F3D725626C50004BE9B1 /* LXIncomeCell.m */; };
 		4762F3DA25626C50004BE9B1 /* LXIncomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4762F3D825626C50004BE9B1 /* LXIncomeCell.xib */; };
 		4778D855254C33C300AA3C5A /* WebInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4778D853254C33C200AA3C5A /* WebInfoViewController.m */; };
+		4782487B256E4C9000C75A52 /* lauange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47824878256E4C8F00C75A52 /* lauange@3x.png */; };
+		4782487C256E4C9000C75A52 /* lauange.png in Resources */ = {isa = PBXBuildFile; fileRef = 47824879256E4C8F00C75A52 /* lauange.png */; };
+		4782487D256E4C9000C75A52 /* lauange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4782487A256E4C9000C75A52 /* lauange@2x.png */; };
 		47A95390256769730095D7EA /* LXGoldShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A9538E256769730095D7EA /* LXGoldShopViewController.m */; };
 		47A95391256769730095D7EA /* LXGoldShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A9538F256769730095D7EA /* LXGoldShopViewController.xib */; };
 		47A9539725676E200095D7EA /* LXGoldShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A9539525676E200095D7EA /* LXGoldShopCell.m */; };
@@ -374,8 +377,6 @@
 		47D134442562620F002324BB /* LXKeFuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D134422562620F002324BB /* LXKeFuViewController.m */; };
 		47D134452562620F002324BB /* LXKeFuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D134432562620F002324BB /* LXKeFuViewController.xib */; };
 		47E84E052564D04B005EFFDE /* LXCollegeVideoDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E84E042564D04B005EFFDE /* LXCollegeVideoDetailVC.m */; };
-		47F4A4D5256B6ABC005D1FFF /* lauange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F4A4D3256B6ABC005D1FFF /* lauange@2x.png */; };
-		47F4A4D6256B6ABC005D1FFF /* lauange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47F4A4D4256B6ABC005D1FFF /* lauange@3x.png */; };
 		66416FF0253DB8C700CD0A43 /* LXCollegeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */; };
 		66416FF1253DB8C700CD0A43 /* LXCollegeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */; };
 		66416FF5253DB8DB00CD0A43 /* LXCollegeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66416FF3253DB8DB00CD0A43 /* LXCollegeTwoCell.m */; };
@@ -1112,6 +1113,9 @@
 		4762F3D825626C50004BE9B1 /* LXIncomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXIncomeCell.xib; sourceTree = "<group>"; };
 		4778D853254C33C200AA3C5A /* WebInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebInfoViewController.m; sourceTree = "<group>"; };
 		4778D854254C33C300AA3C5A /* WebInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInfoViewController.h; sourceTree = "<group>"; };
+		47824878256E4C8F00C75A52 /* lauange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauange@3x.png"; sourceTree = "<group>"; };
+		47824879256E4C8F00C75A52 /* lauange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lauange.png; sourceTree = "<group>"; };
+		4782487A256E4C9000C75A52 /* lauange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauange@2x.png"; sourceTree = "<group>"; };
 		47A9538D256769730095D7EA /* LXGoldShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGoldShopViewController.h; sourceTree = "<group>"; };
 		47A9538E256769730095D7EA /* LXGoldShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGoldShopViewController.m; sourceTree = "<group>"; };
 		47A9538F256769730095D7EA /* LXGoldShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXGoldShopViewController.xib; sourceTree = "<group>"; };
@@ -1126,8 +1130,6 @@
 		47E84E032564D04B005EFFDE /* LXCollegeVideoDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollegeVideoDetailVC.h; sourceTree = "<group>"; };
 		47E84E042564D04B005EFFDE /* LXCollegeVideoDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollegeVideoDetailVC.m; sourceTree = "<group>"; };
 		47F4A496256B47AB005D1FFF /* 和乐宝.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "和乐宝.entitlements"; sourceTree = "<group>"; };
-		47F4A4D3256B6ABC005D1FFF /* lauange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauange@2x.png"; sourceTree = "<group>"; };
-		47F4A4D4256B6ABC005D1FFF /* lauange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauange@3x.png"; sourceTree = "<group>"; };
 		66416FED253DB8C700CD0A43 /* LXCollegeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollegeOneCell.h; sourceTree = "<group>"; };
 		66416FEE253DB8C700CD0A43 /* LXCollegeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollegeOneCell.m; sourceTree = "<group>"; };
 		66416FEF253DB8C700CD0A43 /* LXCollegeOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXCollegeOneCell.xib; sourceTree = "<group>"; };
@@ -2437,8 +2439,9 @@
 				0436B301241722E1004BF13F /* BaseViewController.m */,
 				708F79F42434846700073D6A /* MemberOneCell.h */,
 				04F07E022410EA7C00ECC06C /* Main.storyboard */,
-				47F4A4D3256B6ABC005D1FFF /* lauange@2x.png */,
-				47F4A4D4256B6ABC005D1FFF /* lauange@3x.png */,
+				47824879256E4C8F00C75A52 /* lauange.png */,
+				4782487A256E4C9000C75A52 /* lauange@2x.png */,
+				47824878256E4C8F00C75A52 /* lauange@3x.png */,
 				04232807245AA2FB006B8372 /* qdy.png */,
 				04232805245AA2F9006B8372 /* qdy@2x.png */,
 				04232806245AA2FA006B8372 /* qdy@3x.png */,
@@ -3504,7 +3507,6 @@
 				045A703D248118320014D834 /* XinOrderPayVC.xib in Resources */,
 				04538CA12444526C003792B4 /* MySubscripCell.xib in Resources */,
 				04B20CFE241B726B00821468 /* HBK_ShopppingCartBottomView.xib in Resources */,
-				47F4A4D5256B6ABC005D1FFF /* lauange@2x.png in Resources */,
 				041E1B622458083A00D8B8E1 /* 17775-success.json in Resources */,
 				04308DFA2461511300EB776C /* SystemMessageVC.xib in Resources */,
 				04F4B83E2449C08D00F7FCCE /* MHSheetView.xib in Resources */,
@@ -3533,6 +3535,7 @@
 				045A70322480F71D0014D834 /* XinWithdrawVC.xib in Resources */,
 				0457DA022451B2E5000B58B3 /* BandZFBVC.xib in Resources */,
 				42586A842425B16100A3E6F7 /* ForgotPassWVC.xib in Resources */,
+				4782487B256E4C9000C75A52 /* lauange@3x.png in Resources */,
 				66417011253DDEA600CD0A43 /* LXRuleTableViewCell.xib in Resources */,
 				0452E343242DE85B006D2D31 /* MyOneCell.xib in Resources */,
 				66DA63F9253C4F9700EC7109 /* LXTaskListTableViewCell.xib in Resources */,
@@ -3566,6 +3569,7 @@
 				047D3F622418EFD200171298 /* HomeFightCell.xib in Resources */,
 				702041972431F983001F4806 /* GoodsSelectCell.xib in Resources */,
 				04308DE62461083000EB776C /* MessageListVC.xib in Resources */,
+				4782487C256E4C9000C75A52 /* lauange.png in Resources */,
 				665D08B3242B8062008BC4D7 /* GoodsThreeCell.xib in Resources */,
 				04232809245AA2FC006B8372 /* qdy@3x.png in Resources */,
 				042AB5E52449815D00FA987D /* AnswerCell.xib in Resources */,
@@ -3590,7 +3594,6 @@
 				04CB26CB243EB99500A37C76 /* MyTeamVC.xib in Resources */,
 				04434480241F1F7F00F3F8C2 /* AppraiseListCell.xib in Resources */,
 				04232810245ABE01006B8372 /* UpdateAppPopView.xib in Resources */,
-				47F4A4D6256B6ABC005D1FFF /* lauange@3x.png in Resources */,
 				665D08B8242B91F8008BC4D7 /* GoodsTagsCell.xib in Resources */,
 				04434466241F07C300F3F8C2 /* MessageVC.xib in Resources */,
 				709532FF2431848C005F72CD /* GoodsImageCell.xib in Resources */,
@@ -3609,6 +3612,7 @@
 				708F79EC24346C8200073D6A /* WithdrawDepositSucceeVC.xib in Resources */,
 				04197556241A21050081A9AC /* JSCartCell.xib in Resources */,
 				470D2E67253D30700092B41D /* LXVipTwoCell.xib in Resources */,
+				4782487D256E4C9000C75A52 /* lauange@2x.png in Resources */,
 				048FFE89247E02F60076E9F8 /* GiftPackageCollectionCell.xib in Resources */,
 				0434B5CF247B67A70067C770 /* RegisterMemberFootView.xib in Resources */,
 				045D8E70247D1A8A00055E0F /* AmountConsumptionFootView.xib in Resources */,

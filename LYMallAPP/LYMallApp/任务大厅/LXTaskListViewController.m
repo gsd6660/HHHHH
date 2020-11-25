@@ -126,8 +126,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSDictionary * dic = self.dataArray[indexPath.section];
-//
+    NSDictionary * dic = self.dataArray[indexPath.section];
+
+    NSLog(@"%@",dic[@"article_content"]);
 //    LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
 //    vc.content = dic[@"article_content"];
 //    vc.orderID = dic[@"id"];

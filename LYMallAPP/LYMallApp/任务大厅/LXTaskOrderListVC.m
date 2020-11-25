@@ -82,7 +82,8 @@
     }
     cell.ClickBtn = ^{
         NSDictionary * dic = self.dataArray[indexPath.section];
-        NSLog(@"%@",dic);
+        NSLog(@"%@",dic[@"article_content"]);
+        
         LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
         vc.content =  dic[@"article_content"];
         vc.orderID = dic[@"id"];
