@@ -103,8 +103,8 @@ static NSString * tableViewCellIdentifier = @"ClassifyTableViewCell";
                 [self.tableDataArray addObject:dic];
             }
             
-            NSIndexPath *path=[NSIndexPath indexPathForItem:0 inSection:0];
-            [self tableView:self.tableView didSelectRowAtIndexPath:path];
+//            NSIndexPath *path=[NSIndexPath indexPathForItem:0 inSection:0];
+//            [self tableView:self.tableView didSelectRowAtIndexPath:path];
             
             [self.leftTableView.mj_header endRefreshing];
             [self.tableView reloadData];

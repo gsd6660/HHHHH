@@ -71,13 +71,13 @@
 
         }];
     }else{
-        [NetWorkConnection postURL:@"api/task.wallet/log" param:@{@"page":@(page)} success:^(id responseObject, BOOL success) {
+        [NetWorkConnection postURL:@"api/task.wallet/goldLog" param:@{@"page":@(page)} success:^(id responseObject, BOOL success) {
             NSLog(@"%@",responseJSONString);
             if (responseSuccess) {
                 if (page == 1) {
                     [self.dataArray removeAllObjects];
                 }
-                NSArray * arr = responseObject[@"data"];
+                NSArray * arr = responseObject[@"data"][@"list"][@"data"];
                 [self.dataArray addObjectsFromArray:arr];
                 
                 [self.tableView.mj_header endRefreshing];
@@ -111,8 +111,12 @@
                 cell.descLabel.text = [NSString stringWithFormat:@"+ %@",dic[@"value"]];
             }
         }else{
-            cell.titleLabel.text = dic[@"name"];
-            cell.descLabel.text = [NSString stringWithFormat:@"%@",dic[@"reward"]];
+            cell.titleLabel.text = dic[@"type_name"];
+            if ([dic[@"method"] intValue] == 2) {
+                cell.descLabel.text = [NSString stringWithFormat:@"- %@",dic[@"value"]];
+            }else{
+                cell.descLabel.text = [NSString stringWithFormat:@"+ %@",dic[@"value"]];
+            }
         }
         
     }

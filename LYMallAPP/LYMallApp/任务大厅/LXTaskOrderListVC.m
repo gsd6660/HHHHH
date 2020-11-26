@@ -30,37 +30,45 @@
 
     page = 1;
     MJWeakSelf;
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        page = 1;
-        [weakSelf loadData];
-    }];
-    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        page ++;
-        [weakSelf loadData];
-    }];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        page = 1;
+//        [weakSelf loadData];
+//    }];
+//    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//        page ++;
+//        [weakSelf loadData];
+//    }];
     [self loadData];
 }
 
 
 
 - (void)loadData{
-    [NetWorkConnection postURL:@"/api/task.task/order" param:@{@"page":@(page)} success:^(id responseObject, BOOL success) {
-        NSArray * array = responseObject[@"data"][@"data"];
-        NSLog(@"%@",array);
-        if (page == 1) {
-            [self.dataArray removeAllObjects];
+    [QMUITips showLoadingInView:self.view];
+    [NetWorkConnection postURL:@"/api/task.task/order" param:nil success:^(id responseObject, BOOL success) {
+        [QMUITips hideAllTips];
+        if (responseSuccess) {
+            NSArray * array = responseObject[@"data"][@"data"];
+            NSLog(@"%@",array);
+            if (page == 1) {
+                [self.dataArray removeAllObjects];
+            }
+            [self.dataArray addObjectsFromArray: array];
+//            [self.tableView.mj_header endRefreshing];
+//            [self.tableView.mj_footer endRefreshing];
+            [self.tableView reloadData];
+            
+            if (self.dataArray.count == 0) {
+                [self showEmptyViewWithImage:CCImage(@"wushuju") text:@"暂无数据" detailText:@"" buttonTitle:@"点击重试" buttonAction:@selector(loadData)];
+            }
+            
+        }else{
+            ShowErrorHUD(responseMessage);
         }
-        [self.dataArray addObjectsFromArray: array];
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView.mj_footer endRefreshing];
-        [self.tableView reloadData];
-        
-        if (self.dataArray.count == 0) {
-            [self showEmptyViewWithImage:CCImage(@"wushuju") text:@"暂无数据" detailText:@"" buttonTitle:@"点击重试" buttonAction:@selector(loadData)];
-        }
-        
+       
     } fail:^(NSError *error) {
         NSLog(@"%@",error);
+        [QMUITips hideAllTips];
     }];
 }
 
@@ -82,13 +90,23 @@
     }
     cell.ClickBtn = ^{
         NSDictionary * dic = self.dataArray[indexPath.section];
-        NSLog(@"%@",dic[@"article_content"]);
-        
-        LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
-        vc.content =  dic[@"article_content"];
-        vc.orderID = dic[@"id"];
-        [self.navigationController pushViewController:vc animated:YES];
-        
+        NSLog(@"%@",dic);
+        [QMUITips showLoadingInView:self.view];
+        [NetWorkConnection postURL:@"/api/task.task/detail/task_id" param:@{@"id":dic[@"id"],@"task_id":dic[@"task_id"]} success:^(id responseObject, BOOL success) {
+            [QMUITips hideAllTips];
+            NSLog(@"%@",responseJSONString);
+            if (responseSuccess) {
+                NSDictionary * dataDic = responseObject[@"data"];
+                LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
+                vc.content =  dataDic[@"article_content"];
+                vc.orderID = dataDic[@"id"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }else{
+                ShowErrorHUD(responseMessage);
+            }
+        } fail:^(NSError *error) {
+            [QMUITips hideAllTips];
+        }];
     };
    
     
