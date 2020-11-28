@@ -28,7 +28,7 @@
 //     [UIImage imageNamed:@"guid03"]];
 //     KSGuaidManager.shouldDismissWhenDragging = YES;
 //     [KSGuaidManager begin];
-    [WXApi registerApp:@"wx1c9765d7b1eaf378" universalLink:@"https://bqgvo7.jgmlink.cn"];
+ 
 
     [self createTabBarController];
     // U-Share 平台设置
@@ -48,6 +48,9 @@
     JMLinkConfig *config = [[JMLinkConfig alloc] init];
     config.appKey = @"8570b4786642bb33c699071f";
     [JMLinkService setupWithConfig:config];
+    
+    [WXApi registerApp:@"wx1c9765d7b1eaf378" universalLink:@"https://bqgvo7.jgmlink.cn"];
+//    [WXApi registerApp:<#(nonnull NSString *)#> universalLink:<#(nonnull NSString *)#>];
 //    [WxSdk registerApp];
 
     return YES;
@@ -156,6 +159,9 @@
                 [QMUITips showInfo:@"订单支付失败"];
             }
         }];
+        return YES;
+    }else if([url.scheme isEqualToString:@"wx1c9765d7b1eaf378"] && [url.host isEqualToString:@"pay"]){
+        return [WXApi handleOpenURL:url delegate:self];
     }
     return YES;
 }

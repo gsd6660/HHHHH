@@ -10,6 +10,9 @@
 #import "MyTeamCell.h"
 #import "MyTeamModel.h"
 @interface MyTeamVC ()
+{
+    UIImageView * headView;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataArray;
 @property(nonatomic,assign)NSInteger page;
@@ -23,11 +26,11 @@ static NSString * cellID = @"MyTeamCell";
     self.page = 1;
     self.title = @"我的团队";
     [self.tableView registerNib:[UINib nibWithNibName:cellID bundle:nil] forCellReuseIdentifier:cellID];
-    UIImageView * headView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, kHeightSP(130))];
+    headView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, kHeightSP(130))];
     headView.userInteractionEnabled = YES;
-    headView.image = CCImage(@"jft_banner_team");
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-    [headView addGestureRecognizer:tap];
+//    headView.image = CCImage(@"jft_banner_team");
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+//    [headView addGestureRecognizer:tap];
     self.tableView.tableHeaderView = headView;
     self.tableView.tableFooterView = [UIView new];
     [self getData];
@@ -52,7 +55,7 @@ static NSString * cellID = @"MyTeamCell";
                token = @"";
            }
    WKWebViewVC * vc = [[WKWebViewVC alloc]init];
-   vc.urlString = [NSString stringWithFormat:@"%@wap/invite/index?Authorization=%@",BaseUrl,token];
+   vc.urlString = [NSString stringWithFormat:@"%@wap/invite/index&Authorization=%@",BaseUrl,token];
    [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -60,7 +63,7 @@ static NSString * cellID = @"MyTeamCell";
     [NetWorkConnection postURL:@"api/user.dealer.team/lists" param:nil success:^(id responseObject, BOOL success) {
         NSLog(@"我的团队=====%@",responseJSONString);
         NSArray * data = responseObject[@"data"][@"list"];
-
+        [headView sd_setImageWithURL:[NSURL URLWithString:responseObject[@"data"][@"banner"]]];
         if (responseSuccess) {
             [self.dataArray removeAllObjects];
             for (NSDictionary *dic in data) {

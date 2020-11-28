@@ -193,7 +193,7 @@ static NSString * cellID = @"CommitAppleyDataCell";
         }else if ([cell.levelButn.titleLabel.text isEqualToString:@"市级"]) {
             [self selectArea:cell ShowType:BRAddressPickerModeCity];
 
-        }else if ([cell.levelButn.titleLabel.text isEqualToString:@"县级"]) {
+        }else if ([cell.levelButn.titleLabel.text isEqualToString:@"区/县级"]) {
             [self selectArea:cell ShowType:BRAddressPickerModeArea];
         }
     }
