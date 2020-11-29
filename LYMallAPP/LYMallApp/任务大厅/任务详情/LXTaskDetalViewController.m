@@ -11,13 +11,13 @@
 
 
 @interface LXTaskDetalViewController ()<WKNavigationDelegate>
-
+{
+    BOOL is_oreder;
+}
 @property(nonatomic, strong) UIProgressView *progressView;
 @property(nonatomic, strong) WKWebView *wkWebView;
 
 @property(nonatomic, strong) UILabel * rightLabel;
-
-
 
 @property(nonatomic, strong) UITextView * contentView;
 
@@ -44,6 +44,7 @@
     [super viewDidLoad];
     self.title = @"任务详情";
 
+    is_oreder = NO;
     if (([self.content hasPrefix:@"http:"] || [self.content hasPrefix:@"https:"])) {
         [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.content]]];
     }else {
@@ -113,20 +114,24 @@
 }
 
 - (void)backClick{
-    
-    UIAlertController * al = [UIAlertController alertControllerWithTitle:@"提示" message:@"任务还未完成，是否确认退出?" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction * leftAction = [UIAlertAction actionWithTitle:@"继续任务" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    UIAlertAction * rightAction = [UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    if (is_oreder) {
         [self.navigationController popViewControllerAnimated:YES];
-    }];
-    
-    [al addAction:leftAction];
-    [al addAction:rightAction];
-    [self presentViewController:al animated:YES completion:nil];
+    }else{
+        UIAlertController * al = [UIAlertController alertControllerWithTitle:@"提示" message:@"任务还未完成，是否确认退出?" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * leftAction = [UIAlertAction actionWithTitle:@"继续任务" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        UIAlertAction * rightAction = [UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        
+        [al addAction:leftAction];
+        [al addAction:rightAction];
+        [self presentViewController:al animated:YES completion:nil];
+    }
+   
 
     
 }
@@ -135,6 +140,7 @@
     [NetWorkConnection postURL:@"api/task.task/finish" param:@{@"log_id":self.orderID} success:^(id responseObject, BOOL success) {
         if (responseSuccess) {
             [QMUITips showSucceed:@"完成任务" inView:self.view];
+            is_oreder = YES;
         }else{
             [QMUITips showError:responseMessage inView:self.view];
         }
