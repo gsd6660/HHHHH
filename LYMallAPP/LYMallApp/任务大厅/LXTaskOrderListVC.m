@@ -22,6 +22,12 @@
 
 @implementation LXTaskOrderListVC
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"任务订单";
@@ -38,7 +44,7 @@
 //        page ++;
 //        [weakSelf loadData];
 //    }];
-    [self loadData];
+//    [self loadData];
 }
 
 
@@ -99,7 +105,7 @@
                 NSDictionary * dataDic = responseObject[@"data"];
                 LXTaskDetalViewController * vc = [LXTaskDetalViewController new];
                 vc.content =  dataDic[@"article_content"];
-                vc.orderID = dataDic[@"id"];
+                vc.orderID = dic[@"id"];
                 [self.navigationController pushViewController:vc animated:YES];
             }else{
                 ShowErrorHUD(responseMessage);

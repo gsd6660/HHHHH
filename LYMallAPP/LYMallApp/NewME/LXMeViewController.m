@@ -132,8 +132,9 @@
                 } fail:^(NSError *error) {
                 }];
             }else if ([self.dataDic[@"is_agency"] intValue] == 1) {
-                AgentManagerVC * vc = [[AgentManagerVC alloc]init];
-                [self.navigationController pushViewController:vc animated:YES];
+                [QMUITips showInfo:@"您已经是代理了！"];
+//                AgentManagerVC * vc = [[AgentManagerVC alloc]init];
+//                [self.navigationController pushViewController:vc animated:YES];
             }else if ([self.dataDic[@"is_agency"] intValue] == 3) {
                 [QMUITips showInfo:@"正在审核，请耐心等待"];
             }

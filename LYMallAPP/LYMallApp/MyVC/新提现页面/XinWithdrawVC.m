@@ -77,7 +77,7 @@ static NSString * orderPayCellID = @"OrderPayCell";
         if (responseDataSuccess) {
             NSDictionary * dic = responseObject[@"data"];
 //            self.money = [NSString stringWithFormat:@"%@",dic[@"money"]];
-            
+            self.service_chargeLable.text = dic[@"service_charge"];
             NSArray * method = dic[@"method"];
             for (NSDictionary *dic1 in method) {
                 [self.dataArray addObject:dic1];
@@ -109,7 +109,9 @@ static NSString * orderPayCellID = @"OrderPayCell";
 
 - (void)loadBankInfo:(void(^)(BOOL isSuc))request{
     [NetWorkConnection postURL:@"/api/user/bank_card_detail" param:nil success:^(id responseObject, BOOL success) {
+        NSLog(@"银行卡======%@",responseJSONString);
         if (responseSuccess) {
+            
             self.dataDic = responseObject[@"data"];
             [self.tableView reloadData];
         }else{
@@ -154,7 +156,16 @@ static NSString * orderPayCellID = @"OrderPayCell";
         ShowErrorHUD(@"请选择提现到哪");
         return;
     }
-    [NetWorkConnection postURL:@"/api/task.wallet/withdraw" param:@{@"pay_type":self.payType} success:^(id responseObject, BOOL success) {
+    
+    NSDictionary * parmDic = @{@"gold":self.glodTF.text,
+                               @"bank_name":[CheackNullOjb cc_isNullOrNilWithObject:self.dataDic] ? @"":self.dataDic[@"card_type"],
+                               @"bank_no":[CheackNullOjb cc_isNullOrNilWithObject:self.dataDic] ? @"":self.dataDic[@"id_card"],
+                               @"realname":[CheackNullOjb cc_isNullOrNilWithObject:self.dataDic] ? @"":self.dataDic[@"account_name"],
+                               @"pay_type":self.payType
+    };
+    
+    
+    [NetWorkConnection postURL:@"/api/task.wallet/withdraw" param:parmDic success:^(id responseObject, BOOL success) {
         if (responseSuccess) {
             WithdrawDepositSucceeVC * vc = [[WithdrawDepositSucceeVC alloc]init];
             switch ([self.payType intValue]) {
@@ -192,7 +203,7 @@ static NSString * orderPayCellID = @"OrderPayCell";
                    NSDictionary * dic = responseObject[@"data"];
                    self.money = [NSString stringWithFormat:@"%@",dic[@"money"]];
             self.jiangjinLable.text = dic[@"bonus_money"];
-            self.service_chargeLable.text = dic[@"withdrawal_service_charge"];
+           
 
                    NSArray * method = dic[@"method"];
                    for (NSDictionary *dic1 in method) {
@@ -284,7 +295,7 @@ static NSString * orderPayCellID = @"OrderPayCell";
     
     
     
-     if (indexPath.row == self.dataArray.count){
+     if (indexPath.row == self.dataArray.count - 1){
         if ([CheackNullOjb cc_isNullOrNilWithObject:self.dataDic]) {
             MJWeakSelf;
             AddBankCardVC * vc = [AddBankCardVC new];
@@ -293,6 +304,17 @@ static NSString * orderPayCellID = @"OrderPayCell";
 
             };
             [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            OrderPayCell *celled = [tableView cellForRowAtIndexPath:_selIndex];
+            [celled.selectBtn setImage:[UIImage imageNamed:@"jft_but_Unselected"] forState:UIControlStateNormal];
+
+            //记录当前选中的位置索引
+            _selIndex = indexPath;
+            //当前选择的打勾
+            OrderPayCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            [cell.selectBtn setImage: [UIImage imageNamed:@"jft_but_selected"] forState:UIControlStateNormal];
+            self.payType = [NSString stringWithFormat:@"%@",self.dataArray[indexPath.row][@"pay_type"]];
+            NSLog(@"选择====%@",self.payType);
         }
     }else{
         //之前选中的，取消选择

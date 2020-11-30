@@ -106,16 +106,16 @@
         if (self.type == LXSilver) {
             cell.titleLabel.text = dic[@"type_name"];
             if ([dic[@"method"] intValue] == 2) {
-                cell.descLabel.text = [NSString stringWithFormat:@"- %@",dic[@"value"]];
+                cell.descLabel.text = [NSString stringWithFormat:@"%@",dic[@"value"]];
             }else{
-                cell.descLabel.text = [NSString stringWithFormat:@"+ %@",dic[@"value"]];
+                cell.descLabel.text = [NSString stringWithFormat:@"%@",dic[@"value"]];
             }
         }else{
             cell.titleLabel.text = dic[@"type_name"];
             if ([dic[@"method"] intValue] == 2) {
-                cell.descLabel.text = [NSString stringWithFormat:@"- %@",dic[@"value"]];
+                cell.descLabel.text = [NSString stringWithFormat:@"%@",dic[@"value"]];
             }else{
-                cell.descLabel.text = [NSString stringWithFormat:@"+ %@",dic[@"value"]];
+                cell.descLabel.text = [NSString stringWithFormat:@"%@",dic[@"value"]];
             }
         }
         
