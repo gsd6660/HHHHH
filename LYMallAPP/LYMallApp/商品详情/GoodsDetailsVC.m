@@ -308,21 +308,21 @@ static NSString * GoodsVipTwoCellID = @"GiftPackageCell";
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 4) {
-        if (is_commission) {
-            if (self.discountArray.count>0) {
-                if (isFold) {
-                    return self.discountArray.count+1;
-                }
-            }
-            return 2;
-        }else{
+//        if (is_commission) {
+//            if (self.discountArray.count>0) {
+//                if (isFold) {
+//                    return self.discountArray.count+1;
+//                }
+//            }
+//            return 2;
+//        }else{
             if (self.discountArray.count>0) {
                 if (isFold) {
                     return self.discountArray.count;
                 }
                 return 1;
             }
-        }
+//        }
     }
     if (section == 1){
         if (!is_userGrade) {
@@ -357,10 +357,10 @@ static NSString * GoodsVipTwoCellID = @"GiftPackageCell";
         }
         return 75 ;
     }else if (indexPath.section == 3) {
-        if ([self.typeStr intValue] == 2) {
-            return 0;
-        }
-        return 30 ;
+//        if ([self.typeStr intValue] == 2) {
+//            return 0;
+//        }
+        return 0 ;
     }else if (indexPath.section == 4) {
         if ([self.typeStr intValue] == 2) {
             //470
@@ -405,34 +405,34 @@ static NSString * GoodsVipTwoCellID = @"GiftPackageCell";
     }
     if (indexPath.section == 4) {
         
-        if (is_commission) {
-            if (isFold) {
-                if (indexPath.row == self.discountArray.count) {
-                    GoodsTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsTwoCellID];
-                    cell.dataDic =self.dataDic;
-                    return cell;
-                }else{
-                    GoodsVipCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsVipCellID];
-                    if (self.discountArray.count>0) {
-                        [cell setDataDic:self.discountArray[indexPath.row] withIndexPath:indexPath];
-                    }
-                    return  cell;
-                }
-            }else{
-                if (indexPath.row == 1) {
-                    GoodsTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsTwoCellID];
-                    cell.dataDic =self.dataDic;
-                    return cell;
-                }else{
-                    GoodsVipCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsVipCellID];
-                    if (self.discountArray.count>0) {
-                        [cell setDataDic:self.discountArray[indexPath.row] withIndexPath:indexPath];
-                    }
-                    return  cell;
-                }
-            }
-        }else{
-            
+//        if (is_commission) {
+//            if (isFold) {
+//                if (indexPath.row == self.discountArray.count) {
+//                    GoodsTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsTwoCellID];
+//                    cell.dataDic =self.dataDic;
+//                    return cell;
+//                }else{
+//                    GoodsVipCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsVipCellID];
+//                    if (self.discountArray.count>0) {
+//                        [cell setDataDic:self.discountArray[indexPath.row] withIndexPath:indexPath];
+//                    }
+//                    return  cell;
+//                }
+//            }else{
+//                if (indexPath.row == 1) {
+//                    GoodsTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsTwoCellID];
+//                    cell.dataDic =self.dataDic;
+//                    return cell;
+//                }else{
+//                    GoodsVipCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsVipCellID];
+//                    if (self.discountArray.count>0) {
+//                        [cell setDataDic:self.discountArray[indexPath.row] withIndexPath:indexPath];
+//                    }
+//                    return  cell;
+//                }
+//            }
+//        }else{
+//
             if ([self.typeStr intValue] == 2) {
                 GiftPackageCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsVipTwoCellID];
                 if (self.gift_goods_listArray.count>0) {
@@ -447,7 +447,7 @@ static NSString * GoodsVipTwoCellID = @"GiftPackageCell";
                 [cell setDataDic:self.discountArray[indexPath.row] withIndexPath:indexPath];
             }
             return  cell;
-        }
+//        }
         //        if (indexPath.row < self.discountArray.count) {
         //            GoodsVipCell * cell = [tableView dequeueReusableCellWithIdentifier:GoodsVipCellID];
         //            if (self.discountArray) {

@@ -14,6 +14,11 @@
     [super awakeFromNib];
     // Initialization code
      self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.tipLabel.textColor = kUIColorFromRGB(0x3ACD7B);
+    YBDViewBorderRadiusWithBorder(self.tipLabel, 5, 1, kUIColorFromRGB(0x3ACD7B));
+    [self.contentView addSubview:self.tipLabel];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

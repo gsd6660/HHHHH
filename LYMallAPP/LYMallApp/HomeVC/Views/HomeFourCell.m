@@ -56,6 +56,23 @@
             make.height.mas_equalTo(25);
         }];
         
+        
+        UILabel * tipLabel = [[UILabel alloc]init];
+        tipLabel.text = @"自营";
+        tipLabel.textAlignment = NSTextAlignmentCenter;
+        tipLabel.font = [UIFont systemFontOfSize:11];
+        tipLabel.textColor = kUIColorFromRGB(0x3ACD7B);
+        YBDViewBorderRadiusWithBorder(tipLabel, 5, 1, kUIColorFromRGB(0x3ACD7B));
+        [self.contentView addSubview:tipLabel];
+        
+        [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.goodsImageView.mas_bottom).offset(10);
+            make.left.mas_offset(10);
+            make.width.mas_equalTo(30);
+            make.height.mas_equalTo(18);
+        }];
+        
+        
         self.titleLable = [[UILabel alloc]init];
         self.titleLable.text = @"优质红葡萄酒1000ml";
 //        self.titleLable.backgroundColor = [UIColor redColor];
@@ -65,7 +82,7 @@
        [self.contentView addSubview:self.titleLable];
         [self.titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.goodsImageView.mas_bottom).offset(10);
-        make.left.equalTo(self.goodsImageView).offset(10);
+        make.left.equalTo(tipLabel.mas_right).offset(10);
 
             make.right.equalTo(self.goodsImageView).offset(-10);
             make.height.mas_equalTo(15);

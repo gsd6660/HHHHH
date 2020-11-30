@@ -76,8 +76,8 @@ static NSString * cellIDB = @"BuynowOneCell";
         make.width.mas_equalTo(140);
         make.height.mas_equalTo(35);
     }];
-    _titArray = @[@"优惠券",@"会员折扣",@"银豆抵扣",@"运费",@"实付金额"];
-    _numArray = @[@"暂无可用",@"-￥0.0",@"￥0.09",@"",@"￥0.0"];
+    _titArray = @[@"优惠券",@"会员折扣",@"金豆抵扣",@"运费",@"实付金额"];
+    _numArray = @[@"暂无可用",@"-￥0.0",@"￥0.00",@"",@"￥0.0"];
     if (self.type == DetailPush) {//正常商品
         [self loadDataWithUrl:@"api/order/buyNow"];
     }else if(self.type == SharpDetailPush){//限时购买商品
@@ -148,7 +148,7 @@ static NSString * cellIDB = @"BuynowOneCell";
             self.addressDic = dic[@"address"];
             self.coupon_listArray = dic[@"coupon_list"];
             exist_address = [dic[@"exist_address"]boolValue];
-            is_allow_points = [dic[@"is_allow_points"]boolValue];
+            is_allow_points = [dic[@"is_allow_gold"]boolValue];
             [self.contentArray addObject: self.coupon_listArray.count > 0?@"选择优惠券":@"暂无可用"];
             if (![self.addressDic isKindOfClass:[NSNull class]]) {
                 [self.sureParamDic setValue:self.addressDic[@"address_id"] forKey:@"address_id"];
@@ -157,8 +157,8 @@ static NSString * cellIDB = @"BuynowOneCell";
             [self.contentArray addObject:[NSString stringWithFormat:@"-￥%@",dic[@"grade_money"]]];
             [self.titleArray addObject:@"会员折扣"];
             if (is_allow_points) {
-                [self.contentArray addObject:[NSString stringWithFormat:@" ￥%@",dic[@"points_money"]]];
-                [self.titleArray addObject:@"积分抵扣"];
+                [self.contentArray addObject:[NSString stringWithFormat:@"%@",dic[@"gold_cost"]]];
+                [self.titleArray addObject:@"金豆抵扣"];
             }
             [self.contentArray addObject:[NSString stringWithFormat:@"￥%@",dic[@"express_price"]]];
             [self.titleArray addObject:@"运费"];
@@ -197,7 +197,7 @@ static NSString * cellIDB = @"BuynowOneCell";
             self.addressDic = dic[@"address"];
             self.coupon_listArray = dic[@"coupon_list"];
             exist_address = [dic[@"exist_address"]boolValue];
-            is_allow_points = [dic[@"is_allow_points"]boolValue];
+            is_allow_points = [dic[@"is_allow_gold"]boolValue];
             [self.contentArray addObject: self.coupon_listArray.count > 0?@"选择优惠券":@"暂无可用"];
             if (![self.addressDic isKindOfClass:[NSNull class]]) {
                 [self.sureParamDic setValue:self.addressDic[@"address_id"] forKey:@"address_id"];
@@ -206,8 +206,8 @@ static NSString * cellIDB = @"BuynowOneCell";
             [self.contentArray addObject:[NSString stringWithFormat:@"-￥%@",dic[@"grade_money"]]];
             [self.titleArray addObject:@"会员折扣"];
             if (is_allow_points) {
-                [self.contentArray addObject:[NSString stringWithFormat:@" ￥%@",dic[@"points_money"]]];
-                [self.titleArray addObject:@"积分抵扣"];
+                [self.contentArray addObject:[NSString stringWithFormat:@"%@",dic[@"gold_cost"]]];
+                [self.titleArray addObject:@"金豆抵扣"];
             }
             [self.contentArray addObject:[NSString stringWithFormat:@"￥%@",dic[@"express_price"]]];
             [self.titleArray addObject:@"运费"];
@@ -406,9 +406,9 @@ static NSString * cellIDB = @"BuynowOneCell";
             [cell.descBtn setImage:[UIImage imageNamed:@"jft_but_selected"] forState:UIControlStateSelected];
             cell.btnClick = ^(QMUIButton * _Nonnull btn) {
                 cellBtnSelect = !cell.descBtn.selected;
-                [self.sureParamDic setValue:@(cellBtnSelect) forKey:@"is_use_points"];//是否使用积分抵扣
-                [self.prmDic setValue:@(cellBtnSelect) forKey:@"is_use_points"];
-                [self.cardsDic setValue:@(cellBtnSelect) forKey:@"is_use_points"];
+                [self.sureParamDic setValue:@(cellBtnSelect) forKey:@"is_use_gold"];//是否使用积分抵扣
+                [self.prmDic setValue:@(cellBtnSelect) forKey:@"is_use_gold"];
+                [self.cardsDic setValue:@(cellBtnSelect) forKey:@"is_use_gold"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (weakSelf.type == DetailPush) {
                         [weakSelf loadDataWithUrl:@"api/order/buyNow"];

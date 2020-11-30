@@ -32,6 +32,8 @@
 
 @implementation CartVC
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kUIColorFromRGB(0xf9f9f9);
@@ -40,7 +42,7 @@
     self.title = @"购物车";
     self.change_type = @"1";
    [self setSubViews];
-    [self getCartListsData:@""];
+   
    [self getCartRecommendListsData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserInfo:) name:@"updateUserInfo" object:nil];
@@ -286,6 +288,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 //    [self.selectArray removeAllObjects];
+    [self getCartListsData:@""];
 }
 
 
