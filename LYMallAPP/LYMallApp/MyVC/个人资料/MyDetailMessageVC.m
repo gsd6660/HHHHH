@@ -12,6 +12,7 @@
 
 #import "HomeVC.h"
 #import "LoginRegisterVC.h"
+#import "SetVC.h"
 
 @interface MyDetailMessageVC ()
 {
@@ -93,7 +94,7 @@
     }];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -159,7 +160,12 @@
         }
         
     }
+    
     if (indexPath.section == 1) {
+        cell.textLabel.text = @"安全设置";
+    }
+    
+    if (indexPath.section == 2) {
         cell.textLabel.text = @"收货地址";
         if ([_dataDic[@"address"] count] > 0) {
             NSDictionary * dic = _dataDic[@"address"][@"region"];
@@ -177,8 +183,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     QMUITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-    if (indexPath.section == 1) {
+    if (indexPath.section == 2) {
         MyAddressListVC * vc = [[MyAddressListVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if (indexPath.section == 1) {
+        SetVC * vc = [SetVC new];
         [self.navigationController pushViewController:vc animated:YES];
     }
    

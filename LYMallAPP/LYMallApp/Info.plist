@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>App CategoryPrivacy - Photo Library Usage Description</key>
+	<string>需要访问您的相册修改头像信息等</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
@@ -91,6 +93,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>允许此权限才能使用相机拍摄图片进行评价或更改头像</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>此 app 不会连接到您所用网络上的设备，只会检测与您本地网关的连通性。</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>APP需要您允许此权限才能访问照片库进行评价或更改头像</string>
 	<key>NSPhotoLibraryUsageDescription</key>
